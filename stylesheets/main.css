@@ -196,7 +196,7 @@ section#exec {
     letter-spacing: 1px;
     color: #ffffff; }
   section#exec .row {
-    margin: 40px 10vw;
+    margin: 40px 15vw;
     display: flex; }
   section#exec .two-row {
     margin: 0px 25vw; }
@@ -223,5 +223,31 @@ section#exec {
       text-transform: uppercase;
       font-size: .8em;
       color: #a8a8a8; }
+
+/* Resources section */
+section#resources h1 {
+  margin: 0;
+  padding-top: 96px;
+  text-align: center;
+  font-size: 2.5em;
+  letter-spacing: 1px; }
+section#resources #resources-container {
+  display: flex;
+  margin: 40px 12vw; }
+  section#resources #resources-container .column {
+    flex: 1;
+    margin: 20px; }
+    section#resources #resources-container .column h2 {
+      font-size: 1.2em; }
+    section#resources #resources-container .column a {
+      color: #6cf5d6;
+      text-decoration: none; }
+    section#resources #resources-container .column a:hover {
+      color: #a8a8a8; }
+    section#resources #resources-container .column p {
+      font-family: 'roboto';
+      font-size: 0.9em; }
+
+/* Connect section */
 
 /*# sourceMappingURL=main.css.map */

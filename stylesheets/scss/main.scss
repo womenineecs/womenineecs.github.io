@@ -268,7 +268,7 @@ section#exec {
   }
 
   .row {
-    margin: 40px 10vw;
+    margin: 40px 15vw;
     display: flex;
   }
   
@@ -309,4 +309,48 @@ section#exec {
       color: $gray;
     }
   }
+}
+
+/* Resources section */
+section#resources {
+  h1 {
+    margin: 0;
+    padding-top: 96px;
+    text-align: center;
+    font-size: 2.5em;
+    letter-spacing: 1px;
+  }
+
+  #resources-container {
+    display: flex;
+    margin: 40px 12vw;
+
+    .column {
+      flex: 1;
+      margin: 20px;
+
+      h2 {
+        font-size: 1.2em;
+      }
+
+      a {
+        color: $green;
+        text-decoration: none;
+      }
+
+      a:hover{
+        color: $gray;
+      }
+
+      p {
+        font-family: 'roboto';
+        font-size: .9em
+      }
+    }
+  }
+}
+
+/* Connect section */
+section#connect {
+  
 }
