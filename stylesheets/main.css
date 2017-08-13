@@ -1,0 +1,227 @@
+/* Define constants */
+/* Main style */
+html, body {
+  height: 100%;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  background-color: #ffffff;
+  font-size: 1em;
+  -webkit-touch-callout: none;
+  /* iOS Safari */
+  -webkit-user-select: none;
+  /* Safari */
+  -khtml-user-select: none;
+  /* Konqueror HTML */
+  -moz-user-select: none;
+  /* Firefox */
+  -ms-user-select: none;
+  /* Internet Explorer/Edge */
+  user-select: none;
+  /* Non-prefixed version, currently supported by Chrome and Opera */
+  pointer: default; }
+  html section, body section {
+    width: 100%;
+    position: relative; }
+  html div, body div {
+    position: relative; }
+
+/* common classes */
+.nixie {
+  font-family: "Nixie One", cursive; }
+
+.roboto {
+  font-family: "Roboto", sans-serif; }
+
+.sans {
+  font-family: "Source Sans Pro", sans-serif; }
+
+.hidden {
+  display: none; }
+
+.title {
+  text-transform: uppercase; }
+
+/* Navigation Bar */
+#navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  box-shadow: 10px 0 5px #a8a8a8;
+  z-index: 100; }
+  #navbar .menu {
+    display: flex;
+    background-color: #ffffff;
+    font-family: "Roboto", sans-serif;
+    text-transform: uppercase;
+    font-size: .9em;
+    justify-content: center; }
+    #navbar .menu .item {
+      padding: 1.5em 2.4em 1.2em 2.4em;
+      border-bottom: 4px solid transparent;
+      color: #a8a8a8;
+      justify-content: center;
+      text-transform: uppercase;
+      letter-spacing: 1px; }
+    #navbar .menu .item:hover {
+      color: #6cf5d6;
+      -o-transition: .5s;
+      -ms-transition: .5s;
+      -moz-transition: .5s;
+      -webkit-transition: .5s;
+      transition: .5s;
+      cursor: pointer; }
+
+/* Splash Section */
+section#splash {
+  height: 100%;
+  background: url(../assets/images/cover.png) no-repeat center bottom;
+  background-color: #6cf5d6; }
+  section#splash .splash-title {
+    margin: auto;
+    padding-top: 45vh;
+    color: #ffffff;
+    text-shadow: 1px 1px #a8a8a8; }
+    section#splash .splash-title h1 {
+      margin: 0;
+      width: auto;
+      font-size: 5em;
+      text-align: center; }
+    section#splash .splash-title h2 {
+      width: auto;
+      font-size: 1.2em;
+      font-weight: lighter;
+      text-align: center; }
+
+/* Mission section */
+section#mission h1 {
+  margin-top: 0;
+  padding-top: 96px;
+  text-align: center;
+  font-size: 2.5em;
+  letter-spacing: 1px; }
+section#mission h2 {
+  margin-top: 40px;
+  text-align: center;
+  font-size: 1em;
+  font-weight: lighter; }
+section#mission #goal-container {
+  display: flex;
+  margin: 60px 120px; }
+  section#mission #goal-container .goal {
+    text-align: center;
+    margin: 20px; }
+    section#mission #goal-container .goal h3 {
+      font-family: "Nixie One", cursive; }
+    section#mission #goal-container .goal p {
+      font-family: "Roboto", sans-serif;
+      font-size: .9em;
+      font-weight: lighter; }
+
+/* Facts & Figures Section */
+section#facts {
+  background: #000000;
+  color: #ffffff; }
+  section#facts h1 {
+    margin: 0;
+    padding-top: 96px;
+    text-align: center;
+    font-size: 2.5em;
+    letter-spacing: 1px; }
+  section#facts h2 {
+    margin-top: 40px;
+    text-align: center;
+    font-size: 1.1em;
+    font-weight: lighter;
+    color: #a8a8a8; }
+  section#facts #fact-container {
+    display: flex;
+    margin: 60px 160px 0px 160px; }
+    section#facts #fact-container .fact {
+      flex: 1;
+      text-align: center;
+      margin: 20px; }
+      section#facts #fact-container .fact h3 {
+        margin: 0;
+        font-size: 3em;
+        font-family: "Nixie One", cursive;
+        color: #6cf5d6; }
+      section#facts #fact-container .fact p {
+        margin-top: 0;
+        margin-bottom: 40px;
+        font-size: 1.1em;
+        font-weight: lighter;
+        color: #a8a8a8; }
+
+/* Programs Section */
+section#programs h1 {
+  margin: 0;
+  padding-top: 96px;
+  text-align: center;
+  font-size: 2.5em;
+  letter-spacing: 1px; }
+section#programs #program-container {
+  display: flex;
+  margin: 40px 120px; }
+  section#programs #program-container .column {
+    flex: 1;
+    margin: 20px;
+    display: flex;
+    flex-direction: column;
+    background: #fefefe; }
+    section#programs #program-container .column .program {
+      flex-grow: 1;
+      margin: 10px;
+      padding: 20px;
+      display: flex; }
+      section#programs #program-container .column .program img {
+        padding: 20px; }
+      section#programs #program-container .column .program h2 {
+        font-family: "Nixie One", cursive;
+        font-size: 1.2em; }
+      section#programs #program-container .column .program p {
+        font-family: "Source Sans Pro", sans-serif;
+        font-weight: lighter;
+        font-size: .9em; }
+
+/* Executive Board Section */
+section#exec {
+  background: #000000;
+  text-align: center; }
+  section#exec h1 {
+    margin: 0;
+    padding: 96px 0;
+    font-size: 2.5em;
+    letter-spacing: 1px;
+    color: #ffffff; }
+  section#exec .row {
+    margin: 40px 10vw;
+    display: flex; }
+  section#exec .two-row {
+    margin: 0px 25vw; }
+  section#exec .bottom-row {
+    padding-bottom: 60px; }
+  section#exec .profile {
+    flex: 1; }
+    section#exec .profile img {
+      height: 200px;
+      border-radius: 50%; }
+    section#exec .profile .name {
+      display: block;
+      padding-top: 20px; }
+    section#exec .profile h2 {
+      display: inline;
+      font-family: "Nixie One", cursive;
+      text-transform: uppercase;
+      font-size: .9em;
+      color: #a8a8a8;
+      border-bottom: 1px solid #a8a8a8;
+      padding-bottom: 2px; }
+    section#exec .profile h3 {
+      font-family: "Source Sans Pro", sans-serif;
+      text-transform: uppercase;
+      font-size: .8em;
+      color: #a8a8a8; }
+
+/*# sourceMappingURL=main.css.map */
