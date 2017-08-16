@@ -1,6 +1,6 @@
 /* Define constants */
 $white: #ffffff;
-$black: #000000;
+$black: #303030;
 $green: #6cf5d6;
 $gray: #a8a8a8;
 
@@ -152,11 +152,12 @@ section#mission {
 
   #goal-container {
     display: flex;
-    margin: 60px 120px;
+    margin: 60px 120px 0px 120px;
+    padding-bottom: 96px;
 
     .goal {
       text-align: center;
-      margin: 20px;
+      margin: 0 20px;
 
       img {
         width: 120px;
@@ -177,12 +178,12 @@ section#mission {
 
 /* Facts & Figures Section */
 section#facts {
-  background: $black;
+  background-color: $black;
   color: $white;
+  padding: 96px 0;
 
   h1 {
     margin: 0;
-    padding-top: 96px;
     text-align: center;
     font-size: $h1;
     letter-spacing: 1px;
@@ -203,7 +204,7 @@ section#facts {
     .fact {
       flex: 1;
       text-align: center;
-      margin: 20px;
+      margin: 0 20px;
 
       h3 {
         margin: 0;
@@ -215,7 +216,6 @@ section#facts {
       p {
         font-family: $sans;
         margin-top: 0;
-        margin-bottom: 40px;
         font-size: 1em;
         font-weight: lighter;
         color: $gray;
@@ -226,9 +226,9 @@ section#facts {
 
 /* Programs Section */
 section#programs {
+  padding: 96px 0;
+
   h1 {
-    margin: 0;
-    padding-top: 96px;
     text-align: center;
     font-size: 2.5em;
     letter-spacing: 1px;
@@ -236,20 +236,21 @@ section#programs {
   
   #program-container {
     display: flex;
-    margin: 40px 120px;
+    margin: 40px 150px 0px 150px;
     
     .column {
       flex: 1;
-      margin: 20px;
+      margin: 0;
       display: flex;
       flex-direction: column;
-      background: #fefefe;
 
       .program {
         flex-grow: 1;
         margin: 10px;
         padding: 20px;
         display: flex;
+        background: #fefefe;
+        box-shadow: 0 0 2px $subtle;
 
         img {
           height: 80px;
@@ -275,13 +276,14 @@ section#programs {
 section#exec {
   background: $black;
   text-align: center;
+  padding: 96px 0;
   
   h1 {
     margin: 0;
-    padding: 96px 0;
     font-size: 2.5em;
     letter-spacing: 1px;
     color: $white;
+    padding-bottom: 40px;
   }
 
   .row {

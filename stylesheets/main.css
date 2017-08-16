@@ -111,10 +111,11 @@ section#mission h2 {
   font-weight: lighter; }
 section#mission #goal-container {
   display: flex;
-  margin: 60px 120px; }
+  margin: 60px 120px 0px 120px;
+  padding-bottom: 96px; }
   section#mission #goal-container .goal {
     text-align: center;
-    margin: 20px; }
+    margin: 0 20px; }
     section#mission #goal-container .goal img {
       width: 120px; }
     section#mission #goal-container .goal h3 {
@@ -126,11 +127,11 @@ section#mission #goal-container {
 
 /* Facts & Figures Section */
 section#facts {
-  background: #000000;
-  color: #ffffff; }
+  background-color: #303030;
+  color: #ffffff;
+  padding: 96px 0; }
   section#facts h1 {
     margin: 0;
-    padding-top: 96px;
     text-align: center;
     font-size: 2.5em;
     letter-spacing: 1px; }
@@ -146,7 +147,7 @@ section#facts {
     section#facts #fact-container .fact {
       flex: 1;
       text-align: center;
-      margin: 20px; }
+      margin: 0 20px; }
       section#facts #fact-container .fact h3 {
         margin: 0;
         font-size: 3em;
@@ -155,53 +156,54 @@ section#facts {
       section#facts #fact-container .fact p {
         font-family: "Source Sans Pro", sans-serif;
         margin-top: 0;
-        margin-bottom: 40px;
         font-size: 1em;
         font-weight: lighter;
         color: #a8a8a8; }
 
 /* Programs Section */
-section#programs h1 {
-  margin: 0;
-  padding-top: 96px;
-  text-align: center;
-  font-size: 2.5em;
-  letter-spacing: 1px; }
-section#programs #program-container {
-  display: flex;
-  margin: 40px 120px; }
-  section#programs #program-container .column {
-    flex: 1;
-    margin: 20px;
+section#programs {
+  padding: 96px 0; }
+  section#programs h1 {
+    text-align: center;
+    font-size: 2.5em;
+    letter-spacing: 1px; }
+  section#programs #program-container {
     display: flex;
-    flex-direction: column;
-    background: #fefefe; }
-    section#programs #program-container .column .program {
-      flex-grow: 1;
-      margin: 10px;
-      padding: 20px;
-      display: flex; }
-      section#programs #program-container .column .program img {
-        height: 80px;
-        padding: 20px 30px 20px 20px; }
-      section#programs #program-container .column .program h2 {
-        font-family: "Nixie One", cursive;
-        font-size: 1.2em; }
-      section#programs #program-container .column .program p {
-        font-family: "Source Sans Pro", sans-serif;
-        font-weight: lighter;
-        font-size: .9em; }
+    margin: 40px 150px 0px 150px; }
+    section#programs #program-container .column {
+      flex: 1;
+      margin: 0;
+      display: flex;
+      flex-direction: column; }
+      section#programs #program-container .column .program {
+        flex-grow: 1;
+        margin: 10px;
+        padding: 20px;
+        display: flex;
+        background: #fefefe;
+        box-shadow: 0 0 2px #eaeaea; }
+        section#programs #program-container .column .program img {
+          height: 80px;
+          padding: 20px 30px 20px 20px; }
+        section#programs #program-container .column .program h2 {
+          font-family: "Nixie One", cursive;
+          font-size: 1.2em; }
+        section#programs #program-container .column .program p {
+          font-family: "Source Sans Pro", sans-serif;
+          font-weight: lighter;
+          font-size: .9em; }
 
 /* Executive Board Section */
 section#exec {
-  background: #000000;
-  text-align: center; }
+  background: #303030;
+  text-align: center;
+  padding: 96px 0; }
   section#exec h1 {
     margin: 0;
-    padding: 96px 0;
     font-size: 2.5em;
     letter-spacing: 1px;
-    color: #ffffff; }
+    color: #ffffff;
+    padding-bottom: 40px; }
   section#exec .row {
     margin: 40px 15vw;
     display: flex; }
