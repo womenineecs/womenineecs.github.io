@@ -127,7 +127,9 @@ section#mission #goal-container {
 
 /* Facts & Figures Section */
 section#facts {
-  background-color: #303030;
+  background: url(../assets/images/dark-background.svg);
+  background-position: center;
+  background-size: 100% auto;
   color: #ffffff;
   padding: 96px 0; }
   section#facts h1 {
@@ -195,27 +197,26 @@ section#programs {
 
 /* Executive Board Section */
 section#exec {
-  background: #303030;
+  background: url(../assets/images/dark-background.svg);
+  background-position: center;
+  background-size: 100% auto;
   text-align: center;
   padding: 96px 0; }
   section#exec h1 {
-    margin: 0;
     font-size: 2.5em;
     letter-spacing: 1px;
-    color: #ffffff;
-    padding-bottom: 40px; }
+    color: #ffffff; }
+  section#exec #exec-positions {
+    margin-top: 96px; }
   section#exec .row {
     margin: 40px 15vw;
     display: flex; }
   section#exec .two-row {
     margin: 0px 25vw; }
-  section#exec .bottom-row {
-    padding-bottom: 60px; }
   section#exec .profile {
     flex: 1; }
     section#exec .profile img {
-      height: 200px;
-      border-radius: 50%; }
+      height: 180px; }
     section#exec .profile .name {
       display: block;
       padding-top: 20px; }
@@ -234,28 +235,29 @@ section#exec {
       color: #a8a8a8; }
 
 /* Resources section */
-section#resources h1 {
-  margin: 0;
-  padding-top: 96px;
-  text-align: center;
-  font-size: 2.5em;
-  letter-spacing: 1px; }
-section#resources #resources-container {
-  display: flex;
-  margin: 40px 12vw; }
-  section#resources #resources-container .column {
-    flex: 1;
-    margin: 20px; }
-    section#resources #resources-container .column h2 {
-      font-size: 1.2em; }
-    section#resources #resources-container .column a {
-      color: #6cf5d6;
-      text-decoration: none; }
-    section#resources #resources-container .column a:hover {
-      color: #a8a8a8; }
-    section#resources #resources-container .column p {
-      font-family: 'roboto';
-      font-size: 0.9em; }
+section#resources {
+  padding: 96px 0; }
+  section#resources h1 {
+    margin: 0;
+    text-align: center;
+    font-size: 2.5em;
+    letter-spacing: 1px; }
+  section#resources #resources-container {
+    display: flex;
+    margin: 40px 12vw 0; }
+    section#resources #resources-container .column {
+      flex: 1;
+      margin: 20px; }
+      section#resources #resources-container .column h2 {
+        font-size: 1.2em; }
+      section#resources #resources-container .column a {
+        color: #6cf5d6;
+        text-decoration: none; }
+      section#resources #resources-container .column a:hover {
+        color: #a8a8a8; }
+      section#resources #resources-container .column p {
+        font-family: 'roboto';
+        font-size: 0.9em; }
 
 /* Connect section */
 

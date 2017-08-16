@@ -1,6 +1,6 @@
 /* Define constants */
 $white: #ffffff;
-$black: #303030;
+$darkGray: #303030;
 $green: #6cf5d6;
 $gray: #a8a8a8;
 
@@ -178,7 +178,9 @@ section#mission {
 
 /* Facts & Figures Section */
 section#facts {
-  background-color: $black;
+  background: url(../assets/images/dark-background.svg);
+  background-position: center;
+  background-size: 100% auto;
   color: $white;
   padding: 96px 0;
 
@@ -274,16 +276,20 @@ section#programs {
 
 /* Executive Board Section */
 section#exec {
-  background: $black;
+  background: url(../assets/images/dark-background.svg);
+  background-position: center;
+  background-size: 100% auto;
   text-align: center;
   padding: 96px 0;
   
   h1 {
-    margin: 0;
     font-size: 2.5em;
     letter-spacing: 1px;
     color: $white;
-    padding-bottom: 40px;
+  }
+
+  #exec-positions {
+    margin-top: 96px;
   }
 
   .row {
@@ -295,19 +301,15 @@ section#exec {
     margin: 0px 25vw;
   }
 
-  .bottom-row {
-    padding-bottom: 60px;
-  }  
-
   .profile {
     flex: 1;
     
     img {
-      height: 200px;
-      border-radius: 50%;
+      height: 180px;
     }
+
     .name {
-      display:block;
+      display: block;
       padding-top: 20px;
     }
 
@@ -332,9 +334,10 @@ section#exec {
 
 /* Resources section */
 section#resources {
+  padding: 96px 0;
+
   h1 {
     margin: 0;
-    padding-top: 96px;
     text-align: center;
     font-size: 2.5em;
     letter-spacing: 1px;
@@ -342,7 +345,7 @@ section#resources {
 
   #resources-container {
     display: flex;
-    margin: 40px 12vw;
+    margin: 40px 12vw 0;
 
     .column {
       flex: 1;
