@@ -8,6 +8,9 @@ $nixie: 'Nixie One', cursive;
 $roboto: 'Roboto', sans-serif;
 $sans: 'Source Sans Pro', sans-serif;
 
+$h1: 2.5em;
+$h2: 1.2em;
+
 /* Main style */
 html, body {
   height: 100%;
@@ -97,27 +100,30 @@ html, body {
 /* Splash Section */
 section#splash {
   height: 100%;
-  background: url(../assets/images/cover.png) no-repeat center bottom;
-  background-color: $green;
+  background: url(../assets/images/background.svg);
+  background-size: cover;
+  background-position: center;
 
   .splash-title {
     margin: auto;
     padding-top: 45vh;
     color: $white;
-    text-shadow: 1px 1px $gray;
 
     h1 {
       margin: 0;
       width: auto;
       font-size: 5em;
       text-align: center;
+      font-weight: 600;
+      text-shadow: 1px 1px $gray;
     }
 
     h2 {
       width: auto;
-      font-size: 1.2em;
+      font-size: 1.3em;
       font-weight: lighter;
       text-align: center;
+      font-weight: 400
     }
   }
 }
@@ -128,14 +134,14 @@ section#mission {
     margin-top: 0;
     padding-top: 96px;
     text-align: center;
-    font-size: 2.5em;
-    letter-spacing: 1px;
+    font-size: $h1;
+    letter-spacing: 2px;
   }
 
   h2 {
     margin-top: 40px;
     text-align: center;
-    font-size: 1em;
+    font-size: $h2;
     font-weight: lighter;
   }
 
@@ -147,13 +153,17 @@ section#mission {
       text-align: center;
       margin: 20px;
 
+      img {
+        width: 120px;
+      }
+
       h3 {
         font-family: $nixie;
       }
 
       p {
-        font-family: $roboto;
-        font-size: .9em;
+        font-family: $sans;
+        font-size: 1em;
         font-weight: lighter;
       }
     }

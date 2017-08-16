@@ -76,23 +76,26 @@ html, body {
 /* Splash Section */
 section#splash {
   height: 100%;
-  background: url(../assets/images/cover.png) no-repeat center bottom;
-  background-color: #6cf5d6; }
+  background: url(../assets/images/background.svg);
+  background-size: cover;
+  background-position: center; }
   section#splash .splash-title {
     margin: auto;
     padding-top: 45vh;
-    color: #ffffff;
-    text-shadow: 1px 1px #a8a8a8; }
+    color: #ffffff; }
     section#splash .splash-title h1 {
       margin: 0;
       width: auto;
       font-size: 5em;
-      text-align: center; }
+      text-align: center;
+      font-weight: 600;
+      text-shadow: 1px 1px #a8a8a8; }
     section#splash .splash-title h2 {
       width: auto;
-      font-size: 1.2em;
+      font-size: 1.3em;
       font-weight: lighter;
-      text-align: center; }
+      text-align: center;
+      font-weight: 400; }
 
 /* Mission section */
 section#mission h1 {
@@ -100,11 +103,11 @@ section#mission h1 {
   padding-top: 96px;
   text-align: center;
   font-size: 2.5em;
-  letter-spacing: 1px; }
+  letter-spacing: 2px; }
 section#mission h2 {
   margin-top: 40px;
   text-align: center;
-  font-size: 1em;
+  font-size: 1.2em;
   font-weight: lighter; }
 section#mission #goal-container {
   display: flex;
@@ -112,11 +115,13 @@ section#mission #goal-container {
   section#mission #goal-container .goal {
     text-align: center;
     margin: 20px; }
+    section#mission #goal-container .goal img {
+      width: 120px; }
     section#mission #goal-container .goal h3 {
       font-family: "Nixie One", cursive; }
     section#mission #goal-container .goal p {
-      font-family: "Roboto", sans-serif;
-      font-size: .9em;
+      font-family: "Source Sans Pro", sans-serif;
+      font-size: 1em;
       font-weight: lighter; }
 
 /* Facts & Figures Section */
