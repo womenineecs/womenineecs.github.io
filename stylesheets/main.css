@@ -137,7 +137,7 @@ section#facts {
   section#facts h2 {
     margin-top: 40px;
     text-align: center;
-    font-size: 1.1em;
+    font-size: 1.2em;
     font-weight: lighter;
     color: #a8a8a8; }
   section#facts #fact-container {
@@ -151,11 +151,12 @@ section#facts {
         margin: 0;
         font-size: 3em;
         font-family: "Nixie One", cursive;
-        color: #6cf5d6; }
+        color: #b2e1e8; }
       section#facts #fact-container .fact p {
+        font-family: "Source Sans Pro", sans-serif;
         margin-top: 0;
         margin-bottom: 40px;
-        font-size: 1.1em;
+        font-size: 1em;
         font-weight: lighter;
         color: #a8a8a8; }
 
@@ -181,7 +182,8 @@ section#programs #program-container {
       padding: 20px;
       display: flex; }
       section#programs #program-container .column .program img {
-        padding: 20px; }
+        height: 80px;
+        padding: 20px 30px 20px 20px; }
       section#programs #program-container .column .program h2 {
         font-family: "Nixie One", cursive;
         font-size: 1.2em; }

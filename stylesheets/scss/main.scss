@@ -4,6 +4,11 @@ $black: #000000;
 $green: #6cf5d6;
 $gray: #a8a8a8;
 
+$primary: #b2e1e8;
+$secondary: #98c4e0;
+$purple: #8b71b3;
+$subtle: #eaeaea;
+
 $nixie: 'Nixie One', cursive;
 $roboto: 'Roboto', sans-serif;
 $sans: 'Source Sans Pro', sans-serif;
@@ -179,14 +184,14 @@ section#facts {
     margin: 0;
     padding-top: 96px;
     text-align: center;
-    font-size: 2.5em;
+    font-size: $h1;
     letter-spacing: 1px;
   }
 
   h2 {
     margin-top: 40px;
     text-align: center;
-    font-size: 1.1em;
+    font-size: $h2;
     font-weight: lighter;
     color: $gray;
   }
@@ -204,13 +209,14 @@ section#facts {
         margin: 0;
         font-size: 3em;
         font-family: $nixie;
-        color: $green;
+        color: $primary;
       }
 
       p {
+        font-family: $sans;
         margin-top: 0;
         margin-bottom: 40px;
-        font-size: 1.1em;
+        font-size: 1em;
         font-weight: lighter;
         color: $gray;
       }
@@ -246,7 +252,8 @@ section#programs {
         display: flex;
 
         img {
-          padding: 20px;
+          height: 80px;
+          padding: 20px 30px 20px 20px;
         }
 
         h2 {
