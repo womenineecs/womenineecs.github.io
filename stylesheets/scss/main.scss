@@ -432,8 +432,8 @@ section#connect {
     flex-direction: column;
   }
 
-  #navbar .menu .item {
-    padding: 1.5em 1.5em 1.2em 1.5em;
+  #navbar {
+    display: none;
   }
 
   section#facts #fact-container {
@@ -477,10 +477,6 @@ section#connect {
       font-size: 1.1em;
       margin: 10px 60px;
     }
-  }
-
-  #navbar {
-    display: none;
   }
 
   section#facts #fact-container {
