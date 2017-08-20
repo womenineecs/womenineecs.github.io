@@ -105,6 +105,7 @@ section#mission h1 {
   font-size: 2.5em;
   letter-spacing: 2px; }
 section#mission h2 {
+  margin: 0 40px;
   margin-top: 40px;
   text-align: center;
   font-size: 1.2em;
@@ -138,6 +139,7 @@ section#facts {
     font-size: 2.5em;
     letter-spacing: 1px; }
   section#facts h2 {
+    margin: 0 40px;
     margin-top: 40px;
     text-align: center;
     font-size: 1.2em;
@@ -190,7 +192,7 @@ section#programs {
         background: #fefefe;
         box-shadow: 0 0 2px #eaeaea; }
         section#programs #program-container .column .program img {
-          height: 80px;
+          width: 60px;
           padding: 20px 30px 20px 20px; }
         section#programs #program-container .column .program h2 {
           font-family: "Nixie One", cursive;
@@ -221,7 +223,7 @@ section#exec {
   section#exec .profile {
     flex: 1; }
     section#exec .profile img {
-      height: 180px; }
+      height: 14vw; }
     section#exec .profile .name {
       display: block;
       padding-top: 20px; }
@@ -288,5 +290,96 @@ section#connect {
     font-family: "Source Sans Pro", sans-serif;
     font-size: .8em;
     padding-bottom: 20px; }
+
+/* Mobile */
+@media only screen and (max-width: 1050px) {
+  #program-container {
+    display: flex;
+    flex-direction: column; }
+
+  #resources-container {
+    display: flex;
+    flex-direction: column; }
+
+  #navbar .menu .item {
+    padding: 1.5em 1.5em 1.2em 1.5em; }
+
+  section#facts #fact-container {
+    margin: 60px 100px 0px 100px; }
+    section#facts #fact-container .fact {
+      font-size: .8em;
+      margin: 0 10px; }
+
+  section#exec .row {
+    margin: 20px 10vw; }
+  section#exec .two-row {
+    margin: 0px 20vw; }
+  section#exec .profile img {
+    height: 16vw; }
+  section#exec .profile h3 {
+    font-weight: 600;
+    font-size: .8em; } }
+@media only screen and (max-width: 800px) {
+  section#splash .splash-title h1 {
+    font-size: 3em; }
+  section#splash .splash-title h2 {
+    font-size: 1.1em;
+    margin: 10px 60px; }
+
+  #navbar {
+    display: none; }
+
+  section#facts #fact-container {
+    margin: 60px 60px 0px 60px; }
+    section#facts #fact-container .fact {
+      font-size: .7em;
+      margin: 0 8px; }
+
+  section#mission #goal-container {
+    flex-direction: column; }
+
+  section#programs #program-container {
+    display: flex;
+    flex-direction: column;
+    margin: 40px 80px 0px 80px; }
+
+  section#exec .row {
+    margin: 20px 10vw; }
+  section#exec .two-row {
+    margin: 0px 20vw; }
+  section#exec .profile img {
+    height: 16vw; }
+  section#exec .profile h3 {
+    font-weight: 600;
+    font-size: .8em; } }
+@media only screen and (max-width: 600px) {
+  section#splash .splash-title h1 {
+    font-size: 2.2em;
+    margin: 0 20px; }
+  section#splash .splash-title h2 {
+    font-size: 1.1em;
+    margin: 10px 60px; }
+
+  section#mission #goal-container {
+    margin: 40px 40px 0px 40px; }
+
+  section#facts #fact-container {
+    margin: 60px 20px 0px 20px; }
+    section#facts #fact-container .fact {
+      font-size: .7em;
+      margin: 0 2px; }
+
+  section#programs #program-container {
+    margin: 40px 40px 0px 40px; }
+
+  section#exec .row {
+    margin: 20px 40px; }
+  section#exec .two-row {
+    margin: 0px 80px; }
+  section#exec .profile img {
+    height: 18vw; }
+  section#exec .profile h3 {
+    font-weight: 600;
+    font-size: .6em; } }
 
 /*# sourceMappingURL=main.css.map */

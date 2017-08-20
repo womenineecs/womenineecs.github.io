@@ -144,6 +144,7 @@ section#mission {
   }
 
   h2 {
+    margin: 0 40px;
     margin-top: 40px;
     text-align: center;
     font-size: $h2;
@@ -192,6 +193,7 @@ section#facts {
   }
 
   h2 {
+    margin: 0 40px;
     margin-top: 40px;
     text-align: center;
     font-size: $h2;
@@ -264,9 +266,10 @@ section#programs {
         box-shadow: 0 0 2px $subtle;
 
         img {
-          height: 80px;
+          width: 60px;
           padding: 20px 30px 20px 20px;
         }
+
 
         h2 {
           font-family: $nixie;
@@ -314,7 +317,7 @@ section#exec {
     flex: 1;
     
     img {
-      height: 180px;
+      height: 14vw;
     }
 
     .name {
@@ -417,3 +420,156 @@ section#connect {
   }
 }
 
+/* Mobile */
+@media only screen and (max-width: 1050px) {
+  #program-container {
+    display: flex;
+    flex-direction: column;
+  }
+
+  #resources-container {
+    display: flex;
+    flex-direction: column;
+  }
+
+  #navbar .menu .item {
+    padding: 1.5em 1.5em 1.2em 1.5em;
+  }
+
+  section#facts #fact-container {
+    margin: 60px 100px 0px 100px;
+
+    .fact {
+      font-size: .8em;
+      margin: 0 10px;
+    }
+  }
+
+  section#exec {
+    .row {
+      margin: 20px 10vw;
+    }
+
+    .two-row {
+      margin: 0px 20vw;
+    }
+
+    .profile {
+      img {
+        height: 16vw;
+      }
+
+      h3 {
+        font-weight: 600;
+        font-size: .8em;
+      }
+    }
+  }
+} 
+
+@media only screen and (max-width: 800px) {
+  section#splash .splash-title {
+    h1 {
+      font-size: 3em;
+    }
+    
+    h2 {
+      font-size: 1.1em;
+      margin: 10px 60px;
+    }
+  }
+
+  #navbar {
+    display: none;
+  }
+
+  section#facts #fact-container {
+    margin: 60px 60px 0px 60px;
+    .fact {
+      font-size: .7em;
+      margin: 0 8px;
+    }
+  }
+
+  section#mission #goal-container {
+    flex-direction: column;
+  }
+
+  section#programs #program-container {
+    display: flex;
+    flex-direction: column;
+    margin: 40px 80px 0px 80px
+  }
+
+  section#exec {
+    .row {
+      margin: 20px 10vw;
+    }
+
+    .two-row {
+      margin: 0px 20vw;
+    }
+
+    .profile {
+      img {
+        height: 16vw;
+      }
+
+      h3 {
+        font-weight: 600;
+        font-size: .8em;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  section#splash .splash-title {
+    h1 {
+      font-size: 2.2em;
+      margin: 0 20px;
+    }
+    
+    h2 {
+      font-size: 1.1em;
+      margin: 10px 60px;
+    }
+  }
+
+  section#mission #goal-container {
+    margin: 40px 40px 0px 40px;
+  }
+
+  section#facts #fact-container {
+    margin: 60px 20px 0px 20px;
+    .fact {
+      font-size: .7em;
+      margin: 0 2px;
+    }
+  }
+
+  section#programs #program-container {
+    margin: 40px 40px 0px 40px
+  }
+
+  section#exec {
+    .row {
+      margin: 20px 40px;
+    }
+
+    .two-row {
+      margin: 0px 80px;
+    }
+
+    .profile {
+      img {
+        height: 18vw;
+      }
+
+      h3 {
+        font-weight: 600;
+        font-size: .6em;
+      }
+    }
+  }
+}
