@@ -19,7 +19,7 @@ html, body {
   /* Internet Explorer/Edge */
   user-select: none;
   /* Non-prefixed version, currently supported by Chrome and Opera */
-  pointer: default; }
+  cursor: default; }
   html section, body section {
     width: 100%;
     position: relative; }
@@ -65,12 +65,12 @@ html, body {
       text-transform: uppercase;
       letter-spacing: 1px; }
     #navbar .menu .item:hover {
-      color: #6cf5d6;
-      -o-transition: .5s;
-      -ms-transition: .5s;
-      -moz-transition: .5s;
-      -webkit-transition: .5s;
-      transition: .5s;
+      color: #b2e1e8;
+      -o-transition: .2s;
+      -ms-transition: .2s;
+      -moz-transition: .2s;
+      -webkit-transition: .2s;
+      transition: .2s;
       cursor: pointer; }
 
 /* Splash Section */
@@ -161,6 +161,11 @@ section#facts {
         font-size: 1em;
         font-weight: lighter;
         color: #a8a8a8; }
+      section#facts #fact-container .fact a {
+        color: #b2e1e8;
+        text-decoration: none; }
+      section#facts #fact-container .fact a:hover {
+        color: #ffffff; }
 
 /* Programs Section */
 section#programs {
@@ -251,14 +256,37 @@ section#resources {
       section#resources #resources-container .column h2 {
         font-size: 1.2em; }
       section#resources #resources-container .column a {
-        color: #6cf5d6;
+        color: #98c4e0;
         text-decoration: none; }
       section#resources #resources-container .column a:hover {
-        color: #a8a8a8; }
+        color: #b2e1e8;
+        -o-transition: .2s;
+        -ms-transition: .2s;
+        -moz-transition: .2s;
+        -webkit-transition: .2s;
+        transition: .2s; }
       section#resources #resources-container .column p {
         font-family: 'roboto';
         font-size: 0.9em; }
 
 /* Connect section */
+section#connect {
+  background: #303030;
+  text-align: center; }
+  section#connect div {
+    width: 100%;
+    display: inline-block; }
+    section#connect div a {
+      text-decoration: none;
+      color: #ffffff; }
+    section#connect div i {
+      font-size: 1.5em;
+      padding: 10px; }
+  section#connect .icons {
+    padding-top: 20px; }
+  section#connect .contact-info {
+    font-family: "Source Sans Pro", sans-serif;
+    font-size: .8em;
+    padding-bottom: 20px; }
 
 /*# sourceMappingURL=main.css.map */

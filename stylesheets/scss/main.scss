@@ -31,7 +31,7 @@ html, body {
   -moz-user-select: none; /* Firefox */
   -ms-user-select: none; /* Internet Explorer/Edge */
   user-select: none; /* Non-prefixed version, currently supported by Chrome and Opera */
-  pointer: default;
+  cursor: default;
 
   section {
     width: 100%;
@@ -91,12 +91,12 @@ html, body {
     }
 
     .item:hover {
-      color: $green;
-      -o-transition:.5s;
-      -ms-transition:.5s;
-      -moz-transition:.5s;
-      -webkit-transition:.5s;
-      transition:.5s;
+      color: $primary;
+      -o-transition:.2s;
+      -ms-transition:.2s;
+      -moz-transition:.2s;
+      -webkit-transition:.2s;
+      transition:.2s;
       cursor: pointer;
     }
   }
@@ -221,6 +221,15 @@ section#facts {
         font-size: 1em;
         font-weight: lighter;
         color: $gray;
+      }
+
+      a {
+        color: $primary;
+        text-decoration: none;
+      }
+
+      a:hover {
+        color: $white;
       }
     }
   }
@@ -356,12 +365,17 @@ section#resources {
       }
 
       a {
-        color: $green;
+        color: $secondary;
         text-decoration: none;
       }
 
       a:hover{
-        color: $gray;
+        color: $primary;
+        -o-transition:.2s;
+        -ms-transition:.2s;
+        -moz-transition:.2s;
+        -webkit-transition:.2s;
+        transition:.2s;
       }
 
       p {
@@ -374,5 +388,32 @@ section#resources {
 
 /* Connect section */
 section#connect {
-  
+  background: $darkGray;
+  text-align: center;
+
+  div {
+    width: 100%;
+    display: inline-block;
+    
+    a {
+      text-decoration: none;
+      color: $white;
+    }
+    
+    i {
+      font-size: 1.5em;
+      padding: 10px;
+    }
+  }
+
+  .icons {
+    padding-top: 20px;
+  }
+
+  .contact-info {
+    font-family: $sans;
+    font-size: .8em;
+    padding-bottom: 20px;
+  }
 }
+
