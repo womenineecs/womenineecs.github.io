@@ -304,6 +304,9 @@ section#connect {
   #navbar {
     display: none; }
 
+  section#mission #goal-container {
+    flex-direction: column; }
+
   section#facts #fact-container {
     margin: 60px 100px 0px 100px; }
     section#facts #fact-container .fact {
@@ -331,9 +334,6 @@ section#connect {
     section#facts #fact-container .fact {
       font-size: .7em;
       margin: 0 8px; }
-
-  section#mission #goal-container {
-    flex-direction: column; }
 
   section#programs #program-container {
     display: flex;

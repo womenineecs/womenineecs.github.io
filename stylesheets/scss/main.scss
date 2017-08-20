@@ -436,6 +436,11 @@ section#connect {
     display: none;
   }
 
+
+  section#mission #goal-container {
+    flex-direction: column;
+  }
+  
   section#facts #fact-container {
     margin: 60px 100px 0px 100px;
 
@@ -485,10 +490,6 @@ section#connect {
       font-size: .7em;
       margin: 0 8px;
     }
-  }
-
-  section#mission #goal-container {
-    flex-direction: column;
   }
 
   section#programs #program-container {
