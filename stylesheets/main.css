@@ -268,8 +268,9 @@ section#resources {
         -webkit-transition: .2s;
         transition: .2s; }
       section#resources #resources-container .column p {
-        font-family: 'roboto';
-        font-size: 0.9em; }
+        font-family: 'Source Sans Pro';
+        font-size: 1em;
+        font-weight: 300; }
 
 /* Connect section */
 section#connect {
