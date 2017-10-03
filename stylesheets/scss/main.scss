@@ -284,7 +284,34 @@ section#programs {
       }
     }
   }
+  #events {
+    h2 {
+      padding: 20px 0;
+      font-family: $nixie;
+      text-transform: uppercase;
+      text-align: center;
+      font-size: 2em;
+      letter-spacing: 1px;
+    }
+
+    #event-container { 
+      font-family: $sans;
+      text-align: center;
+      h3 { 
+        font-weight: 300;
+        font-size: 1.3em;
+      }
+      .event {
+        h3 {
+          font-weight: 200;
+          font-size: 1.2em;
+        }
+        padding-bottom: 20px;
+      }
+    } 
+  }
 }
+
 
 /* Executive Board Section */
 section#exec {

@@ -201,6 +201,24 @@ section#programs {
           font-family: "Source Sans Pro", sans-serif;
           font-weight: lighter;
           font-size: .9em; }
+  section#programs #events h2 {
+    padding: 20px 0;
+    font-family: "Nixie One", cursive;
+    text-transform: uppercase;
+    text-align: center;
+    font-size: 2em;
+    letter-spacing: 1px; }
+  section#programs #events #event-container {
+    font-family: "Source Sans Pro", sans-serif;
+    text-align: center; }
+    section#programs #events #event-container h3 {
+      font-weight: 300;
+      font-size: 1.3em; }
+    section#programs #events #event-container .event {
+      padding-bottom: 20px; }
+      section#programs #events #event-container .event h3 {
+        font-weight: 200;
+        font-size: 1.2em; }
 
 /* Executive Board Section */
 section#exec {
