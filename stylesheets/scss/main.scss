@@ -72,10 +72,10 @@ html, body {
   width: 100%;
   box-shadow: 10px 0 5px $gray;
   z-index: 100;
+  background-color: $white;
 
   .menu {
     display: flex;
-    background-color: $white;
     font-family: $roboto;
     text-transform: uppercase;
     font-size: .9em;
@@ -105,7 +105,7 @@ html, body {
 /* Splash Section */
 section#splash {
   height: 100%;
-  background: url(../assets/images/background.svg);
+  background-color: $primary;
   background-size: cover;
   background-position: center;
 
