@@ -1,4 +1,7 @@
 $(document).ready(function() {
+
+  
+
   var $body = $('html, body');
   var $tags = $('#goto-mission, #goto-facts, #goto-programs, #goto-events, #goto-exec, #goto-resources');
 

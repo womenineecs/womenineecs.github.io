@@ -42,6 +42,27 @@ html, body {
 .title {
   text-transform: uppercase; }
 
+  /* Programs' Tabs */
+.nav.nav-tabs.md-tabs.nav-justified .nav-item .nav-link {
+    color: #757575;
+    font-family: "Nixie One", cursive;
+}
+
+.tab-content .tab-pane h2, p {
+    color: #757575;
+    font-family: "Nixie One", cursive; 
+    margin-left: 5%;
+    margin-right: 5%;
+}
+
+.tab-content .tab-pane #tab {
+  box-shadow: 0 0 2px #eaeaea;
+}
+
+.tab-content .tab-pane img {
+  width: 5%;
+}
+
 /* Navigation Bar */
 #navbar {
   position: fixed;
