@@ -42,27 +42,6 @@ html, body {
 .title {
   text-transform: uppercase; }
 
-  /* Programs' Tabs */
-.nav.nav-tabs.md-tabs.nav-justified .nav-item .nav-link {
-    color: #757575;
-    font-family: "Nixie One", cursive;
-}
-
-.tab-content .tab-pane h2, p {
-    color: #757575;
-    font-family: "Nixie One", cursive; 
-    margin-left: 5%;
-    margin-right: 5%;
-}
-
-.tab-content .tab-pane #tab {
-  box-shadow: 0 0 2px #eaeaea;
-}
-
-.tab-content .tab-pane img {
-  width: 5%;
-}
-
 /* Navigation Bar */
 #navbar {
   position: fixed;
@@ -197,6 +176,16 @@ section#programs {
     text-align: center;
     font-size: 2.5em;
     letter-spacing: 1px; }
+  section#programs #tab-titles {
+    width: 80%;
+    margin: 40px auto 0; }
+    section#programs #tab-titles li a {
+      color: #F47F8C; }
+  section#programs .tab-content {
+    font-family: "Source Sans Pro", sans-serif;
+    margin-top: 30px; }
+    section#programs .tab-content #tab .upcoming .heading {
+      font-weight: 600; }
   section#programs #program-container {
     display: flex;
     margin: 40px 150px 0px 150px; }

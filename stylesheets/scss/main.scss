@@ -246,6 +246,30 @@ section#programs {
     font-size: 2.5em;
     letter-spacing: 1px;
   }
+
+  #tab-titles {
+    width: 80%;
+    margin: 40px auto 0;
+
+    li {
+      a {
+        color: #F47F8C;
+      }
+    }
+  }
+
+  .tab-content {
+    font-family: $sans;
+    margin-top: 30px;
+
+    #tab {
+      .upcoming {
+        .heading {
+          font-weight: 600;
+        }
+      }
+    }
+  }
   
   #program-container {
     display: flex;
