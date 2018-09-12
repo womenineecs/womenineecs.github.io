@@ -186,6 +186,9 @@ section#programs {
     margin-top: 30px; }
     section#programs .tab-content #tab .upcoming .heading {
       font-weight: 600; }
+    section#programs .tab-content #tab .upcoming .event {
+      color: #F47F8C;
+      font-weight: 600; }
   section#programs #program-container {
     display: flex;
     margin: 40px 150px 0px 150px; }
