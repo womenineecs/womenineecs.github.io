@@ -169,67 +169,67 @@ section#facts {
       section#facts #fact-container .fact a:hover {
         color: #ffffff; }
 
-/* Programs Section */
-section#programs {
+/* Events Section */
+section#events {
   padding: 96px 0; }
-  section#programs h1 {
+  section#events h1 {
     text-align: center;
     font-size: 2.5em;
     letter-spacing: 1px; }
-  section#programs #tab-titles {
+  section#events #tab-titles {
     width: 80%;
     margin: 40px auto 0; }
-    section#programs #tab-titles li a {
+    section#events #tab-titles li a {
       color: #F47F8C; }
-  section#programs .tab-content {
+  section#events .tab-content {
     font-family: "Source Sans Pro", sans-serif;
     margin-top: 30px; }
-    section#programs .tab-content #tab .upcoming .heading {
+    section#events .tab-content #tab .upcoming .heading {
       font-weight: 600; }
-    section#programs .tab-content #tab .upcoming .event {
+    section#events .tab-content #tab .upcoming .event {
       color: #F47F8C;
       font-weight: 600; }
-  section#programs #program-container {
+  section#events #program-container {
     display: flex;
     margin: 40px 150px 0px 150px; }
-    section#programs #program-container .column {
+    section#events #program-container .column {
       flex: 1;
       margin: 0;
       display: flex;
       flex-direction: column; }
-      section#programs #program-container .column .program {
+      section#events #program-container .column .program {
         flex-grow: 1;
         margin: 10px;
         padding: 20px;
         display: flex;
         background: #fefefe;
         box-shadow: 0 0 2px #eaeaea; }
-        section#programs #program-container .column .program img {
+        section#events #program-container .column .program img {
           width: 60px;
           padding: 20px 30px 20px 20px; }
-        section#programs #program-container .column .program h2 {
+        section#events #program-container .column .program h2 {
           font-family: "Nixie One", cursive;
           font-size: 1.2em; }
-        section#programs #program-container .column .program p {
+        section#events #program-container .column .program p {
           font-family: "Source Sans Pro", sans-serif;
           font-weight: lighter;
           font-size: .9em; }
-  section#programs #events h2 {
+  section#events #events h2 {
     padding: 20px 0;
     font-family: "Nixie One", cursive;
     text-transform: uppercase;
     text-align: center;
     font-size: 2em;
     letter-spacing: 1px; }
-  section#programs #events #event-container {
+  section#events #events #event-container {
     font-family: "Source Sans Pro", sans-serif;
     text-align: center; }
-    section#programs #events #event-container h3 {
+    section#events #events #event-container h3 {
       font-weight: 300;
       font-size: 1.3em; }
-    section#programs #events #event-container .event {
+    section#events #events #event-container .event {
       padding-bottom: 20px; }
-      section#programs #events #event-container .event h3 {
+      section#events #events #event-container .event h3 {
         font-weight: 200;
         font-size: 1.2em; }
 
@@ -367,7 +367,7 @@ section#connect {
       font-size: .7em;
       margin: 0 8px; }
 
-  section#programs #program-container {
+  section#events #program-container {
     display: flex;
     flex-direction: column;
     margin: 40px 80px 0px 80px; }
@@ -398,7 +398,7 @@ section#connect {
       font-size: .7em;
       margin: 0 2px; }
 
-  section#programs #program-container {
+  section#events #program-container {
     margin: 40px 40px 0px 40px; }
 
   section#exec .row {
