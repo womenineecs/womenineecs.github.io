@@ -35,9 +35,9 @@ body {
     border: none;
 }
 
-.tz-gallery img {
-    /* border-radius: 2px; */
-}
+/* .tz-gallery img {
+    border-radius: 2px; 
+} */
 
 .tz-gallery .caption{
     /* padding: 5px; */
