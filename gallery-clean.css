@@ -1,0 +1,107 @@
+/* $primary: #b2e1e8;
+$secondary: #98c4e0; */
+
+body {
+    background-color: #fff;
+    min-height: 100vh;
+    font: normal 16px sans-serif;
+}
+
+.gallery-container h1 {
+    text-align: center;
+    margin-top: 70px;
+    /* font-family: 'Droid Sans', sans-serif; */
+    /* font-family: "Source Sans Pro", sans-serif; */
+    font-weight: bold;
+    color: #58595a;
+}
+
+.gallery-container p.page-description {
+    text-align: center;
+    margin: 30px auto;
+    font-size: 18px;
+    color: #85878c;
+}
+
+/* Styles for the gallery */
+
+.tz-gallery {
+    padding: 40px 40px 0px 40px;
+}
+
+.tz-gallery .thumbnail {
+    padding: 0;
+    margin-bottom: 30px;
+    border: none;
+}
+
+/* .tz-gallery img {
+    border-radius: 2px; 
+} */
+
+.tz-gallery .caption{
+    /* padding: 5px; */
+    /* background-color: #b2e1e850; */
+     /* rgba(50,50,50,0.3); */
+    text-align: left; 
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    color: white;
+    font-family: "Source Sans Pro", sans-serif;
+    text-shadow: 1px 1px #a8a8a8;
+    /* box-shadow: 1px 1px 0 2px #a8a8a850; */
+}
+
+.tz-gallery .caption h3 {
+    font-size: 20px;
+    font-weight: bold;
+    font-family:"Nixie One", cursive;
+    margin: 0;
+}
+
+.tz-gallery .caption p {
+    font-size: 16px;
+    font-weight: lighter;
+    /* color: #7b7d7d; */
+    margin: 0;
+}
+
+.baguetteBox-button {
+    background-color: transparent !important;
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 100%;
+    width: 100%;
+    opacity: 0;
+    transition: .2s ease;
+    background-color: #008CBA;
+  }
+  
+  .thumbnail:hover .overlay {
+    opacity: 1;
+  }
+  
+  .text {
+    color: white;
+    font-size: 24px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    text-align: center;
+    font-family: "Source Sans Pro", sans-serif;
+    font-weight: lighter;
+  }
+
+  .more {
+    font-family:"Nixie One", cursive;
+    text-shadow: 1px 1px #a8a8a8;
+  }

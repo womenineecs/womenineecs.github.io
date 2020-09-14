@@ -282,7 +282,7 @@ section#resources {
     letter-spacing: 1px; }
   section#resources #resources-container {
     display: flex;
-    margin: 40px 12vw 0; }
+    margin: 0px 12vw 0; }
     section#resources #resources-container .column {
       flex: 1;
       margin: 20px; }
