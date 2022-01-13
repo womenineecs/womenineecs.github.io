@@ -1,6 +1,6 @@
 # Women In EECS Website
 
-This website is hosted on scripts.mit.edu. In order to update this website, the
+This website is hosted on scripts.mit.edu. To update this website, the
 easiest thing to do is:
 
 - Update this Github repository with your desired changes.
