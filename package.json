@@ -1,0 +1,23 @@
+{
+  "name": "womenineecs.github.io",
+  "version": "1.0.0",
+  "description": "This website is hosted on scripts.mit.edu. To update this website, the easiest thing to do is:",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "lite-server"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/womenineecs/womenineecs.github.io.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/womenineecs/womenineecs.github.io/issues"
+  },
+  "homepage": "https://github.com/womenineecs/womenineecs.github.io#readme",
+  "devDependencies": {
+    "lite-server": "^2.6.1"
+  }
+}

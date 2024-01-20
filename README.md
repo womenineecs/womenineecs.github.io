@@ -10,3 +10,8 @@ easiest thing to do is:
 
 This website also uses SASS. See [here](https://sass-lang.com/) for details. Generally you want to edit the file `stylesheets/main.scss` while running something like `sass --watch stylesheets/scss:stylesheets/`.
 
+
+To run a local version on your computer, run the following commands:
+ >> npm install
+ >> npm start
+
