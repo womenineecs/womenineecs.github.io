@@ -12,7 +12,6 @@ This website also uses SASS. See [here](https://sass-lang.com/) for details. Gen
 
 
 To run a local version on your computer, run the following commands:
- >> npm install
-> >
- >> npm start
+ - `npm install `
+ - `npm start `
 
