@@ -317,6 +317,59 @@ section#resources {
         font-size: 1em;
         font-weight: 300; }
 
+
+/* Sponsors Section */
+section#sponsors {
+  background: url(../assets/images/dark-background.svg);
+  background-position: center;
+  background-size: 100% auto;
+  color: #ffffff;
+  padding: 96px 0; }
+  section#sponsors h1 {
+    margin: 0;
+    text-align: center;
+    font-size: 2.5em;
+    letter-spacing: 1px; }
+  section#sponsors h2 {
+    margin: 0 40px;
+    margin-top: 40px;
+    text-align: center;
+    font-size: 1.2em;
+    font-weight: lighter;
+    color: #a8a8a8; }
+  section#sponsors #sponsor-text {
+    text-align: center;
+    font-family: "Source Sans Pro", sans-serif;
+    font-size: 1.25em;
+    color: #a8a8a8; 
+    padding: 50px 0;
+  }
+  section#sponsors #sponsor-container {
+    display: flex;
+    margin: 60px 160px 0px 160px; }
+    section#sponsors #sponsor-container .sponsor {
+      flex: 1;
+      text-align: center;
+      margin: 0 20px; }
+      section#sponsors #sponsor-container .sponsor h3 {
+        margin: 0;
+        font-size: 3em;
+        font-family: "Nixie One", cursive;
+        color: #b2e1e8; }
+      section#sponsors #sponsor-container .sponsor p {
+        font-family: "Source Sans Pro", sans-serif;
+        margin-top: 0;
+        font-size: 1em;
+        font-weight: lighter;
+        color: #a8a8a8; }
+      section#sponsors #sponsor-container .sponsor a {
+        color: #b2e1e8;
+        text-decoration: none; }
+      section#sponsors #sponsor-container .sponsor a:hover {
+        color: #ffffff; }
+      section#sponsors #sponsor-container .sponsor img {
+        height: 16vw; }
+
 /* Connect section */
 section#connect {
   background: #303030;
