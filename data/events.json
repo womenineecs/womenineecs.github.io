@@ -1,0 +1,44 @@
+{
+  "events": [
+    {
+      "title": "Citadel Women's Breakfast",
+      "date": "9/18/2024",
+      "image": "assets/images/sponsors/citadel.png"
+    },
+    {
+      "title": "Mentorship Spring Kickoff",
+      "date": "3/10/2024",
+      "image": "assets/images/events/2023-2024/mentorship_spring.png"
+    },
+    {
+      "title": "Charceuterie Study Break",
+      "date": "3/21/2024",
+      "image": "assets/images/events/2023-2024/charcuterie.png"
+    },
+    {
+      "title": "Tufts ECE x MIT WiEECS Mixer",
+      "date": "3/1/2024",
+      "image": "assets/images/events/2023-2024/tufts_mixer.png"
+    },
+    {
+      "title": "Movie Night",
+      "date": "1/27/2024",
+      "image": "assets/images/events/MovieNight.png"
+    },
+    {
+      "title": "Winter Study Break",
+      "date": "12/5/2023",
+      "image": "assets/images/events/2023-2024/winter_study_break.png"
+    },
+    {
+      "title": "MIT x Harvard Mixer",
+      "date": "11/16/2023",
+      "image": "assets/images/events/2023-2024/harvard_mixer.png"
+    },
+    {
+      "title": "Fall Study Break",
+      "date": "11/7/2023",
+      "image": "assets/images/events/2023-2024/fall_study_break.png"
+    }
+  ]
+} 

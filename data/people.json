@@ -1,0 +1,49 @@
+{
+  "executives": [
+    {
+      "name": "Sabrina Do",
+      "role": "Co-President",
+      "image": "assets/images/profiles/2023-2024/Sabrina_Do.JPG"
+    },
+    {
+      "name": "Shiqi Cheng",
+      "role": "Co-President",
+      "image": "assets/images/profiles/2023-2024/Shiqi_Cheng.png"
+    },
+    {
+      "name": "Janelle Cai",
+      "role": "Treasurer and Community Events",
+      "image": "assets/images/profiles/2023-2024/Janelle_Cai.jpeg"
+    },
+    {
+      "name": "Valerie Kwek",
+      "role": "Mentorship Team",
+      "image": "assets/images/profiles/2023-2024/Valerie_Kwek.jpg"
+    },
+    {
+      "name": "Amy He",
+      "role": "Mentorship Team",
+      "image": "assets/images/profiles/2023-2024/Amy_He.JPG"
+    },
+    {
+      "name": "Arianna Scott",
+      "role": "Mentorship Team",
+      "image": "assets/images/profiles/2023-2024/Arianna_Scott.png"
+    },
+    {
+      "name": "Rachel Jiang",
+      "role": "Professional Development Team",
+      "image": "assets/images/profiles/2023-2024/Rachel_Jiang.JPG"
+    },
+    {
+      "name": "Jeewoo Kang",
+      "role": "Professional Development Team",
+      "image": "assets/images/profiles/2023-2024/Jeewoo_Kang.JPG"
+    },
+    {
+      "name": "Elaine Jiang",
+      "role": "Publicity Team",
+      "image": "assets/images/profiles/2023-2024/Elaine_Jiang.png"
+    }
+  ]
+} 
