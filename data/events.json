@@ -3,42 +3,42 @@
     {
       "title": "Hot Chocolate Study Break",
       "date": "2/28/2025",
-      "image": "assets/images/events/2024-2025/hot_chocolate.png"
+      "image": "public/images/events/2024-2025/hot_chocolate.png"
     },
     {
       "title": "Matcha Study Break",
       "date": "11/8/2024",
-      "image": "assets/images/events/2024-2025/matcha_study_break.png"
+      "image": "public/images/events/2024-2025/matcha_study_break.png"
     },
     {
         "title": "Google Speaker Event",
         "date": "10/29/2024",
-        "image": "assets/images/events/2024-2025/google_speaker_event.png"
+        "image": "public/images/events/2024-2025/google_speaker_event.png"
     },
     {
       "title": "Citadel Women's Breakfast",
       "date": "9/18/2024",
-      "image": "assets/images/sponsors/citadel.png"
+      "image": "public/images/sponsors/citadel.png"
     },
     {
       "title": "Mentorship Spring Kickoff",
       "date": "3/10/2024",
-      "image": "assets/images/events/2023-2024/mentorship_spring.png"
+      "image": "public/images/events/2023-2024/mentorship_spring.png"
     },
     {
       "title": "Charceuterie Study Break",
       "date": "3/21/2024",
-      "image": "assets/images/events/2023-2024/charcuterie.png"
+      "image": "public/images/events/2023-2024/charcuterie.png"
     },
     {
       "title": "Tufts ECE x MIT WiEECS Mixer",
       "date": "3/1/2024",
-      "image": "assets/images/events/2023-2024/tufts_mixer.png"
+      "image": "public/images/events/2023-2024/tufts_mixer.png"
     },
     {
       "title": "Movie Night",
       "date": "1/27/2024",
-      "image": "assets/images/events/2023-2024/MovieNight.png"
+      "image": "public/images/events/2023-2024/MovieNight.png"
     }
   ]
 }

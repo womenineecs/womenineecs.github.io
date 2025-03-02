@@ -142,7 +142,7 @@ section#mission #goal-container {
 
 /* Facts & Figures Section */
 section#facts {
-  background: url(../assets/images/dark-background.svg);
+  background: url(../public/images/dark-background.svg);
   background-position: center;
   background-size: 100% auto;
   color: #ffffff;
@@ -249,7 +249,7 @@ section#events {
 
 /* Executive Board Section */
 section#exec {
-  background: url(../assets/images/dark-background.svg);
+  background: url(../public/images/dark-background.svg);
   background-position: center;
   background-size: 100% auto;
   text-align: center;
@@ -320,7 +320,7 @@ section#resources {
 
 /* Sponsors Section */
 section#sponsors {
-  background: url(../assets/images/dark-background.svg);
+  background: url(../public/images/dark-background.svg);
   background-position: center;
   background-size: 100% auto;
   color: #ffffff;

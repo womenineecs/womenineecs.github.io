@@ -3,47 +3,72 @@
     {
       "name": "Sabrina Do",
       "role": "Co-President",
-      "image": "assets/images/profiles/2023-2024/Sabrina_Do.JPG"
+      "image": "public/images/profiles/2024-2025/Sabrina_Do.jpg"
     },
     {
       "name": "Shiqi Cheng",
       "role": "Co-President",
-      "image": "assets/images/profiles/2023-2024/Shiqi_Cheng.png"
+      "image": "public/images/profiles/2024-2025/Shiqi_Cheng.jpg"
     },
     {
       "name": "Janelle Cai",
-      "role": "Treasurer and Community Events",
-      "image": "assets/images/profiles/2023-2024/Janelle_Cai.jpeg"
+      "role": "Treasurer",
+      "image": "public/images/profiles/2023-2024/Janelle_Cai.jpeg"
+    },
+    {
+      "name": "Arianna Scott",
+      "role": "Community Events Team",
+      "image": "public/images/profiles/2024-2025/Arianna_Scott.jpg"
+    },
+    {
+      "name": "Christy Li",
+      "role": "Community Events Team",
+      "image": "public/images/profiles/2024-2025/Christy_Li.jpg"
+    },
+    {
+      "name": "Rachel Jiang",
+      "role": "Community Events Team",
+      "image": "public/images/profiles/2024-2025/Rachel_Jiang.jpg"
+    },
+    {
+      "name": "Kyra Henriques",
+      "role": "Community Events Team",
+      "image": "public/images/profiles/2024-2025/Kyra_Henriques.jpg"
     },
     {
       "name": "Valerie Kwek",
       "role": "Mentorship Team",
-      "image": "assets/images/profiles/2023-2024/Valerie_Kwek.jpg"
+      "image": "public/images/profiles/2024-2025/Valerie_Kwek.jpg"
     },
     {
-      "name": "Amy He",
+      "name": "Angelika Wang",
       "role": "Mentorship Team",
-      "image": "assets/images/profiles/2023-2024/Amy_He.JPG"
+      "image": "public/images/profiles/2024-2025/Angelika_Wang.jpg"
     },
     {
-      "name": "Arianna Scott",
-      "role": "Mentorship Team",
-      "image": "assets/images/profiles/2023-2024/Arianna_Scott.png"
+        "name": "Iris Xu",
+        "role": "Mentorship Team",
+        "image": "public/images/profiles/2024-2025/Iris_Xu.jpg"
     },
     {
-      "name": "Rachel Jiang",
-      "role": "Professional Development Team",
-      "image": "assets/images/profiles/2023-2024/Rachel_Jiang.JPG"
+        "name": "Angelika Wang",
+        "role": "Mentorship Team",
+        "image": "public/images/profiles/2024-2025/Angelika_Wang.jpg"
     },
     {
       "name": "Jeewoo Kang",
       "role": "Professional Development Team",
-      "image": "assets/images/profiles/2023-2024/Jeewoo_Kang.JPG"
+      "image": "public/images/profiles/2024-2025/Jeewoo_Kang.jpg"
     },
     {
-      "name": "Elaine Jiang",
-      "role": "Publicity Team",
-      "image": "assets/images/profiles/2023-2024/Elaine_Jiang.png"
+      "name": "Nikita Agarwal",
+      "role": "Professional Development Team",
+      "image": "public/images/profiles/2024-2025/Nikita_Agarwal.jpg"
+    },
+    {
+      "name": "Isabella Wu",
+      "role": "Professional Development Team",
+      "image": "public/images/profiles/2024-2025/Isabella_Wu.jpg"
     }
   ]
-} 
+}

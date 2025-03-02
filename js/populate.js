@@ -55,7 +55,7 @@ function populateEvents(events) {
     `
         <div class="col-sm-6 col-md-4">
             <div class="thumbnail">
-                <img src="assets/images/events/def.png" style="opacity:0;">
+                <img src="public/images/events/def.png" style="opacity:0;">
                 <div class="text more">
                     <a href="https://calendar.google.com/calendar/u/0?cid=MjZhNWJhY2I0MTI0MTc2Zjc5YTRmMWM3NjJiZGUzMjU5MmU2MDU1MmFkNmE4ZTk4NjhiMDIwMTdlMmVkODc5YkBncm91cC5jYWxlbmRhci5nb29nbGUuY29t">...and more!</a>
                 </div>

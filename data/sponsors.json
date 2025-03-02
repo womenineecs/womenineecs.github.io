@@ -3,17 +3,17 @@
     {
       "name": "PDT Partners",
       "url": "https://pdtpartners.com/",
-      "image": "assets/images/sponsors/pdt_partners.png"
+      "image": "public/images/sponsors/pdt_partners.png"
     },
     {
       "name": "MIT-Harvard COOP",
       "url": "https://www.thecoop.com/?srsltid=AfmBOooASK0iEwZUQT4O-eXkLZL9wY43r5sLc0XupWZRPIGAENnGoio7",
-      "image": "assets/images/sponsors/Coop.jpeg"
+      "image": "public/images/sponsors/Coop.jpeg"
     },
     {
       "name": "Citadel",
       "url": "https://www.citadel.com/",
-      "image": "assets/images/sponsors/citadel.png"
+      "image": "public/images/sponsors/citadel.png"
     }
   ]
 } 
