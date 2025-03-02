@@ -1,3 +1,5 @@
+const maxEvents = 6;
+
 document.addEventListener("DOMContentLoaded", function () {
   // Load all JSON data
   Promise.all([
@@ -7,7 +9,7 @@ document.addEventListener("DOMContentLoaded", function () {
   ])
     .then(([sponsorsData, eventsData, peopleData]) => {
       populateSponsors(sponsorsData.sponsors);
-      populateEvents(eventsData.events);
+      populateEvents(eventsData.events.slice(0, maxEvents));
       populateExecutives(peopleData.executives);
     })
     .catch((error) => console.error("Error loading data:", error));

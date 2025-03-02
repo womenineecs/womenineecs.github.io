@@ -1,6 +1,21 @@
 {
   "events": [
     {
+      "title": "Hot Chocolate Study Break",
+      "date": "2/28/2025",
+      "image": "assets/images/events/2024-2025/hot_chocolate.png"
+    },
+    {
+      "title": "Matcha Study Break",
+      "date": "11/8/2024",
+      "image": "assets/images/events/2024-2025/matcha_study_break.png"
+    },
+    {
+        "title": "Google Speaker Event",
+        "date": "10/29/2024",
+        "image": "assets/images/events/2024-2025/google_speaker_event.png"
+    },
+    {
       "title": "Citadel Women's Breakfast",
       "date": "9/18/2024",
       "image": "assets/images/sponsors/citadel.png"
@@ -23,22 +38,7 @@
     {
       "title": "Movie Night",
       "date": "1/27/2024",
-      "image": "assets/images/events/MovieNight.png"
-    },
-    {
-      "title": "Winter Study Break",
-      "date": "12/5/2023",
-      "image": "assets/images/events/2023-2024/winter_study_break.png"
-    },
-    {
-      "title": "MIT x Harvard Mixer",
-      "date": "11/16/2023",
-      "image": "assets/images/events/2023-2024/harvard_mixer.png"
-    },
-    {
-      "title": "Fall Study Break",
-      "date": "11/7/2023",
-      "image": "assets/images/events/2023-2024/fall_study_break.png"
+      "image": "assets/images/events/2023-2024/MovieNight.png"
     }
   ]
-} 
+}
