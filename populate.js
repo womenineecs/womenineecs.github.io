@@ -3,10 +3,18 @@ const maxEvents = 6;
 
 // Ensure MDB initialization happens after DOM is loaded
 document.addEventListener("DOMContentLoaded", function () {
-  // Initialize MDB components if needed
-  if (typeof mdb !== "undefined") {
-    mdb.init();
-  }
+  // Create a function to check for MDB
+  const initMDB = () => {
+    if (typeof mdb !== "undefined") {
+      mdb.init();
+    } else {
+      // If MDB isn't available yet, try again in 100ms
+      setTimeout(initMDB, 100);
+    }
+  };
+
+  // Start checking for MDB
+  initMDB();
 
   // ... existing code ...
   Promise.all([
