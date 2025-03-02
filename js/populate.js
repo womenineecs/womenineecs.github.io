@@ -3,9 +3,9 @@ const maxEvents = 6;
 document.addEventListener("DOMContentLoaded", function () {
   // Load all JSON data
   Promise.all([
-    fetch("/data/sponsors.json").then((response) => response.json()),
-    fetch("/data/events.json").then((response) => response.json()),
-    fetch("/data/people.json").then((response) => response.json()),
+    fetch("./data/sponsors.json").then((response) => response.json()),
+    fetch("./data/events.json").then((response) => response.json()),
+    fetch("./data/people.json").then((response) => response.json()),
   ])
     .then(([sponsorsData, eventsData, peopleData]) => {
       populateSponsors(sponsorsData.sponsors);
@@ -39,7 +39,7 @@ function populateEvents(events) {
         <div class="col-sm-6 col-md-4">
             <div class="thumbnail">
                 <a class="lightbox" href="${event.image}">
-                    <img src="${event.image}" alt="${event.title}" loading="lazy" decoding="async">
+                    <img src="${event.image}" alt="${event.title}" decoding="async">
                 </a>
                 <div class="overlay">
                     <div class="text">${event.title}</div>
@@ -84,7 +84,7 @@ function populateExecutives(executives) {
 function createExecutiveProfile(executive) {
   return `
         <div class="profile">
-            <img src="${executive.image}" loading="lazy" decoding="async">
+            <img src="${executive.image}" decoding="async">
             <div class="name">
                 <h2>${executive.name}</h2>
             </div>
