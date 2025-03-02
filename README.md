@@ -53,15 +53,11 @@ womenineecs.github.io/
 │   │   ├── profiles/
 │   │   └── sponsors.ts
 ├── js
+│   ├── data.js          # Data for people, events, sponsors
 │   ├── main.js          # Enables link-scrolling
-│   └── populate.js      # Automatically populates people, events, and sponsors based off /data json files
-└── data/                         # JSON Data for autopopulated information
-    ├── events.json
-    ├── people.json
-    └── sponsors.json
+│   └── populate.js      # Functions for automatically populates people, events, and sponsors based off data.js
 ```
 
 ## How to Update People, Events, Sponsors
 
-1. Go to data/
-2. Go to the respective json file and update it
+1. Go to js/data.js and update it
