@@ -1,8 +1,17 @@
 const maxEvents = 6;
 
-populateSponsors(SPONSORS_DATA.sponsors);
-populateEvents(EVENTS_DATA.events.slice(0, maxEvents));
-populateExecutives(PEOPLE_DATA.executives);
+// Only call functions if their containers exist
+if (document.getElementById("sponsor-container")) {
+  populateSponsors(SPONSORS_DATA.sponsors);
+}
+
+if (document.querySelector(".tz-gallery .row")) {
+  populateEvents(EVENTS_DATA.events.slice(0, maxEvents));
+}
+
+if (document.getElementById("exec-positions")) {
+  populateExecutives(PEOPLE_DATA.executives);
+}
 
 function populateSponsors(sponsors) {
   const sponsorContainer = document.getElementById("sponsor-container");

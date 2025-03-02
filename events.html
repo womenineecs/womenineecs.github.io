@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+
+<head lang="en">
+  <meta charset="utf-8">
+  <title>Women in EECS @ MIT</title>
+  <link rel='icon' href='/public/images/favicon.png' type='image/x-icon'>
+
+  <!-- Preload critical images -->
+  <link rel="preload" as="image" href="public/images/dark-background.svg">
+  
+  <!-- Image optimization CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/lazysizes@5.3.2/lazysizes.min.js" async></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-176696574-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'UA-176696574-1');
+  </script>
+
+  <!-- JQuery -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <!-- Bootstrap core CSS -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Material Design Bootstrap -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.5.9/css/mdb.min.css" rel="stylesheet">
+
+  <!-- JQuery -->
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <!-- Bootstrap tooltips -->
+  <script type="text/javascript"
+    src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.13.0/umd/popper.min.js"></script>
+  <!-- Bootstrap core JavaScript -->
+  <script type="text/javascript"
+    src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/js/bootstrap.min.js"></script>
+  <!-- MDB core JavaScript -->
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.5.9/js/mdb.min.js"></script>
+
+  <!-- Importing fonts -->
+  <link
+    href="https://fonts.googleapis.com/css?family=Nixie+One|Roboto:100,300,400,500,700,900|Source+Sans+Pro:200,300,400,600,700,900"
+    rel="stylesheet">
+
+  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+
+  <!-- Custom CSS -->
+  <link href="stylesheets/main.css" rel="stylesheet" type="text/css">
+
+  <!-- Custom JS -->
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link rel="stylesheet" href="stylesheets/gallery-clean.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.8.1/baguetteBox.min.css">
+
+</head>
+<body>
+    <div id="navbar">
+        <div class="menu">
+            <a href="../index.html" class="item">Home</a>
+            <a href="team.html" class="item">Our Team</a>
+            <a href="events.html" class="item">Events</a>
+            <a href="resources.html" class="item">Resources</a>
+            <a href="sponsorship.html" class="item">Sponsors</a>
+        </div>
+    </div>
+
+    <!-- Events section -->
+    <a name="events"></a>
+    <section id="events">
+      <h1 class="nixie title">Upcoming/Recent Events</h1>
+      <div class="container gallery-container">
+        <div class="tz-gallery">
+          <div class="row">
+            <!-- Content will be populated by JavaScript -->
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Connect section -->
+    <a name="connect"> </a>
+    <section id="connect">
+      <div class="icons">
+        <a href="mailto:wieecs-exec@mit.edu">
+          <i class="fa fa-envelope"></i>
+        </a>
+
+        <a href="https://www.facebook.com/mitwieecs/" target="_blank">
+          <i class="fa fa-facebook"></i>
+        </a>
+
+        <a href="https://www.instagram.com/mitwieecs/" target="_blank">
+          <i class="fa fa-instagram"></i>
+        </a>
+
+        <!-- <a href="https://medium.com/mit-women-in-eecs" target="_blank">
+          <i class="fa fa-medium"></i>
+        </a> -->
+        <a href="https://mailman.mit.edu:444/mailman/listinfo/wieecs" target="_blank">
+          <i class="fa fa-bars"></i>
+        </a>
+        <div class="contact-info">
+          <a href="public/assets/constitution.pdf" target="_blank"> Women in EECS @ MIT</a>
+        </div>
+    </section>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.8.1/baguetteBox.min.js"></script>
+    <script>
+      baguetteBox.run('.tz-gallery');
+    </script>
+    <script src="../js/data.js"></script>
+    <script src="../js/populate.js"></script>
+</body>
+</html>
+

@@ -62,20 +62,28 @@
   <link rel="stylesheet" href="stylesheets/gallery-clean.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.8.1/baguetteBox.min.css">
 
+  <!-- Combine and minify CSS files -->
+  <link href="stylesheets/combined.min.css" rel="stylesheet">
+  
+  <!-- Add modern meta tags -->
+  <meta name="description" content="MIT's Undergraduate Women in Electrical Engineering and Computer Science - Building community, empowering women, and advocating for change.">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  
+  <!-- Preconnect to important domains -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://cdnjs.cloudflare.com">
 </head>
 
 <body>
   <div id="navbar">
     <div class="menu">
-      <a id="goto-mission" class="item">Mission</a>
-      <a id="goto-facts" class="item">Facts & Figures</a>
-      <a id="goto-events" class="item">Events</a>
-      <a id="goto-exec" class="item">Executive Board</a>
-      <a id="goto-resources" class="item">Resources</a>
-      <a id="goto-sponsors" class="item">Sponsors</a>
-      <a id="goto-connect" class="item">Contact Us</a>
+        <a href="index.html" class="item">Home</a>
+        <a href="team.html" class="item">Our Team</a>
+        <a href="events.html" class="item">Events</a>
+        <a href="resources.html" class="item">Resources</a>
+        <a href="sponsorship.html" class="item">Sponsors</a>
     </div>
-  </div>
+</div>
 
   <!-- Splash section -->
   <a name="splash"></a>
@@ -140,122 +148,37 @@
     </div>
   </section>
 
-  <!-- Events section -->
-  <a name="events"></a>
-  <section id="events">
-    <h1 class="nixie title">Upcoming/Recent Events</h1>
-    <div class="container gallery-container">
-      <div class="tz-gallery">
-        <div class="row">
-          <!-- Content will be populated by JavaScript -->
-        </div>
-      </div>
-    </div>
-  </section>
+   <!-- Connect section -->
+   <a name="connect"> </a>
+   <section id="connect">
+     <div class="icons">
+       <a href="mailto:wieecs-exec@mit.edu">
+         <i class="fa fa-envelope"></i>
+       </a>
 
-  <!-- Executive Board section -->
-  <a name="exec"></a>
-  <section id="exec">
-    <h1 class="nixie title">Executive Board</h1>
-    <div id="exec-positions">
-      <!-- Content will be populated by JavaScript -->
-    </div>
-  </section>
+       <a href="https://www.facebook.com/mitwieecs/" target="_blank">
+         <i class="fa fa-facebook"></i>
+       </a>
 
-  <!-- Resources section -->
-  <a name="resources"></a>
-  <section id="resources">
-    <h1 class="nixie title">Resources</h1>
-    <div id="resources-container" style="margin-top:0px;">
-      <div class="column">
-        <h2 class="nixie">Institute Resources for Women</h2>
-        <p> <a href="//studentlife.mit.edu/impact-opportunities/diversity-inclusion/womenmit"
-            target="_blank">Women@MIT</a> - Run through the office of diversity and inclusion, Women@MIT serves as a
-          central location of information and resources for women-identified students at MIT. It functions to make
-          students aware of the network of offices, departments, and organizations that exist to support and empower
-          women-identified students. </p>
+       <a href="https://www.instagram.com/mitwieecs/" target="_blank">
+         <i class="fa fa-instagram"></i>
+       </a>
 
-        <p> <a href="//studentlife.mit.edu/impact-opportunities/diversity-inclusion/womenmit/margaret-cheney-room"
-            target="_blank">Margaret Cheney Room</a> - The Cheney Room provides a safe space for all women-identified
-          students in the MIT community. Along with being a physical space on-campus for students to study and relax,
-          the Cheney Room also facilitates events targeted at the female student community.</p>
-
-        <p> <a href="//diversity.mit.edu/status-undergrad-women" target="_blank">Report on status of undergraduate women
-            at MIT</a> - This comprehensive report was compiled by the Institute using student response data from a 2014
-          survey. It is part of a larger initiative to better understand and improve the undergraduate experience for
-          women at MIT.</p>
-      </div>
-
-      <div class="column">
-        <h2 class="nixie">Other Women's Organizations On-Campus</h2>
-        <p> <a href="//web.mit.edu/wi/" target="_blank">Women's Initiative</a> - Women's Initiative is a student group
-          at MIT dedicated to encouraging more high-school aged girls to pursue degrees and careers in Engineering.</p>
-
-        <p> <a href="//wtp.mit.edu/" target="_blank">Women's Technology Program</a> - WTP is a rigorous four-week summer
-          academic and residential experience where female high school students explore engineering through hands-on
-          classes, labs, and team-based projects in the summer after 11<sup>th</sup> grade.</p>
-
-        <p> <a href="//gw6.scripts.mit.edu/index.html" target="_blank">Graduate Women of 6</a> - GW6 focuses on the
-          personal and professional development of women in the EECS graduate program.</p>
-
-        <p> <a href="//swe.mit.edu/about/" target="_blank">Society of Women Engineers</a> - SWE strives to inspire
-          younger generations of girls about engineering, encourage the notion of diversity in engineering, and
-          determine and advocate for the needs of women engineers at MIT and the broader community.</p>
-      </div>
-    </div>
-  </section>
-
-
-  <!-- Sponsors section -->
-  <a name="sponsors"></a>
-  <section id="sponsors">
-    <h1 class="nixie title">Sponsors</h1>
-    <div id="sponsor-container">
-      <!-- Content will be populated by JavaScript -->
-    </div>
-    <div id="sponsor-text">
-      <p>Looking to sponsor, share job postings with our members, or co-host events? Please
-        reach out to <a href="mailto:wieecs-exec@mit.edu">
-          wieecs-exec@mit.edu </a> for more information! 
-        <p><a href="public/assets/wieecs-sponsorship.pdf" download type="application/pdf">2025 Corporate Sponsorship Packet</a></p>
-      </p>
-    </div>
-  </section>
-
-  <!-- Connect section -->
-  <a name="connect"> </a>
-  <section id="connect">
-    <div class="icons">
-      <a href="mailto:wieecs-exec@mit.edu">
-        <i class="fa fa-envelope"></i>
-      </a>
-
-      <a href="https://www.facebook.com/mitwieecs/" target="_blank">
-        <i class="fa fa-facebook"></i>
-      </a>
-
-      <a href="https://www.instagram.com/mitwieecs/" target="_blank">
-        <i class="fa fa-instagram"></i>
-      </a>
-
-      <!-- <a href="https://medium.com/mit-women-in-eecs" target="_blank">
-        <i class="fa fa-medium"></i>
-      </a> -->
-      <a href="https://mailman.mit.edu:444/mailman/listinfo/wieecs" target="_blank">
-        <i class="fa fa-bars"></i>
-      </a>
-      <div class="contact-info">
-        <a href="public/assets/constitution.pdf" target="_blank"> Women in EECS @ MIT</a>
-      </div>
-  </section>
-
+       <!-- <a href="https://medium.com/mit-women-in-eecs" target="_blank">
+         <i class="fa fa-medium"></i>
+       </a> -->
+       <a href="https://mailman.mit.edu:444/mailman/listinfo/wieecs" target="_blank">
+         <i class="fa fa-bars"></i>
+       </a>
+       <div class="contact-info">
+         <a href="public/assets/constitution.pdf" target="_blank"> Women in EECS @ MIT</a>
+       </div>
+   </section>
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.8.1/baguetteBox.min.js"></script>
   <script>
     baguetteBox.run('.tz-gallery');
   </script>
-  <script src="js/data.js"></script>
-  <script src="js/populate.js"></script>
 </body>
 
 </html>
