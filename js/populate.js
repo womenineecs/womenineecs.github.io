@@ -1,6 +1,10 @@
 const maxEvents = 6;
 
 document.addEventListener("DOMContentLoaded", function () {
+  // Initialize MDB components if needed
+  if (typeof mdb !== "undefined") {
+    mdb.init();
+  }
   // Load all JSON data
   Promise.all([
     fetch("./data/sponsors.json").then((response) => response.json()),
