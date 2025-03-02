@@ -1,23 +1,8 @@
 const maxEvents = 6;
 
-document.addEventListener("DOMContentLoaded", function () {
-  // Initialize MDB components if needed
-  if (typeof mdb !== "undefined") {
-    mdb.init();
-  }
-  // Load all JSON data
-  Promise.all([
-    fetch("./data/sponsors.json").then((response) => response.json()),
-    fetch("./data/events.json").then((response) => response.json()),
-    fetch("./data/people.json").then((response) => response.json()),
-  ])
-    .then(([sponsorsData, eventsData, peopleData]) => {
-      populateSponsors(sponsorsData.sponsors);
-      populateEvents(eventsData.events.slice(0, maxEvents));
-      populateExecutives(peopleData.executives);
-    })
-    .catch((error) => console.error("Error loading data:", error));
-});
+populateSponsors(SPONSORS_DATA.sponsors);
+populateEvents(EVENTS_DATA.events.slice(0, maxEvents));
+populateExecutives(PEOPLE_DATA.executives);
 
 function populateSponsors(sponsors) {
   const sponsorContainer = document.getElementById("sponsor-container");
