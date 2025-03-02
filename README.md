@@ -5,9 +5,9 @@
   <span> • </span>
     	<a href="#setup">Setup</a>
   <span> • </span>
-    	<a href="#hosting">Hosting Details</a>
+    	<a href="#hosting-details">Hosting Details</a>
   <span> • </span>
-        <a href="#directory">Directory Overview</a>
+        <a href="#directory-overview">Directory Overview</a>
   <p></p>
 </div>
 
