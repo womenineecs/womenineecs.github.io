@@ -3,17 +3,27 @@
     {
       "name": "PDT Partners",
       "url": "https://pdtpartners.com/",
-      "image": "assets/images/sponsors/pdt_partners.png"
+      "image": "assets/images/sponsors/pdt.png"
     },
     {
       "name": "MIT-Harvard COOP",
       "url": "https://www.thecoop.com/?srsltid=AfmBOooASK0iEwZUQT4O-eXkLZL9wY43r5sLc0XupWZRPIGAENnGoio7",
-      "image": "assets/images/sponsors/Coop.jpeg"
+      "image": "assets/images/sponsors/mitcoop.svg"
     },
     {
       "name": "Citadel",
       "url": "https://www.citadel.com/",
       "image": "assets/images/sponsors/citadel.png"
+    }
+    {
+      "name": "Persona",
+      "url": "https://withpersona.com/",
+      "image": "assets/images/sponsors/persona.png"
+    }
+    {
+      "name": "Roblox",
+      "url": "https://withpersona.com/",
+      "image": "assets/images/sponsors/persona.png"
     }
   ]
 } 
