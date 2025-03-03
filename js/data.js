@@ -1,11 +1,6 @@
 const SPONSORS_DATA = {
     sponsors: [
       {
-        name: "PDT Partners",
-        url: "https://pdtpartners.com/",
-        image: "public/images/sponsors/pdt_partners.png",
-      },
-      {
         name: "MIT-Harvard COOP",
         url: "https://www.thecoop.com/?srsltid=AfmBOooASK0iEwZUQT4O-eXkLZL9wY43r5sLc0XupWZRPIGAENnGoio7",
         image: "public/images/sponsors/Coop.jpeg",
@@ -14,6 +9,26 @@ const SPONSORS_DATA = {
         name: "Citadel",
         url: "https://www.citadel.com/",
         image: "public/images/sponsors/citadel.png",
+      },
+      {
+        name: "D.E. Shaw",
+        url: "https://www.deshaw.com/",
+        image: "public/images/sponsors/deshaw.png",
+      },
+      {
+        name: "PDT Partners",
+        url: "https://pdtpartners.com/",
+        image: "public/images/sponsors/pdt_partners.png",
+      },
+      {
+        name: "Roblox",
+        url: "roblox.com",
+        image: "public/images/sponsors/roblox.webp",
+      },
+      {
+        name: "Persona",
+        url: "https://withpersona.com/",
+        image: "public/images/sponsors/persona.png",
       },
     ],
   };
