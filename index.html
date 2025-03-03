@@ -4,10 +4,10 @@
 <head lang="en">
   <meta charset="utf-8">
   <title>Women in EECS @ MIT</title>
-  <link rel='icon' href='/assets/images/favicon.png' type='image/x-icon'>
+  <link rel='icon' href='/public/images/favicon.png' type='image/x-icon'>
 
   <!-- Preload critical images -->
-  <link rel="preload" as="image" href="assets/images/dark-background.svg">
+  <link rel="preload" as="image" href="public/images/dark-background.svg">
   
   <!-- Image optimization CDN -->
   <script src="https://cdn.jsdelivr.net/npm/lazysizes@5.3.2/lazysizes.min.js" async></script>
@@ -54,14 +54,12 @@
   <link href="stylesheets/main.css" rel="stylesheet" type="text/css">
 
   <!-- Custom JS -->
-  <script src="js/main.js"></script>
-  <script src="js/populate.js"></script>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-  <link rel="stylesheet" href="gallery-clean.css">
+  <link rel="stylesheet" href="stylesheets/gallery-clean.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.8.1/baguetteBox.min.css">
 
 </head>
@@ -96,20 +94,20 @@
       to succeed.</h2>
     <div id="goal-container">
       <div class="goal">
-        <img src="assets/images/community.svg" alt="Community" loading="lazy">
+        <img src="public/images/community.svg" alt="Community" loading="lazy">
         <h3>Community</h3>
         <p>To foster a supportive peer network amongst MIT's undergraduate women interested in EECS.</p>
       </div>
 
       <div class="goal">
-        <img src="assets/images/empowerment.svg" alt="Empowerment" loading="lazy">
+        <img src="public/images/empowerment.svg" alt="Empowerment" loading="lazy">
         <h3>Empowerment</h3>
         <p>To empower women as leaders in the technology industry by giving them the resources and mentorship to grow.
         </p>
       </div>
 
       <div class="goal">
-        <img src="assets/images/advocacy.svg" alt="Advocacy" loading="lazy">
+        <img src="public/images/advocacy.svg" alt="Advocacy" loading="lazy">
         <h3>Advocacy</h3>
         <p>To raise awareness about the issues women face in the field both at MIT and beyond.</p>
       </div>
@@ -219,7 +217,7 @@
       <p>Looking to sponsor, share job postings with our members, or co-host events? Please
         reach out to <a href="mailto:wieecs-exec@mit.edu">
           wieecs-exec@mit.edu </a> for more information! 
-        <p><a href="/assets/wieecs-sponsorship.pdf" download type="application/pdf">2025 Corporate Sponsorship Packet</a></p>
+        <p><a href="public/assets/wieecs-sponsorship.pdf" download type="application/pdf">2025 Corporate Sponsorship Packet</a></p>
       </p>
     </div>
   </section>
@@ -247,7 +245,7 @@
         <i class="fa fa-bars"></i>
       </a>
       <div class="contact-info">
-        <a href="constitution.pdf" target="_blank"> Women in EECS @ MIT</a>
+        <a href="public/assets/constitution.pdf" target="_blank"> Women in EECS @ MIT</a>
       </div>
   </section>
 
@@ -256,6 +254,8 @@
   <script>
     baguetteBox.run('.tz-gallery');
   </script>
+  <script src="js/data.js"></script>
+  <script src="js/populate.js"></script>
 </body>
 
 </html>
