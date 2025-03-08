@@ -3,7 +3,7 @@ const SPONSORS_DATA = {
       {
         name: "MIT-Harvard COOP",
         url: "https://www.thecoop.com/?srsltid=AfmBOooASK0iEwZUQT4O-eXkLZL9wY43r5sLc0XupWZRPIGAENnGoio7",
-        image: "public/images/sponsors/Coop.jpeg",
+        image: "public/images/sponsors/mitcoop.svg",
       },
       {
         name: "Citadel",
@@ -18,7 +18,7 @@ const SPONSORS_DATA = {
       {
         name: "PDT Partners",
         url: "https://pdtpartners.com/",
-        image: "public/images/sponsors/pdt_partners.png",
+        image: "public/images/sponsors/pdt.png",
       },
       {
         name: "Roblox",

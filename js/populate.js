@@ -17,6 +17,12 @@ function populateSponsors(sponsors) {
     `
     )
     .join("");
+
+  // Ensure correct grid layout
+  const numSponsors = sponsors.length;
+  const numCols = Math.ceil(numSponsors / 2); // Split into 2 rows
+  sponsorContainer.style.display = "grid";
+  sponsorContainer.style.gridTemplateColumns = `repeat(${numCols}, 1fr)`;
 }
 
 function populateEvents(events) {

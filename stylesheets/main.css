@@ -479,3 +479,27 @@ section#connect {
     font-size: .6em; } }
 
 /*# sourceMappingURL=main.css.map */
+
+#sponsor-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr)); /* Dynamic columns */
+  grid-template-rows: auto auto; /* Forces two rows */
+  gap: 15px; /* Space between sponsors */
+  justify-content: center;
+  align-items: center;
+  padding: 10px 0;
+}
+
+.sponsor {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.sponsor img {
+  width: 100%;
+  max-width: 300px; /* Limits image size */
+  height: auto;
+  object-fit: contain;
+}
+
