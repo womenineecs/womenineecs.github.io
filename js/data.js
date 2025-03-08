@@ -22,7 +22,7 @@ const SPONSORS_DATA = {
       },
       {
         name: "Roblox",
-        url: "roblox.com",
+        url: "https://www.roblox.com/",
         image: "public/images/sponsors/roblox.webp",
       },
       {
