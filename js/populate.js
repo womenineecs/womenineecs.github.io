@@ -18,7 +18,7 @@ function populateSponsors(sponsors) {
 
   // Create HTML for each tier
   const goldHTML = `
-    <div class="sponsor-container gold">
+    <div class="gold">
       ${goldSponsors
         .map(
           (sponsor) => `
@@ -34,7 +34,7 @@ function populateSponsors(sponsors) {
   `;
 
   const silverHTML = `
-    <div class="sponsor-container silver">
+    <div class="silver">
       ${silverSponsors
         .map(
           (sponsor) => `
@@ -50,7 +50,7 @@ function populateSponsors(sponsors) {
   `;
 
   const bronzeHTML = `
-    <div class="sponsor-container bronze">
+    <div class="bronze">
       ${bronzeSponsors
         .map(
           (sponsor) => `

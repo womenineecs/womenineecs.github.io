@@ -599,25 +599,25 @@ section#connect .contact-info {
 
 #sponsor-container {
   display: grid;
-  gap: 15px; /* Space between sponsors */
+  gap: 15px;
   justify-content: center;
   align-items: center;
   padding: 10px 0;
 }
 
-.sponsor-container.gold {
-  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr)); /* Dynamic columns */
-  grid-template-rows: auto auto; /* Forces two rows */
+section#sponsors #sponsor-container .gold {
+  grid-template-columns: repeat(3, 1fr);
+  grid-auto-rows: auto;
 }
 
-.sponsor-container.silver {
-  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr)); /* Dynamic columns */
-  grid-template-rows: auto auto auto; /* Forces two rows */
+section#sponsors #sponsor-container .silver {
+  grid-template-columns: repeat(3, 1fr);
+  grid-auto-rows: auto;
 }
 
-.sponsor-container.bronze {
-  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr)); /* Dynamic columns */
-  grid-template-rows: auto auto auto auto; /* Forces two rows */
+section#sponsors #sponsor-container .bronze {
+  grid-template-columns: repeat(3, 1fr);
+  grid-auto-rows: auto;
 }
 
 .sponsor {
@@ -628,7 +628,7 @@ section#connect .contact-info {
 
 .sponsor img {
   width: 100%;
-  max-width: 300px; /* Limits image size */
+  max-width: 300px;
   height: auto;
   object-fit: contain;
 }
