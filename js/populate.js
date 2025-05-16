@@ -6,23 +6,67 @@ populateExecutives(PEOPLE_DATA.executives);
 
 function populateSponsors(sponsors) {
   const sponsorContainer = document.getElementById("sponsor-container");
-  sponsorContainer.innerHTML = sponsors
-    .map(
-      (sponsor) => `
-        <div class="sponsor">
-            <a href="${sponsor.url}" target="_blank">
-                <img src="${sponsor.image}" alt="${sponsor.name}" loading="lazy" decoding="async">
-            </a>
-        </div>
-    `
-    )
-    .join("");
 
-  // Ensure correct grid layout
-  const numSponsors = sponsors.length;
-  const numCols = Math.ceil(numSponsors / 2); // Split into 2 rows
-  sponsorContainer.style.display = "grid";
-  sponsorContainer.style.gridTemplateColumns = `repeat(${numCols}, 1fr)`;
+  // Separate sponsors by tier
+  const goldSponsors = sponsors.filter((sponsor) => sponsor.tier === "gold");
+  const silverSponsors = sponsors.filter(
+    (sponsor) => sponsor.tier === "silver"
+  );
+  const bronzeSponsors = sponsors.filter(
+    (sponsor) => sponsor.tier === "bronze"
+  );
+
+  // Create HTML for each tier
+  const goldHTML = `
+    <div class="sponsor-container gold">
+      ${goldSponsors
+        .map(
+          (sponsor) => `
+        <div class="sponsor">
+          <a href="${sponsor.url}" target="_blank">
+            <img src="${sponsor.image}" alt="${sponsor.name}" loading="lazy" decoding="async">
+          </a>
+        </div>
+      `
+        )
+        .join("")}
+    </div>
+  `;
+
+  const silverHTML = `
+    <div class="sponsor-container silver">
+      ${silverSponsors
+        .map(
+          (sponsor) => `
+        <div class="sponsor">
+          <a href="${sponsor.url}" target="_blank">
+            <img src="${sponsor.image}" alt="${sponsor.name}" loading="lazy" decoding="async">
+          </a>
+        </div>
+      `
+        )
+        .join("")}
+    </div>
+  `;
+
+  const bronzeHTML = `
+    <div class="sponsor-container bronze">
+      ${bronzeSponsors
+        .map(
+          (sponsor) => `
+        <div class="sponsor">
+          <a href="${sponsor.url}" target="_blank">
+            <img src="${sponsor.image}" alt="${sponsor.name}" loading="lazy" decoding="async">
+          </a>
+        </div>
+      `
+        )
+        .join("")}
+    </div>
+  `;
+
+  // Combine the HTML: gold on top, then silver, then bronze
+  sponsorContainer.innerHTML = goldHTML + silverHTML + bronzeHTML;
 }
 
 function populateEvents(events) {

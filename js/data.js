@@ -4,32 +4,63 @@ const SPONSORS_DATA = {
         name: "MIT-Harvard COOP",
         url: "https://www.thecoop.com/?srsltid=AfmBOooASK0iEwZUQT4O-eXkLZL9wY43r5sLc0XupWZRPIGAENnGoio7",
         image: "public/images/sponsors/mitcoop.svg",
+        tier: "bronze",
       },
       {
         name: "Citadel",
         url: "https://www.citadel.com/",
         image: "public/images/sponsors/citadel.png",
+        tier: "silver",
       },
       {
         name: "D.E. Shaw",
         url: "https://www.deshaw.com/",
         image: "public/images/sponsors/deshaw.png",
+        tier: "bronze",
       },
       {
         name: "PDT Partners",
         url: "https://pdtpartners.com/",
         image: "public/images/sponsors/pdt.png",
+        tier: "silver",
       },
       {
         name: "Roblox",
         url: "https://www.roblox.com/",
         image: "public/images/sponsors/roblox.png",
+        tier: "bronze",
       },
       {
         name: "Persona",
         url: "https://withpersona.com/",
         image: "public/images/sponsors/persona.png",
+        tier: "bronze",
       },
+      {
+        name: "Jump Trading",
+        url: "https://www.jumptrading.com/",
+        image: "public/images/sponsors/jump.png",
+        tier: "silver",
+      },
+      {
+        name: "Susquehanna",
+        url: "https://sig.com/",
+        image: "public/images/sponsors/sig.png",
+        tier: "bronze",
+      },
+      {
+        name: "Jane Street",
+        url: "https://www.janestreet.com/",
+        image: "public/images/sponsors/janestreet.png",
+        tier: "bronze",
+      },
+      {
+        name: "Capital One",
+        url: "https://www.capitalone.com/",
+        image: "public/images/sponsors/c1.png",
+        tier: "silver",
+      },
+
     ],
   };
   
