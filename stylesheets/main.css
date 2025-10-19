@@ -389,23 +389,25 @@ section#resources #resources-container .column p {
 
 /* Sponsors Section */
 section#sponsors {
-  background: url(../public/images/dark-background.svg);
-  background-position: center;
+  /* background: url(../public/images/dark-background.svg); */
+  /* background-position: center;
   background-size: 100% auto;
-  color: #ffffff;
+  color: #ffffff; */
+  background-color: #ffffff;
+  /* color: #a8a8a8; */
   padding: 96px 0;
 }
 section#sponsors h1 {
   margin: 0;
   text-align: center;
-  font-size: 2.5em;
+  font-size: 2.7em;
   letter-spacing: 1px;
 }
 section#sponsors h2 {
   margin: 0 40px;
   margin-top: 40px;
   text-align: center;
-  font-size: 1.2em;
+  font-size: 1.5em;
   font-weight: lighter;
   color: #a8a8a8;
 }
@@ -448,6 +450,25 @@ section#sponsors #sponsor-container .sponsor a:hover {
 section#sponsors #sponsor-container .sponsor img {
   height: 16vw;
 }
+.custom-btn {
+  display: inline-block;
+  padding: 12px 24px;
+  background-color: #664ea6;
+  color: #ffffff;
+  font-family: 'Source Sans Pro', sans-serif;
+  text-decoration: none;
+  border: none;
+  border-radius: 8px; /* Rounded corners */
+  font-weight: 600;
+  font-size: 1em;
+  transition: background-color 0.3s ease;
+}
+
+.custom-btn:hover {
+  background-color: #523e8e; /* Darker purple on hover */
+  color: #ffffff;
+}
+
 
 /* Connect section */
 section#connect {
