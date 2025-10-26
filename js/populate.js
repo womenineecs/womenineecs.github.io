@@ -5,69 +5,45 @@ populateEvents(EVENTS_DATA.events.slice(0, maxEvents));
 populateExecutives(PEOPLE_DATA.executives);
 
 function populateSponsors(sponsors) {
-  const sponsorContainer = document.getElementById("sponsor-container");
+  const tiers = ["gold", "silver", "bronze", "past"];
 
-  // Separate sponsors by tier
-  const goldSponsors = sponsors.filter((sponsor) => sponsor.tier === "gold");
-  const silverSponsors = sponsors.filter(
-    (sponsor) => sponsor.tier === "silver"
-  );
-  const bronzeSponsors = sponsors.filter(
-    (sponsor) => sponsor.tier === "bronze"
-  );
+  tiers.forEach((tier) => {
+    const container = document.getElementById(`${tier}-sponsor-container`);
+    const heading = document.getElementById(`${tier}-heading`);
+    if (!container) return;
 
-  // Create HTML for each tier
-  const goldHTML = `
-    <div class="gold">
-      ${goldSponsors
-        .map(
-          (sponsor) => `
+    // Filter sponsors for this tier
+    const tierSponsors = sponsors.filter((s) => s.tier === tier);
+
+    // Hide both heading + container if empty
+    if (tierSponsors.length === 0) {
+      if (heading) heading.style.display = "none";
+      container.style.display = "none";
+      return;
+    }
+
+    // Otherwise, populate normally
+    container.innerHTML = tierSponsors
+      .map(
+        (s) => `
         <div class="sponsor">
-          <a href="${sponsor.url}" target="_blank">
-            <img src="${sponsor.image}" alt="${sponsor.name}" loading="lazy" decoding="async">
+          <a href="${s.url}" target="_blank">
+            <img src="${s.image}" alt="${s.name}" loading="lazy" decoding="async">
           </a>
         </div>
       `
-        )
-        .join("")}
-    </div>
-  `;
-
-  const silverHTML = `
-    <div class="silver">
-      ${silverSponsors
-        .map(
-          (sponsor) => `
-        <div class="sponsor">
-          <a href="${sponsor.url}" target="_blank">
-            <img src="${sponsor.image}" alt="${sponsor.name}" loading="lazy" decoding="async">
-          </a>
-        </div>
-      `
-        )
-        .join("")}
-    </div>
-  `;
-
-  const bronzeHTML = `
-    <div class="bronze">
-      ${bronzeSponsors
-        .map(
-          (sponsor) => `
-        <div class="sponsor">
-          <a href="${sponsor.url}" target="_blank">
-            <img src="${sponsor.image}" alt="${sponsor.name}" loading="lazy" decoding="async">
-          </a>
-        </div>
-      `
-        )
-        .join("")}
-    </div>
-  `;
-
-  // Combine the HTML: gold on top, then silver, then bronze
-  sponsorContainer.innerHTML = goldHTML + silverHTML + bronzeHTML;
+      )
+      .join("");
+  });
 }
+
+document.addEventListener("DOMContentLoaded", () => {
+  populateSponsors(SPONSORS_DATA.sponsors);
+});
+
+document.addEventListener("DOMContentLoaded", () => {
+  populateSponsors(SPONSORS_DATA.sponsors);
+});
 
 function populateEvents(events) {
   const galleryContainer = document.querySelector(".tz-gallery .row");

@@ -28,7 +28,7 @@ const SPONSORS_DATA = {
         name: "MIT-Harvard COOP",
         url: "https://www.thecoop.com/?srsltid=AfmBOooASK0iEwZUQT4O-eXkLZL9wY43r5sLc0XupWZRPIGAENnGoio7",
         image: "public/images/sponsors/mitcoop.svg",
-        tier: "bronze",
+        tier: "past",
       },
       {
         name: "D.E. Shaw",
@@ -40,13 +40,13 @@ const SPONSORS_DATA = {
         name: "Roblox",
         url: "https://www.roblox.com/",
         image: "public/images/sponsors/roblox.png",
-        tier: "bronze",
+        tier: "past",
       },
       {
         name: "Persona",
         url: "https://withpersona.com/",
         image: "public/images/sponsors/persona.png",
-        tier: "bronze",
+        tier: "past",
       },
       {
         name: "Susquehanna",
@@ -60,10 +60,23 @@ const SPONSORS_DATA = {
         image: "public/images/sponsors/janestreet.png",
         tier: "bronze",
       },
+      {
+        name: "Symbotic",
+        url: "https://www.symbotic.com/",
+        image: "public/images/sponsors/symbotic.png",
+        tier: "silver",
+      },
+      {
+        name: "Data Dog",
+        url: "https://www.datadoghq.com/",
+        image: "public/images/sponsors/datadog.png",
+        tier: "bronze",
+      },
+
 
     ],
   };
-  
+
   const EVENTS_DATA = {
     events: [
       {
@@ -108,7 +121,7 @@ const SPONSORS_DATA = {
       },
     ],
   };
-  
+
   const PEOPLE_DATA = {
     executives: [
       {
@@ -188,4 +201,3 @@ const SPONSORS_DATA = {
       },
     ],
   };
-  
