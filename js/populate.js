@@ -75,7 +75,7 @@ function populateEvents(events) {
   if (upcomingContainer) {
     upcomingContainer.innerHTML = upcomingEvents.length > 0
       ? upcomingEvents.map(event => createEventCard(event)).join("")
-      : '<div class="col-12"><p style="text-align: center; padding: 20px;">No upcoming events at this time. Check back soon!</p></div>';
+      : '<div class="col-12"><p class="sans" style="text-align: center; padding: 20px; font-size: 1.4em; line-height: 1.8; color: #555; font-weight: 400;">No upcoming events at this time. Check back soon!</p></div>';
   }
 
   // Populate past events
