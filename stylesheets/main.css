@@ -108,6 +108,65 @@ section#splash {
   }
 }
 
+/* Upcoming Events Alert */
+.upcoming-alert {
+  position: absolute;
+  bottom: 80px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  padding: 20px 40px;
+  border-radius: 50px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+  animation: slideUp 0.5s ease-out;
+  max-width: 90%;
+  z-index: 50;
+}
+
+.upcoming-alert .alert-content {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  font-family: "Source Sans Pro", sans-serif;
+  color: #333;
+}
+
+.upcoming-alert .fa {
+  font-size: 24px;
+  color: #b2e1e8;
+}
+
+.upcoming-alert #alert-text {
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.upcoming-alert .alert-link {
+  color: #b2e1e8;
+  text-decoration: none;
+  font-weight: 600;
+  margin-left: 10px;
+  white-space: nowrap;
+  transition: color 0.3s ease;
+}
+
+.upcoming-alert .alert-link:hover {
+  color: #98c4e0;
+  text-decoration: none;
+}
+
+@keyframes slideUp {
+  from {
+    bottom: 40px;
+    opacity: 0;
+  }
+  to {
+    bottom: 80px;
+    opacity: 1;
+  }
+}
+
 section#splash .splash-title {
   margin: auto;
   padding-top: 45vh;
@@ -222,6 +281,20 @@ section#events {
   padding: 96px 0;
 }
 section#events h1 {
+  text-align: center;
+  font-size: 2.5em;
+  letter-spacing: 1px;
+}
+section#upcoming-events {
+  padding-top: 96px;
+  margin-top: 60px;
+}
+section#upcoming-events h1 {
+  text-align: center;
+  font-size: 2.5em;
+  letter-spacing: 1px;
+}
+section#past-events h1 {
   text-align: center;
   font-size: 2.5em;
   letter-spacing: 1px;

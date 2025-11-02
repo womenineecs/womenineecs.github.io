@@ -80,6 +80,16 @@ const SPONSORS_DATA = {
   const EVENTS_DATA = {
     events: [
       {
+        title: "Cookie Decorating Study Break",
+        date: "10/30/2025",
+        image: "public/images/events/2025-2026/cookie_decorating.png",
+      },
+      {
+        title: "Playa Bowls Study Break",
+        date: "10/2/2025",
+        image: "public/images/events/2025-2026/playa_bowls.png",
+      },
+      {
         title: "Hot Chocolate Study Break",
         date: "2/28/2025",
         image: "public/images/events/2024-2025/hot_chocolate.png",
