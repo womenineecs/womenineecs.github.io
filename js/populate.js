@@ -1,106 +1,133 @@
 const maxEvents = 6;
 
 populateSponsors(SPONSORS_DATA.sponsors);
-populateEvents(EVENTS_DATA.events.slice(0, maxEvents));
+populateEvents(EVENTS_DATA.events);
 populateExecutives(PEOPLE_DATA.executives);
 
 function populateSponsors(sponsors) {
-  const sponsorContainer = document.getElementById("sponsor-container");
+  const tiers = ["gold", "silver", "bronze", "past"];
 
-  // Separate sponsors by tier
-  const goldSponsors = sponsors.filter((sponsor) => sponsor.tier === "gold");
-  const silverSponsors = sponsors.filter(
-    (sponsor) => sponsor.tier === "silver"
-  );
-  const bronzeSponsors = sponsors.filter(
-    (sponsor) => sponsor.tier === "bronze"
-  );
+  tiers.forEach((tier) => {
+    const container = document.getElementById(`${tier}-sponsor-container`);
+    const heading = document.getElementById(`${tier}-heading`);
+    if (!container) return;
 
-  // Create HTML for each tier
-  const goldHTML = `
-    <div class="gold">
-      ${goldSponsors
-        .map(
-          (sponsor) => `
+    // Filter sponsors for this tier
+    const tierSponsors = sponsors.filter((s) => s.tier === tier);
+
+    // Hide both heading + container if empty
+    if (tierSponsors.length === 0) {
+      if (heading) heading.style.display = "none";
+      container.style.display = "none";
+      return;
+    }
+
+    // Otherwise, populate normally
+    container.innerHTML = tierSponsors
+      .map(
+        (s) => `
         <div class="sponsor">
-          <a href="${sponsor.url}" target="_blank">
-            <img src="${sponsor.image}" alt="${sponsor.name}" loading="lazy" decoding="async">
+          <a href="${s.url}" target="_blank">
+            <img src="${s.image}" alt="${s.name}" loading="lazy" decoding="async">
           </a>
         </div>
       `
-        )
-        .join("")}
-    </div>
-  `;
-
-  const silverHTML = `
-    <div class="silver">
-      ${silverSponsors
-        .map(
-          (sponsor) => `
-        <div class="sponsor">
-          <a href="${sponsor.url}" target="_blank">
-            <img src="${sponsor.image}" alt="${sponsor.name}" loading="lazy" decoding="async">
-          </a>
-        </div>
-      `
-        )
-        .join("")}
-    </div>
-  `;
-
-  const bronzeHTML = `
-    <div class="bronze">
-      ${bronzeSponsors
-        .map(
-          (sponsor) => `
-        <div class="sponsor">
-          <a href="${sponsor.url}" target="_blank">
-            <img src="${sponsor.image}" alt="${sponsor.name}" loading="lazy" decoding="async">
-          </a>
-        </div>
-      `
-        )
-        .join("")}
-    </div>
-  `;
-
-  // Combine the HTML: gold on top, then silver, then bronze
-  sponsorContainer.innerHTML = goldHTML + silverHTML + bronzeHTML;
+      )
+      .join("");
+  });
 }
 
+document.addEventListener("DOMContentLoaded", () => {
+  populateSponsors(SPONSORS_DATA.sponsors);
+});
+
+document.addEventListener("DOMContentLoaded", () => {
+  populateSponsors(SPONSORS_DATA.sponsors);
+});
+
 function populateEvents(events) {
-  const galleryContainer = document.querySelector(".tz-gallery .row");
-  galleryContainer.innerHTML =
-    events
-      .map(
-        (event) => `
-        <div class="col-sm-6 col-md-4">
-            <div class="thumbnail">
-                <a class="lightbox" href="${event.image}">
-                    <img src="${event.image}" alt="${event.title}" decoding="async">
-                </a>
-                <div class="overlay">
-                    <div class="text">${event.title}</div>
-                </div>
-                <div class="caption">
-                    <h3>${event.date}</h3>
-                </div>
-            </div>
+  const today = new Date();
+  today.setHours(0, 0, 0, 0);
+
+  // Separate events into upcoming and past
+  const upcomingEvents = [];
+  const pastEvents = [];
+
+  events.forEach(event => {
+    const eventDate = new Date(event.date);
+    eventDate.setHours(0, 0, 0, 0);
+
+    if (eventDate >= today) {
+      upcomingEvents.push(event);
+    } else {
+      pastEvents.push(event);
+    }
+  });
+
+  // Sort upcoming events by date (earliest first)
+  upcomingEvents.sort((a, b) => new Date(a.date) - new Date(b.date));
+
+  // Sort past events by date (most recent first)
+  pastEvents.sort((a, b) => new Date(b.date) - new Date(a.date));
+
+  // Populate upcoming events
+  const upcomingContainer = document.querySelector("#upcoming-events .row");
+  if (upcomingContainer) {
+    upcomingContainer.innerHTML = upcomingEvents.length > 0
+      ? upcomingEvents.map(event => createEventCard(event)).join("")
+      : '<div class="col-12"><p style="text-align: center; padding: 20px;">No upcoming events at this time. Check back soon!</p></div>';
+  }
+
+  // Populate past events
+  const pastContainer = document.querySelector("#past-events .row");
+  if (pastContainer) {
+    pastContainer.innerHTML = pastEvents.map(event => createEventCard(event)).join("");
+  }
+}
+
+function createEventCard(event) {
+  const calendarUrl = createGoogleCalendarUrl(event);
+
+  return `
+    <div class="col-sm-6 col-md-4">
+      <div class="thumbnail">
+        <a class="lightbox" href="${event.image}">
+          <img src="${event.image}" alt="${event.title}" decoding="async">
+        </a>
+        <div class="overlay">
+          <div class="text">${event.title}</div>
         </div>
-    `
-      )
-      .join("") +
-    `
-        <div class="col-sm-6 col-md-4">
-            <div class="thumbnail">
-                <img src="public/images/events/def.png" style="opacity:0;">
-                <div class="text more">
-                    <a href="https://calendar.google.com/calendar/u/0?cid=MjZhNWJhY2I0MTI0MTc2Zjc5YTRmMWM3NjJiZGUzMjU5MmU2MDU1MmFkNmE4ZTk4NjhiMDIwMTdlMmVkODc5YkBncm91cC5jYWxlbmRhci5nb29nbGUuY29t">...and more!</a>
-                </div>
-            </div>
+        <div class="caption">
+          <h3>${event.date}</h3>
+          <a href="${calendarUrl}" target="_blank" class="add-to-calendar-btn">
+            <i class="fa fa-calendar-plus-o"></i> Add to Google Calendar
+          </a>
         </div>
-    `;
+      </div>
+    </div>
+  `;
+}
+
+function createGoogleCalendarUrl(event) {
+  const eventDate = new Date(event.date);
+
+  // Format: YYYYMMDD
+  const dateStr = eventDate.toISOString().split('T')[0].replace(/-/g, '');
+
+  // Create all-day event (00:00 to 23:59)
+  const startDateTime = dateStr;
+  const endDateTime = dateStr;
+
+  const params = new URLSearchParams({
+    action: 'TEMPLATE',
+    text: event.title,
+    dates: `${startDateTime}/${endDateTime}`,
+    details: `WiEECS @ MIT Event: ${event.title}`,
+    location: 'MIT',
+    ctz: 'America/New_York'
+  });
+
+  return `https://calendar.google.com/calendar/render?${params.toString()}`;
 }
 
 function populateExecutives(executives) {

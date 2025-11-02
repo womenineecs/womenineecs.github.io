@@ -7,8 +7,8 @@
   <link rel='icon' href='/public/images/favicon.png' type='image/x-icon'>
 
   <!-- Preload critical images -->
-  <link rel="preload" as="image" href="public/images/dark-background.svg">
-  
+  <!-- <link rel="preload" as="image" href="public/images/dark-background.svg"> -->
+
   <!-- Image optimization CDN -->
   <script src="https://cdn.jsdelivr.net/npm/lazysizes@5.3.2/lazysizes.min.js" async></script>
 
@@ -74,63 +74,30 @@
       <a href="contact.html" class="item">Contact Us</a>
     </div>
   </div>
-  <!-- Resources section -->
-  <a name="resources"></a>
-  <section id="resources">
-    <h1 class="nixie title">Resources</h1>
-    <div id="resources-container" style="margin-top:0px;">
-      <div class="column">
-        <h2 class="nixie">Institute Resources for Women</h2>
-        <p> <a href="//studentlife.mit.edu/impact-opportunities/diversity-inclusion/womenmit"
-            target="_blank">Women@MIT</a> - Run through the office of diversity and inclusion, Women@MIT serves as a
-          central location of information and resources for women-identified students at MIT. It functions to make
-          students aware of the network of offices, departments, and organizations that exist to support and empower
-          women-identified students. </p>
-
-        <p> <a href="//studentlife.mit.edu/impact-opportunities/diversity-inclusion/womenmit/margaret-cheney-room"
-            target="_blank">Margaret Cheney Room</a> - The Cheney Room provides a safe space for all women-identified
-          students in the MIT community. Along with being a physical space on-campus for students to study and relax,
-          the Cheney Room also facilitates events targeted at the female student community.</p>
-
-        <p> <a href="//diversity.mit.edu/status-undergrad-women" target="_blank">Report on status of undergraduate women
-            at MIT</a> - This comprehensive report was compiled by the Institute using student response data from a 2014
-          survey. It is part of a larger initiative to better understand and improve the undergraduate experience for
-          women at MIT.</p>
-      </div>
-
-      <div class="column">
-        <h2 class="nixie">Other Women's Organizations On-Campus</h2>
-        <p> <a href="//web.mit.edu/wi/" target="_blank">Women's Initiative</a> - Women's Initiative is a student group
-          at MIT dedicated to encouraging more high-school aged girls to pursue degrees and careers in Engineering.</p>
-
-        <p> <a href="//wtp.mit.edu/" target="_blank">Women's Technology Program</a> - WTP is a rigorous four-week summer
-          academic and residential experience where female high school students explore engineering through hands-on
-          classes, labs, and team-based projects in the summer after 11<sup>th</sup> grade.</p>
-
-        <p> <a href="//gw6.scripts.mit.edu/index.html" target="_blank">Graduate Women of 6</a> - GW6 focuses on the
-          personal and professional development of women in the EECS graduate program.</p>
-
-        <p> <a href="//swe.mit.edu/about/" target="_blank">Society of Women Engineers</a> - SWE strives to inspire
-          younger generations of girls about engineering, encourage the notion of diversity in engineering, and
-          determine and advocate for the needs of women engineers at MIT and the broader community.</p>
-      </div>
-    </div>
-  </section>
-
 
   <!-- Sponsors section -->
   <a name="sponsors"></a>
   <section id="sponsors">
     <h1 class="nixie title">Sponsors</h1>
-    <div id="sponsor-container">
-      <!-- Content will be populated by JavaScript -->
-    </div>
+
+    <!-- Gold Sponsors -->
+    <h2 id="gold-heading" class="nixie tier-heading gold">Gold Sponsors</h2>
+    <div id="gold-sponsor-container" class="sponsor-row"></div>
+
+    <!-- Silver Sponsors -->
+    <h2 id="silver-heading" class="nixie tier-heading silver">Silver Sponsors</h2>
+    <div id="silver-sponsor-container" class="sponsor-row"></div>
+
+    <!-- Bronze Sponsors -->
+    <h2 id="bronze-heading" class="nixie tier-heading bronze">Bronze Sponsors</h2>
+    <div id="bronze-sponsor-container" class="sponsor-row"></div>
+
+    <!-- Past Sponsors -->
+    <h2 id="past-heading" class="nixie tier-heading past">Past Sponsors</h2>
+    <div id="past-sponsor-container" class="sponsor-row"></div>
     <div id="sponsor-text">
-      <p>Looking to sponsor, share job postings with our members, or co-host events? Please
-        reach out to <a href="mailto:wieecs-exec@mit.edu">
-          wieecs-exec@mit.edu </a> for more information! 
-        <p><a href="public/assets/wieecs-sponsorship.pdf" download type="application/pdf">2025 Corporate Sponsorship Packet</a></p>
-      </p>
+      <p>Looking to sponsor, share job postings with our members, or co-host events? Click the button below for details, or reach out to <a href="mailto:wieecs-exec@mit.edu"> wieecs-exec@mit.edu </a></p>
+      <p><a href="public/assets/wieecs-sponsorship.pdf" target="_blank" class="custom-btn">Package <br> Information</a></p>
     </div>
   </section>
 
@@ -160,6 +127,7 @@
         <a href="public/assets/constitution.pdf" target="_blank"> Women in EECS @ MIT</a>
       </div>
   </section>
+
   <script src="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.8.1/baguetteBox.min.js"></script>
   <script>
     baguetteBox.run('.tz-gallery');

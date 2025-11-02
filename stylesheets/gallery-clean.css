@@ -105,3 +105,61 @@ body {
     font-family:"Nixie One", cursive;
     text-shadow: 1px 1px #a8a8a8;
   }
+
+/* Add to Calendar Button Styles */
+.add-to-calendar-btn {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 8px 15px;
+  background-color: #b2e1e8;
+  color: #333;
+  text-decoration: none;
+  border-radius: 4px;
+  font-size: 14px;
+  font-family: "Source Sans Pro", sans-serif;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.add-to-calendar-btn:hover {
+  background-color: #98c4e0;
+  color: #fff;
+  text-decoration: none;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+  transform: translateY(-1px);
+}
+
+.add-to-calendar-btn i {
+  margin-right: 5px;
+}
+
+/* Sync All Events Button */
+.sync-all-btn {
+  display: inline-block;
+  padding: 12px 30px;
+  background: linear-gradient(135deg, #b2e1e8 0%, #98c4e0 100%);
+  color: #fff;
+  text-decoration: none;
+  border-radius: 25px;
+  font-size: 16px;
+  font-family: "Source Sans Pro", sans-serif;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(178, 225, 232, 0.4);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.sync-all-btn:hover {
+  background: linear-gradient(135deg, #98c4e0 0%, #7ab8d4 100%);
+  color: #fff;
+  text-decoration: none;
+  box-shadow: 0 6px 20px rgba(152, 196, 224, 0.6);
+  transform: translateY(-2px);
+}
+
+.sync-all-btn i {
+  margin-right: 8px;
+  font-size: 18px;
+}
