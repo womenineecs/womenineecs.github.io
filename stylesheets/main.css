@@ -475,7 +475,7 @@ section#exec {
   padding-bottom: 96px;
 }
 section#exec .page-header h1 {
-  color: #ffffff;
+  color: black;
   margin-bottom: 40px;
 }
 section#exec .page-divider {
@@ -487,21 +487,21 @@ section#exec #exec-positions {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 6.5rem; 
+  gap: 1rem; 
 }
 
 section#exec .row {
   display: flex;
   justify-content: space-evenly; 
   flex-wrap: nowrap; 
-  gap: 3.8rem; 
+  gap: 2.5rem; 
   width: 100%;
 }
 
 section#exec .exec-member {
+  padding: 18px 18px 23px 18px; /* even vertical spacing inside card */
   background: rgba(255, 255, 255, 0.05);
   border-radius: 20px;
-  padding: 30px 25px 25px 25px;
   width: 85%; 
   max-width: 320px;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -521,14 +521,15 @@ section#exec .exec-member img {
   aspect-ratio: 1/1;
   border-radius: 20px;
   object-fit: cover;
+  margin-top: 15px; /* add small margin to balance top spacing */
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
 }
 
 section#exec .exec-member h3 {
-  margin-top: 20px;
+  margin-top: 16px;
   font-size: 1.8rem;
   font-weight: 600;
-  color: #ffffff;
+  color: black;
 }
 
 section#exec .exec-member p {
