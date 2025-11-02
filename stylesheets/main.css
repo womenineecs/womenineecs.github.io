@@ -53,6 +53,52 @@ body div {
   text-transform: uppercase;
 }
 
+/* Universal Page Header Style */
+.page-header {
+  padding-top: 100px;
+  text-align: center;
+  margin-bottom: 40px;
+  border: none !important;
+  border-bottom: none !important;
+}
+
+.page-header::after {
+  display: none !important;
+}
+
+.page-header h1 {
+  margin: 0 !important;
+  margin-bottom: 0 !important;
+  padding: 0 !important;
+  padding-bottom: 0 !important;
+  font-size: 3em;
+  letter-spacing: 2px;
+  color: #333;
+  border: none !important;
+  border-bottom: none !important;
+  text-decoration: none !important;
+  box-shadow: none !important;
+  background: none !important;
+}
+
+.page-header h1::after {
+  display: none !important;
+}
+
+.page-divider {
+  width: 80px;
+  height: 4px;
+  background: linear-gradient(to right, #b2e1e8, #98c4e0);
+  margin: 20px auto 0 auto;
+  border-radius: 2px;
+  border: none !important;
+  box-shadow: none !important;
+}
+
+.page-divider::after {
+  display: none !important;
+}
+
 /* Navigation Bar */
 #navbar {
   position: fixed;
@@ -189,39 +235,99 @@ section#splash .splash-title h2 {
 }
 
 /* Mission section */
-section#mission h1 {
-  margin-top: 0;
-  padding-top: 96px;
-  text-align: center;
-  font-size: 2.5em;
-  letter-spacing: 2px;
+section#mission {
+  background: linear-gradient(to bottom, #ffffff 0%, #f8fbfc 100%);
+  padding-bottom: 100px;
 }
-section#mission h2 {
-  margin: 0 40px;
-  margin-top: 40px;
+
+
+section#mission .club-photo-container {
   text-align: center;
-  font-size: 1.2em;
-  font-weight: lighter;
+  margin: 50px auto;
+  max-width: 1100px;
+  padding: 0 40px;
 }
+
+section#mission .club-photo {
+  width: 100%;
+  height: auto;
+  border-radius: 16px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.12);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+section#mission .club-photo:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 50px rgba(0, 0, 0, 0.18);
+}
+
+section#mission .mission-statement {
+  max-width: 800px;
+  margin: 60px auto;
+  padding: 0 40px;
+  text-align: center;
+}
+
+section#mission .mission-statement p {
+  font-size: 1.4em;
+  line-height: 1.8;
+  color: #555;
+  font-weight: 400;
+}
+
 section#mission #goal-container {
   display: flex;
-  margin: 60px 120px 0px 120px;
-  padding-bottom: 96px;
+  max-width: 1200px;
+  margin: 80px auto 0;
+  padding: 0 40px;
+  gap: 40px;
+  justify-content: center;
 }
+
 section#mission #goal-container .goal {
+  flex: 1;
   text-align: center;
-  margin: 0 20px;
+  background: white;
+  padding: 50px 30px;
+  border-radius: 16px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
+  max-width: 350px;
 }
+
+section#mission #goal-container .goal:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 35px rgba(178, 225, 232, 0.3);
+}
+
+section#mission #goal-container .goal .goal-icon-wrapper {
+  margin-bottom: 30px;
+  display: inline-block;
+  padding: 20px;
+  background: linear-gradient(135deg, #b2e1e8 0%, #98c4e0 100%);
+  border-radius: 50%;
+  box-shadow: 0 4px 15px rgba(178, 225, 232, 0.4);
+}
+
 section#mission #goal-container .goal img {
-  width: 120px;
+  width: 80px;
+  height: 80px;
+  display: block;
 }
+
 section#mission #goal-container .goal h3 {
   font-family: "Nixie One", cursive;
+  font-size: 1.8em;
+  margin: 20px 0;
+  color: #333;
 }
+
 section#mission #goal-container .goal p {
   font-family: "Source Sans Pro", sans-serif;
-  font-size: 1em;
-  font-weight: lighter;
+  font-size: 1.05em;
+  line-height: 1.7;
+  color: #666;
+  font-weight: 400;
 }
 
 /* Facts & Figures Section */
@@ -278,26 +384,13 @@ section#facts #fact-container .fact a:hover {
 
 /* Events Section */
 section#events {
-  padding: 96px 0;
-}
-section#events h1 {
-  text-align: center;
-  font-size: 2.5em;
-  letter-spacing: 1px;
+  padding-bottom: 96px;
 }
 section#upcoming-events {
-  padding-top: 96px;
   margin-top: 60px;
 }
-section#upcoming-events h1 {
-  text-align: center;
-  font-size: 2.5em;
-  letter-spacing: 1px;
-}
-section#past-events h1 {
-  text-align: center;
-  font-size: 2.5em;
-  letter-spacing: 1px;
+section#past-events {
+  margin-top: 60px;
 }
 section#events #tab-titles {
   width: 80%;
@@ -378,16 +471,15 @@ section#exec {
   background-position: center;
   background-size: cover;
   text-align: center;
-  padding: 100px 0;
+  padding-bottom: 96px;
 }
-
-section#exec h1 {
-  font-size: 2.8em;
-  letter-spacing: 1px;
+section#exec .page-header h1 {
   color: #ffffff;
   margin-bottom: 40px;
 }
-
+section#exec .page-divider {
+  background: linear-gradient(to right, #ffffff, #b2e1e8);
+}
 section#exec #exec-positions {
   max-width: 70%; 
   margin: 0 auto;
@@ -459,13 +551,7 @@ section#exec .exec-member p {
 
 /* Resources section */
 section#resources {
-  padding: 96px 0;
-}
-section#resources h1 {
-  margin: 0;
-  text-align: center;
-  font-size: 2.5em;
-  letter-spacing: 1px;
+  padding-bottom: 96px;
 }
 section#resources #resources-container {
   display: flex;
@@ -504,13 +590,7 @@ section#sponsors {
   color: #ffffff; */
   background-color: #ffffff;
   /* color: #a8a8a8; */
-  padding: 96px 0;
-}
-section#sponsors h1 {
-  margin: 0;
-  text-align: center;
-  font-size: 2.7em;
-  letter-spacing: 1px;
+  padding-bottom: 96px;
 }
 section#sponsors h2 {
   margin: 0 40px;
@@ -703,6 +783,24 @@ section#connect .contact-info {
   section#splash .splash-title h2 {
     font-size: 1.1em;
     margin: 10px 60px;
+  }
+
+  section#mission .mission-header h1 {
+    font-size: 2.2em;
+  }
+
+  section#mission #goal-container {
+    flex-direction: column;
+    gap: 30px;
+    padding: 0 20px;
+  }
+
+  section#mission #goal-container .goal {
+    max-width: 100%;
+  }
+
+  section#mission .mission-statement p {
+    font-size: 1.2em;
   }
 
   section#facts #fact-container {
