@@ -465,6 +465,7 @@ section#events #events #event-container .event h3 {
   font-size: 1.2em;
 }
 
+
 /* Executive Board Section */
 section#exec {
   background: url(../public/images/dark-background.svg);
@@ -535,7 +536,7 @@ section#exec .exec-member p {
   font-size: 1.2rem;
   color: #b2e1e8;
   font-family: "Source Sans Pro", sans-serif;
-}
+} 
 
 @media (max-width: 992px) {
   section#exec .row {
