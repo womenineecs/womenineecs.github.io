@@ -501,7 +501,7 @@ section#exec .row {
 section#exec .exec-member {
   background: rgba(255, 255, 255, 0.05);
   border-radius: 20px;
-  padding: 30px 10px 25px 10px;
+  padding: 30px 25px 25px 25px;
   width: 85%; 
   max-width: 320px;
   transition: transform 0.3s ease, box-shadow 0.3s ease;

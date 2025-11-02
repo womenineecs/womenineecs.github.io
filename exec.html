@@ -169,14 +169,16 @@
 
         // First row: 2 members
         var firstRow = document.createElement('div');
-        firstRow.className = 'row justify-content-center mb-5';
+        firstRow.className = 'row justify-content-center mb-4';
         executives.slice(0, 2).forEach(function(person) {
           var col = document.createElement('div');
           col.className = 'col-md-5 col-sm-6 exec-member mb-4';
           col.innerHTML = `
-            <img src="${person.image}" class="img-fluid mb-3 shadow" style="width:85%;max-width:320px;border-radius:20px;object-fit:cover;" alt="${person.name || 'Executive'}">
-            <h3 class="font-weight-bold">${person.name || 'Executive'}</h3>
-            <p class="text-muted">${person.role || 'Executive'}</p>
+            <div class="exec-card" data-name="${person.name}" data-role="${person.role}" data-image="${person.image}">
+              <img src="${person.image}" class="img-fluid mb-3 shadow" style="width:95%;max-width:400px;border-radius:20px;object-fit:cover;cursor:pointer;" alt="${person.name || 'Executive'}">
+              <h3 class="font-weight-bold">${person.name || 'Executive'}</h3>
+              <p class="text-muted">${person.role || 'Executive'}</p>
+            </div>
           `;
           firstRow.appendChild(col);
         });
@@ -185,19 +187,79 @@
         // Subsequent rows: 3 members each
         for (var i = 2; i < executives.length; i += 3) {
           var row = document.createElement('div');
-          row.className = 'row justify-content-center mb-5';
+          row.className = 'row justify-content-center mb-4';
           executives.slice(i, i + 3).forEach(function(person) {
             var col = document.createElement('div');
-            col.className = 'col-md-4 col-sm-6 exec-member mb-4';
+            col.className = 'col-md-5 col-sm-6 exec-member mb-4';
             col.innerHTML = `
-              <img src="${person.image}" class="img-fluid mb-3 shadow" style="width:85%;max-width:320px;border-radius:20px;object-fit:cover;" alt="${person.name || 'Executive'}">
-              <h3 class="font-weight-bold">${person.name || 'Executive'}</h3>
-              <p class="text-muted">${person.role || 'Executive'}</p>
+              <div class="exec-card" data-name="${person.name}" data-role="${person.role}" data-image="${person.image}">
+                <img src="${person.image}" class="img-fluid mb-4 shadow" style="width:90%;max-width:360px;border-radius:20px;object-fit:cover;cursor:pointer;" alt="${person.name || 'Executive'}">
+                <h3 class="font-weight-bold">${person.name || 'Executive'}</h3>
+                <p class="text-muted">${person.role || 'Executive'}</p>
+              </div>
             `;
             row.appendChild(col);
           });
           container.appendChild(row);
         }
+
+        // Enable modal on click
+        $(document).on('click', '.exec-card', function() {
+          var name = $(this).data('name');
+          var role = $(this).data('role');
+          var image = $(this).data('image');
+
+          var person = PEOPLE_DATA.executives.find(p => p.name === name);
+
+          $('#execModalName').text(name);
+          $('#execModalRole').text(role);
+          $('#execModalImage').attr('src', image);
+          $('#execModalBio').text(person && person.bio ? person.bio : "Bio coming soon!");
+
+          // Email and LinkedIn 
+          if (person && person.linkedin && person.linkedin.trim() !== '') {
+            $('#execModalLinkedIn').attr('href', person.linkedin).show();
+          } else {
+            $('#execModalLinkedIn').hide();
+          }
+
+          if (person && person.email && person.email.trim() !== '') {
+            const email = person.email.trim();
+            $('#execModalEmail')
+              .off('click')
+              .on('click', function(e) {
+                e.preventDefault();
+                navigator.clipboard.writeText(email).then(() => {
+                  const notif = $('<div></div>')
+                    .text('📋 Email copied to clipboard!')
+                    .css({
+                      position: 'fixed',
+                      bottom: '20px',
+                      right: '20px',
+                      background: '#28a745',
+                      color: 'white',
+                      padding: '14px 20px',
+                      borderRadius: '10px',
+                      fontSize: '1rem',
+                      fontWeight: '500',
+                      zIndex: 2000,
+                      opacity: 0,
+                      transition: 'opacity 0.3s'
+                    })
+                    .appendTo('body');
+                  setTimeout(() => notif.css('opacity', 1), 50);
+                  setTimeout(() => notif.fadeOut(400, () => notif.remove()), 1500);
+                }).catch(err => {
+                  console.error('Clipboard copy failed', err);
+                });
+              })
+              .show();
+          } else {
+            $('#execModalEmail').hide();
+          }
+
+          $('#execModal').modal('show');
+        });
       }
 
       if (document.readyState === 'loading') {
@@ -246,4 +308,80 @@
 	// ]]>
 </script>
 </body>
-  </html>
+  <!-- Executive Popup Modal -->
+  <div class="modal fade" id="execModal" tabindex="-1" role="dialog" aria-labelledby="execModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+      <div class="modal-content border-0 shadow-lg" style="overflow:hidden;border-radius:14px;animation:fadeIn 0.3s ease-in-out;">
+        <!-- Window-style top bar -->
+        <div class="d-flex align-items-center justify-content-between px-3 py-2 window-bar" style="background:#f1f1f1;border-bottom:1px solid #ddd;cursor:pointer;">
+          <div class="d-flex align-items-center">
+            <span class="window-dot close-dot" style="width:12px;height:12px;border-radius:50%;background:#ff5f57;display:inline-block;margin-right:6px;"></span>
+            <span class="window-dot" style="width:12px;height:12px;border-radius:50%;background:#ffbd2e;display:inline-block;margin-right:6px;"></span>
+            <span class="window-dot" style="width:12px;height:12px;border-radius:50%;background:#28c940;display:inline-block;"></span>
+          </div>
+          <span class="text-muted" style="font-size:0.9rem;">WiEECS Exec Team</span>
+          <span style="width:20px;"></span>
+        </div>
+
+        <script>
+          document.addEventListener('DOMContentLoaded', function() {
+            document.querySelectorAll('.window-dot').forEach(dot => {
+              dot.addEventListener('click', function() {
+                $('#execModal').modal('hide');
+              });
+            });
+          });
+        </script>
+
+        <div class="row no-gutters">
+          <div class="col-md-5 d-flex align-items-stretch bg-light">
+            <img id="execModalImage" src="" alt="Executive Headshot" class="w-100 h-100" style="object-fit:cover;">
+          </div>
+          <div class="col-md-7 p-4 d-flex flex-column justify-content-center">
+            <h3 id="execModalName" class="font-weight-bold mb-1" style="font-size:1.8rem;"></h3>
+            <h5 id="execModalRole" class="text-muted mb-3" style="font-size:1.1rem;"></h5>
+            <p id="execModalBio" style="line-height:1.6;color:#333;font-size:1rem;">Lorem ipsum dolor sit amet, consectetur adipiscing elit. This is a placeholder bio for now.</p>
+            <div id="execModalLinks" class="mt-3">
+              <a id="execModalEmail" href="#" target="_blank" class="mr-3" style="display:none;color:#555;font-size:1.4rem;">
+                <i class="fa fa-envelope"></i>
+              </a>
+              <a id="execModalLinkedIn" href="#" target="_blank" style="display:none;color:#0077b5;font-size:1.4rem;">
+                <i class="fa fa-linkedin"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <style>
+    @keyframes fadeIn {
+      from { opacity: 0; transform: scale(0.95); }
+      to { opacity: 1; transform: scale(1); }
+    }
+
+    .modal.fade .modal-dialog {
+      transition: transform 0.3s ease-out, opacity 0.3s ease-out;
+      transform: translateY(-30px);
+      opacity: 0;
+    }
+    .modal.fade.show .modal-dialog {
+      transform: translateY(0);
+      opacity: 1;
+    }
+
+    .modal-backdrop.show {
+      backdrop-filter: blur(80px) brightness(0.9);
+      background-color: rgba(0,0,0,0.9);
+    }
+
+    #execModal .modal-content {
+      background: #fff;
+      border-radius: 14px;
+    }
+    #execModal h3, #execModal h5, #execModal p {
+      font-family: 'Roboto', sans-serif;
+    }
+  </style>
+</html>
