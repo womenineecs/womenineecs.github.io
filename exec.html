@@ -81,8 +81,9 @@
       <h1 class="nixie title">Executive Board</h1>
       <div class="page-divider"></div>
     </div>
-    <div id="exec-positions">
-      <div class="container-fluid text-center">
+    <div id="exec-positions" class="container-fluid text-center">
+      <div id="exec-container" class="container"></div>
+      <!-- <div class="container-fluid text-center">
         <div class="row justify-content-center mb-5">
           <div class="col-md-5 col-sm-6 exec-member">
             <img src="public/images/exec/2024-2025/Sabrina_Do.jpg" class="img-fluid mb-3 shadow" style="width: 85%; max-width: 320px; border-radius: 20px; object-fit: cover;">
@@ -113,7 +114,7 @@
             <p class="text-muted">Position 5</p>
           </div>
         </div>
-      </div>
+      </div> -->
     </div>
   </section>
 
@@ -148,9 +149,64 @@
   <script>
     baguetteBox.run('.tz-gallery');
   </script>
-  <!-- <script src="js/data.js"></script> -->
-  <script src="js/populate.js"></script>
+  <script src="js/data.js"></script>
   <script src="js/main.js"></script>
+  <script>
+    (function() {
+      function renderExecs() {
+        var container = document.getElementById('exec-container');
+        if (!container) return;
+
+        container.innerHTML = '';
+
+        if (typeof PEOPLE_DATA === 'undefined' || !PEOPLE_DATA.executives) {
+          console.error('[exec] PEOPLE_DATA.executives not found. Is js/data.js loaded?');
+          return;
+        }
+
+        var executives = PEOPLE_DATA.executives;
+        if (!executives || !executives.length) return;
+
+        // First row: 2 members
+        var firstRow = document.createElement('div');
+        firstRow.className = 'row justify-content-center mb-5';
+        executives.slice(0, 2).forEach(function(person) {
+          var col = document.createElement('div');
+          col.className = 'col-md-5 col-sm-6 exec-member mb-4';
+          col.innerHTML = `
+            <img src="${person.image}" class="img-fluid mb-3 shadow" style="width:85%;max-width:320px;border-radius:20px;object-fit:cover;" alt="${person.name || 'Executive'}">
+            <h3 class="font-weight-bold">${person.name || 'Executive'}</h3>
+            <p class="text-muted">${person.role || 'Executive'}</p>
+          `;
+          firstRow.appendChild(col);
+        });
+        container.appendChild(firstRow);
+
+        // Subsequent rows: 3 members each
+        for (var i = 2; i < executives.length; i += 3) {
+          var row = document.createElement('div');
+          row.className = 'row justify-content-center mb-5';
+          executives.slice(i, i + 3).forEach(function(person) {
+            var col = document.createElement('div');
+            col.className = 'col-md-4 col-sm-6 exec-member mb-4';
+            col.innerHTML = `
+              <img src="${person.image}" class="img-fluid mb-3 shadow" style="width:85%;max-width:320px;border-radius:20px;object-fit:cover;" alt="${person.name || 'Executive'}">
+              <h3 class="font-weight-bold">${person.name || 'Executive'}</h3>
+              <p class="text-muted">${person.role || 'Executive'}</p>
+            `;
+            row.appendChild(col);
+          });
+          container.appendChild(row);
+        }
+      }
+
+      if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', renderExecs);
+      } else {
+        renderExecs();
+      }
+    })();
+  </script>
   <!-- Code injected by live-server -->
 <script>
 	// <![CDATA[  <-- For SVG support
