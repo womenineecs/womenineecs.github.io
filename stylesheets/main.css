@@ -482,19 +482,19 @@ section#exec .page-divider {
   background: linear-gradient(to right, #ffffff, #b2e1e8);
 }
 section#exec #exec-positions {
-  max-width: 70%; 
+  max-width: 70%;
   margin: 0 auto;
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 1rem; 
+  gap: 1rem;
 }
 
 section#exec .row {
   display: flex;
-  justify-content: space-evenly; 
-  flex-wrap: nowrap; 
-  gap: 2.5rem; 
+  justify-content: space-evenly;
+  flex-wrap: nowrap;
+  gap: 2.5rem;
   width: 100%;
 }
 
@@ -502,7 +502,7 @@ section#exec .exec-member {
   padding: 18px 18px 23px 18px; /* even vertical spacing inside card */
   background: rgba(255, 255, 255, 0.05);
   border-radius: 20px;
-  width: 85%; 
+  width: 85%;
   max-width: 320px;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   display: flex;
@@ -537,7 +537,7 @@ section#exec .exec-member p {
   font-size: 1.2rem;
   color: #b2e1e8;
   font-family: "Source Sans Pro", sans-serif;
-} 
+}
 
 @media (max-width: 992px) {
   section#exec .row {
@@ -557,11 +557,13 @@ section#resources {
 }
 section#resources #resources-container {
   display: flex;
-  margin: 0px 12vw 0;
+  margin: 0px 8vw 0; /* reduce left margin, effectively shifting everything right */
+  padding-left: 20px; /* optional extra nudge to the right */
 }
+
 section#resources #resources-container .column {
   flex: 1;
-  margin: 20px;
+  margin: 20px 20px 20px 0; /* remove some left spacing to shift content right */
 }
 section#resources #resources-container .column h2 {
   font-size: 1.2em;
@@ -582,6 +584,168 @@ section#resources #resources-container .column p {
   font-family: "Source Sans Pro";
   font-size: 1em;
   font-weight: 300;
+}
+/* Hide old two-column layout */
+#resources-container {
+  display: none !important;
+}
+
+/* New layout wrapper */
+#resources-list {
+  margin: 0 12vw;
+  margin-top: 40px;
+}
+
+/* Group headings */
+.resource-group-title {
+  font-size: 1.6em;
+  margin: 60px 0 30px;
+  font-weight: 600;
+}
+
+/* Resource item layout */
+.resource-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 40px;
+  margin-bottom: 60px;
+  padding-bottom: 25px;
+  border-bottom: 1px solid #e7e7e7;
+  padding-left: 60px; /* shifts each item to the right */
+}
+/* Left side: title + button */
+.resource-left {
+  min-width: 260px;
+  margin-top: -25px;   /* shifts left column upward */
+}
+
+.resource-left h3 {
+  font-family: "Source Sans Pro", sans-serif;
+  font-weight: 700;
+  margin-bottom: 16px;  /* consistent spacing */
+}
+
+/* Purple button */
+.resource-button {
+  display: inline-block;
+  background-color: #664ea6;
+  color: white !important;
+  padding: 14px 28px;
+  border-radius: 14px;
+  font-weight: 600;
+  text-decoration: none;
+  letter-spacing: 0.5px;
+  transition: 0.2s;
+}
+
+.resource-button:hover {
+  background-color: #523e8e;
+}
+
+/* Right side text */
+.resource-right {
+  margin-top: -4px;   /* aligns text with raised left column */
+}
+
+.resource-right p {
+  font-family: "Source Sans Pro";
+  font-size: 1em;
+  font-weight: 300;
+  line-height: 1.6;
+  max-width: 700px;
+  margin: 0;          /* aligns perfectly with header + button */
+}
+/* Mobile responsive layout */
+@media (max-width: 768px) {
+  .resource-item {
+    flex-direction: column;
+  }
+  .resource-left {
+    margin-top: 0;
+    margin-bottom: 15px;
+  }
+  .resource-right {
+    margin-top: 0;
+  }
+}
+/* adjust last resource-item spacing */
+#resources-list .resource-item:last-of-type {
+  margin-bottom: 0; /* remove extra bottom margin */
+}
+/*Contact Portion */
+/* Reduce the gap above contact section */
+#contact-section {
+  padding-top: 40px;    /* reduce top padding */
+  padding-bottom: 80px;
+  padding-left: 12vw;
+  padding-right: 12vw;
+  margin-top: 0;        /* remove extra margin */
+}
+/* Reduce bottom margin of the last heading in Resources */
+#resources .resource-group-title:last-of-type {
+  margin-bottom: 10px; /* instead of 40px */
+}
+
+#contact-section .contact-container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 20px;
+}
+
+/* Reset heading margin to match Resources style */
+#contact-section .contact-heading {
+  font-family: "Nixie One", serif;
+  font-size: 2em;
+  font-weight: 400;
+  margin: 0 0 20px 0;   /* top 0, bottom 20px */
+  padding-left: 100px;
+}
+
+#contact-section .contact-text p {
+  font-size: 1.2em;    /* slightly bigger text */
+  line-height: 1.6;
+  padding-left: 100px; /* shift text right */
+}
+
+#contact-section .contact-button-wrapper {
+  padding-left: 100px; /* align button with text */
+}
+
+#contact-section .contact-text a {
+  color: #98c4e0;
+  text-decoration: none;
+}
+
+#contact-section .contact-text a:hover {
+  color: #b2e1e8;
+}
+
+/* #contact-section .contact-button-wrapper {
+  margin-top: 20px;
+} */
+
+/* Reuse resource-button styling */
+#contact-section .resource-button {
+  background-color: #6a43c1;
+  color: white !important;
+  padding: 12px 26px;
+  border-radius: 14px;
+  font-weight: 600;
+  text-decoration: none;
+  letter-spacing: 0.5px;
+  transition: 0.2s;
+}
+
+#contact-section .resource-button:hover {
+  background-color: #5835a3;
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+  #contact-section {
+    padding: 50px 5vw;
+  }
 }
 
 /* Sponsors Section */
