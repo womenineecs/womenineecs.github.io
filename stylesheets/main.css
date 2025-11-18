@@ -482,7 +482,7 @@ section#exec .page-divider {
   background: linear-gradient(to right, #ffffff, #b2e1e8);
 }
 section#exec #exec-positions {
-  max-width: 70%;
+  max-width: 90%;
   margin: 0 auto;
   display: flex;
   flex-direction: column;
@@ -499,7 +499,7 @@ section#exec .row {
 }
 
 section#exec .exec-member {
-  padding: 18px 18px 23px 18px; /* even vertical spacing inside card */
+  padding: 18px 18px 23px 18px; 
   background: rgba(255, 255, 255, 0.05);
   border-radius: 20px;
   width: 85%;
@@ -517,11 +517,11 @@ section#exec .exec-member:hover {
 
 section#exec .exec-member img {
   width: 85%;
-  max-width: 320px;
-  aspect-ratio: 1/1;
+  max-width: 340px;
+  aspect-ratio: 1/1.03;
   border-radius: 20px;
   object-fit: cover;
-  margin-top: 15px; /* add small margin to balance top spacing */
+  margin-top: 15px; 
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
 }
 
