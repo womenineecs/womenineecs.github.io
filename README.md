@@ -15,6 +15,7 @@
 
 This is Women in EECS's primary website.
 
+
 ## Setup
 
 1. Install [Node.js LTS](https://nodejs.org/en/download)
