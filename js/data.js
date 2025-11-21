@@ -233,7 +233,7 @@ const PEOPLE_DATA = {
   {
     "name": "Maureen Zhang",
     "role": "Mentorship Team",
-    "image": "public/images/exec/stock.jpg",
+    "image": "public/images/exec/2025-2026/Maureen.jpg",
     "bio": "Hey! I'm Maureen, and I'm studying Math (18) & CS (6-3), with a particular interest in AI-driven tools for social and economic mobility, multimodal AI, and scalable AI/ML infrastructure. In my free time, I love writing, visiting art museums, running, and doomscrolling Depop!"
   },
   {
