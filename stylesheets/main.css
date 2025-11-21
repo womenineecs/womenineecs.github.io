@@ -134,6 +134,24 @@ body div {
   cursor: pointer;
 }
 
+/* Mobile menu toggle - hidden by default */
+#navbar .mobile-menu-toggle {
+  display: none;
+  position: fixed;
+  right: 25px;
+  top: 3px;
+  font-size: 2em;
+  color: #a8a8a8;
+  cursor: pointer;
+  padding: 10px;
+  transition: color 0.2s;
+  z-index: 101;
+}
+
+#navbar .mobile-menu-toggle:hover {
+  color: #b2e1e8;
+}
+
 /* Splash Section */
 section#splash {
   background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
@@ -239,7 +257,6 @@ section#mission {
   background: linear-gradient(to bottom, #ffffff 0%, #f8fbfc 100%);
   padding-bottom: 100px;
 }
-
 
 section#mission .club-photo-container {
   text-align: center;
@@ -465,7 +482,6 @@ section#events #events #event-container .event h3 {
   font-size: 1.2em;
 }
 
-
 /* Executive Board Section */
 section#exec {
   background: url(../public/images/dark-background.svg);
@@ -499,7 +515,7 @@ section#exec .row {
 }
 
 section#exec .exec-member {
-  padding: 18px 18px 23px 18px; 
+  padding: 18px 18px 23px 18px;
   background: rgba(255, 255, 255, 0.05);
   border-radius: 20px;
   width: 85%;
@@ -521,7 +537,7 @@ section#exec .exec-member img {
   aspect-ratio: 1/1.03;
   border-radius: 20px;
   object-fit: cover;
-  margin-top: 15px; 
+  margin-top: 15px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
 }
 
@@ -616,13 +632,13 @@ section#resources #resources-container .column p {
 /* Left side: title + button */
 .resource-left {
   min-width: 260px;
-  margin-top: -25px;   /* shifts left column upward */
+  margin-top: -25px; /* shifts left column upward */
 }
 
 .resource-left h3 {
   font-family: "Source Sans Pro", sans-serif;
   font-weight: 700;
-  margin-bottom: 16px;  /* consistent spacing */
+  margin-bottom: 16px; /* consistent spacing */
 }
 
 /* Purple button */
@@ -644,7 +660,7 @@ section#resources #resources-container .column p {
 
 /* Right side text */
 .resource-right {
-  margin-top: -4px;   /* aligns text with raised left column */
+  margin-top: -4px; /* aligns text with raised left column */
 }
 
 .resource-right p {
@@ -653,7 +669,7 @@ section#resources #resources-container .column p {
   font-weight: 300;
   line-height: 1.6;
   max-width: 700px;
-  margin: 0;          /* aligns perfectly with header + button */
+  margin: 0; /* aligns perfectly with header + button */
 }
 /* Mobile responsive layout */
 @media (max-width: 768px) {
@@ -675,11 +691,11 @@ section#resources #resources-container .column p {
 /*Contact Portion */
 /* Reduce the gap above contact section */
 #contact-section {
-  padding-top: 40px;    /* reduce top padding */
+  padding-top: 40px; /* reduce top padding */
   padding-bottom: 80px;
   padding-left: 12vw;
   padding-right: 12vw;
-  margin-top: 0;        /* remove extra margin */
+  margin-top: 0; /* remove extra margin */
 }
 /* Reduce bottom margin of the last heading in Resources */
 #resources .resource-group-title:last-of-type {
@@ -698,12 +714,12 @@ section#resources #resources-container .column p {
   font-family: "Nixie One", serif;
   font-size: 2em;
   font-weight: 400;
-  margin: 0 0 20px 0;   /* top 0, bottom 20px */
+  margin: 0 0 20px 0; /* top 0, bottom 20px */
   padding-left: 100px;
 }
 
 #contact-section .contact-text p {
-  font-size: 1.2em;    /* slightly bigger text */
+  font-size: 1.2em; /* slightly bigger text */
   line-height: 1.6;
   padding-left: 100px; /* shift text right */
 }
@@ -812,7 +828,7 @@ section#sponsors #sponsor-container .sponsor img {
   padding: 12px 24px;
   background-color: #664ea6;
   color: #ffffff;
-  font-family: 'Source Sans Pro', sans-serif;
+  font-family: "Source Sans Pro", sans-serif;
   text-decoration: none;
   border: none;
   border-radius: 8px;
@@ -832,8 +848,8 @@ section#sponsors #sponsor-container .sponsor img {
 #sponsors {
   text-align: center;
   margin: 60px auto 0 auto; /* center horizontally */
-  max-width: 1200px;         /* optional, prevents overflow on large screens */
-  padding: 0 20px;           /* optional, prevents overflow on small screens */
+  max-width: 1200px; /* optional, prevents overflow on large screens */
+  padding: 0 20px; /* optional, prevents overflow on small screens */
 }
 
 /* Tier headings */
@@ -868,11 +884,18 @@ section#sponsors #sponsor-container .sponsor img {
   font-family: "Nixie One", cursive;
 }
 
-section#sponsors h2.tier-heading.gold { color: #d4af37; }
-section#sponsors h2.tier-heading.silver { color: #8d8d8d; }
-section#sponsors h2.tier-heading.bronze { color: #cd7f32; }
-section#sponsors h2.tier-heading.past { color: #2a2727; }
-
+section#sponsors h2.tier-heading.gold {
+  color: #d4af37;
+}
+section#sponsors h2.tier-heading.silver {
+  color: #8d8d8d;
+}
+section#sponsors h2.tier-heading.bronze {
+  color: #cd7f32;
+}
+section#sponsors h2.tier-heading.past {
+  color: #2a2727;
+}
 
 /* Connect section */
 section#connect {
@@ -912,8 +935,49 @@ section#connect .contact-info {
     flex-direction: column;
   }
 
-  #navbar {
+  /* Show hamburger menu on mobile */
+  #navbar .mobile-menu-toggle {
+    display: block;
+  }
+
+  /* Hide menu by default on mobile */
+  #navbar .menu {
     display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background-color: #ffffff;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+    animation: slideDown 0.3s ease-out;
+  }
+
+  /* Show menu when open */
+  #navbar .menu.mobile-open {
+    display: flex;
+  }
+
+  /* Slide down animation for mobile menu */
+  @keyframes slideDown {
+    from {
+      opacity: 0;
+      transform: translateY(-10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  #navbar .menu .item {
+    padding: 1.2em 1.5em;
+    border-bottom: 1px solid #f0f0f0;
+    text-align: center;
+  }
+
+  #navbar .menu .item:last-child {
+    border-bottom: none;
   }
 
   section#mission #goal-container {
