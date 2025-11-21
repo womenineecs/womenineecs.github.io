@@ -85,18 +85,43 @@ function populateEvents(events) {
   // Populate upcoming events
   const upcomingContainer = document.querySelector("#upcoming-events .row");
   if (upcomingContainer) {
+    let html = "";
+  
+    for (const event of upcomingEvents) {
+      try {
+        html += createEventCard(event);
+      } catch (err) {
+        console.warn("Error with event, skipping:", event, err);
+        continue;
+      }
+    }
+  
     upcomingContainer.innerHTML =
-      upcomingEvents.length > 0
-        ? upcomingEvents.map((event) => createEventCard(event)).join("")
-        : '<div class="col-12"><p class="sans" style="text-align: center; padding: 20px; font-size: 1.4em; line-height: 1.8; color: #555; font-weight: 400;">No upcoming events at this time. Check back soon!</p></div>';
-  }
+      html ||
+      '<div class="col-12"><p class="sans" style="text-align: center; padding: 20px; font-size: 1.4em; line-height: 1.8; color: #555; font-weight: 400;">No upcoming events at this time. Check back soon!</p></div>';
+  }  
 
   // Populate past events
   const pastContainer = document.querySelector("#past-events .row");
   if (pastContainer) {
-    pastContainer.innerHTML = pastEvents
-      .map((event) => createEventCard(event))
-      .join("");
+    let html = "";
+  
+    for (const event of pastEvents) {
+      try {
+        html += createEventCard(event);
+      } catch (err) {
+        console.error("Error creating past event card, skipping:", event, err);
+        continue; // move to the next event
+      }
+    }
+  
+    pastContainer.innerHTML = html || `
+      <div class="col-12">
+        <p class="sans" style="text-align: center; padding: 20px; font-size: 1.4em; line-height: 1.8; color: #555; font-weight: 400;">
+          No past events available.
+        </p>
+      </div>
+    `;
   }
 }
 
@@ -107,7 +132,9 @@ function createEventCard(event) {
     <div class="col-sm-6 col-md-4">
       <div class="thumbnail">
         <a class="lightbox" href="${event.image}">
-          <img src="${event.image}" alt="${event.title}" decoding="async">
+          <img referrerPolicy="no-referrer" src="${event.image}" 
+               alt="${event.title}" 
+               decoding="async"
         </a>
         <div class="overlay">
           <div class="text">${event.title}</div>
