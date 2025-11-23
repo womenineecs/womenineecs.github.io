@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+  <!DOCTYPE html>
 <html>
 
 <head lang="en">
@@ -7,8 +7,8 @@
   <link rel='icon' href='/public/images/favicon.png' type='image/x-icon'>
 
   <!-- Preload critical images -->
-  <link rel="preload" as="image" href="public/images/dark-background.svg">
-  
+  <!-- <link rel="preload" as="image" href="public/images/dark-background.svg"> -->
+
   <!-- Image optimization CDN -->
   <script src="https://cdn.jsdelivr.net/npm/lazysizes@5.3.2/lazysizes.min.js" async></script>
 
@@ -63,7 +63,6 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.8.1/baguetteBox.min.css">
 
 </head>
-
 <body>
   <div id="navbar">
     <div class="menu">
@@ -79,24 +78,36 @@
     </div>
   </div>
 
-  <!-- Splash section -->
-  <a name="splash"></a>
-  <section id="splash">
-    <div class="splash-title">
-      <h1 class="nixie title">Women in EECS</h1>
-      <h2 class="sans">MIT's Undergraduate Women in Electrical Engineering and Computer Science</h2>
+  <!-- Sponsors section -->
+  <a name="sponsors"></a>
+  <section id="sponsors">
+    <div class="page-header">
+      <h1 class="nixie title">Sponsors</h1>
+      <div class="page-divider"></div>
     </div>
-    <!-- Upcoming Events Alert -->
-    <div id="upcoming-events-alert" class="upcoming-alert" style="display: none;">
-      <div class="alert-content">
-        <i class="fa fa-calendar-check-o"></i>
-        <span id="alert-text"></span>
-        <a href="events.html" class="alert-link">View Events →</a>
-      </div>
+
+    <!-- Gold Sponsors -->
+    <h2 id="gold-heading" class="nixie tier-heading gold">Gold Sponsors</h2>
+    <div id="gold-sponsor-container" class="sponsor-row"></div>
+
+    <!-- Silver Sponsors -->
+    <h2 id="silver-heading" class="nixie tier-heading silver">Silver Sponsors</h2>
+    <div id="silver-sponsor-container" class="sponsor-row"></div>
+
+    <!-- Bronze Sponsors -->
+    <h2 id="bronze-heading" class="nixie tier-heading bronze">Bronze Sponsors</h2>
+    <div id="bronze-sponsor-container" class="sponsor-row"></div>
+
+    <!-- Past Sponsors -->
+    <h2 id="past-heading" class="nixie tier-heading past">Past Sponsors</h2>
+    <div id="past-sponsor-container" class="sponsor-row"></div>
+    <div id="sponsor-text">
+      <p>Looking to sponsor, share job postings with our members, or co-host events? Click the button below for details, or reach out to <a href="mailto:wieecs-exec@mit.edu"> wieecs-exec@mit.edu </a></p>
+      <p><a href="public/assets/wieecs-sponsorship.pdf" target="_blank" class="custom-btn">Package <br> Information</a></p>
     </div>
   </section>
 
-<!-- Connect section -->
+  <!-- Connect section -->
   <a name="connect"> </a>
   <section id="connect">
     <div class="icons">
@@ -116,13 +127,12 @@
         <i class="fa fa-medium"></i>
       </a> -->
       <a href="https://mailman.mit.edu:444/mailman/listinfo/wieecs" target="_blank">
-        <i class="fa fa-address-book"></i>
+        <i class="fa fa-bars"></i>
       </a>
       <div class="contact-info">
         <a href="public/assets/constitution.pdf" target="_blank"> Women in EECS @ MIT</a>
       </div>
   </section>
-
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.8.1/baguetteBox.min.js"></script>
   <script>
@@ -131,6 +141,5 @@
   <script src="js/data.js"></script>
   <script src="js/populate.js"></script>
   <script src="js/main.js"></script>
-</body>
-
-</html>
+  </body>
+  </html>

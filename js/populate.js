@@ -1,106 +1,175 @@
 const maxEvents = 6;
 
+// Google Sheets CSV URL - replace with your published sheet URL
+const GOOGLE_SHEETS_CSV_URL =
+  "https://docs.google.com/spreadsheets/d/e/2PACX-1vSCj2n9VNPuirjkT8gbPdlDZC0HAMszyipQlcu7k5-wNV0tVjOSnlleY9YhMc5-2jA8_eAUgJ_prFXq/pub?output=csv"; // Add your Google Sheets CSV URL here
+
 populateSponsors(SPONSORS_DATA.sponsors);
-populateEvents(EVENTS_DATA.events.slice(0, maxEvents));
+
+// Load events from both local data and Google Sheets
+if (GOOGLE_SHEETS_CSV_URL) {
+  loadEventsFromGoogleSheets();
+} else {
+  // Only local events if no Google Sheets URL
+  populateEvents(EVENTS_DATA.events);
+}
+
 populateExecutives(PEOPLE_DATA.executives);
 
 function populateSponsors(sponsors) {
-  const sponsorContainer = document.getElementById("sponsor-container");
+  const tiers = ["gold", "silver", "bronze", "past"];
 
-  // Separate sponsors by tier
-  const goldSponsors = sponsors.filter((sponsor) => sponsor.tier === "gold");
-  const silverSponsors = sponsors.filter(
-    (sponsor) => sponsor.tier === "silver"
-  );
-  const bronzeSponsors = sponsors.filter(
-    (sponsor) => sponsor.tier === "bronze"
-  );
+  tiers.forEach((tier) => {
+    const container = document.getElementById(`${tier}-sponsor-container`);
+    const heading = document.getElementById(`${tier}-heading`);
+    if (!container) return;
 
-  // Create HTML for each tier
-  const goldHTML = `
-    <div class="gold">
-      ${goldSponsors
-        .map(
-          (sponsor) => `
+    // Filter sponsors for this tier
+    const tierSponsors = sponsors.filter((s) => s.tier === tier);
+
+    // Hide both heading + container if empty
+    if (tierSponsors.length === 0) {
+      if (heading) heading.style.display = "none";
+      container.style.display = "none";
+      return;
+    }
+
+    // Otherwise, populate normally
+    container.innerHTML = tierSponsors
+      .map(
+        (s) => `
         <div class="sponsor">
-          <a href="${sponsor.url}" target="_blank">
-            <img src="${sponsor.image}" alt="${sponsor.name}" loading="lazy" decoding="async">
+          <a href="${s.url}" target="_blank">
+            <img src="${s.image}" alt="${s.name}" loading="lazy" decoding="async">
           </a>
         </div>
       `
-        )
-        .join("")}
-    </div>
-  `;
-
-  const silverHTML = `
-    <div class="silver">
-      ${silverSponsors
-        .map(
-          (sponsor) => `
-        <div class="sponsor">
-          <a href="${sponsor.url}" target="_blank">
-            <img src="${sponsor.image}" alt="${sponsor.name}" loading="lazy" decoding="async">
-          </a>
-        </div>
-      `
-        )
-        .join("")}
-    </div>
-  `;
-
-  const bronzeHTML = `
-    <div class="bronze">
-      ${bronzeSponsors
-        .map(
-          (sponsor) => `
-        <div class="sponsor">
-          <a href="${sponsor.url}" target="_blank">
-            <img src="${sponsor.image}" alt="${sponsor.name}" loading="lazy" decoding="async">
-          </a>
-        </div>
-      `
-        )
-        .join("")}
-    </div>
-  `;
-
-  // Combine the HTML: gold on top, then silver, then bronze
-  sponsorContainer.innerHTML = goldHTML + silverHTML + bronzeHTML;
+      )
+      .join("");
+  });
 }
 
+document.addEventListener("DOMContentLoaded", () => {
+  populateSponsors(SPONSORS_DATA.sponsors);
+});
+
+document.addEventListener("DOMContentLoaded", () => {
+  populateSponsors(SPONSORS_DATA.sponsors);
+});
+
 function populateEvents(events) {
-  const galleryContainer = document.querySelector(".tz-gallery .row");
-  galleryContainer.innerHTML =
-    events
-      .map(
-        (event) => `
-        <div class="col-sm-6 col-md-4">
-            <div class="thumbnail">
-                <a class="lightbox" href="${event.image}">
-                    <img src="${event.image}" alt="${event.title}" decoding="async">
-                </a>
-                <div class="overlay">
-                    <div class="text">${event.title}</div>
-                </div>
-                <div class="caption">
-                    <h3>${event.date}</h3>
-                </div>
-            </div>
-        </div>
-    `
-      )
-      .join("") +
-    `
-        <div class="col-sm-6 col-md-4">
-            <div class="thumbnail">
-                <img src="public/images/events/def.png" style="opacity:0;">
-                <div class="text more">
-                    <a href="https://calendar.google.com/calendar/u/0?cid=MjZhNWJhY2I0MTI0MTc2Zjc5YTRmMWM3NjJiZGUzMjU5MmU2MDU1MmFkNmE4ZTk4NjhiMDIwMTdlMmVkODc5YkBncm91cC5jYWxlbmRhci5nb29nbGUuY29t">...and more!</a>
-                </div>
-            </div>
-        </div>
+  const today = new Date();
+  today.setHours(0, 0, 0, 0);
+
+  // Separate events into upcoming and past
+  const upcomingEvents = [];
+  const pastEvents = [];
+
+  events.forEach((event) => {
+    const eventDate = new Date(event.date);
+    eventDate.setHours(0, 0, 0, 0);
+
+    if (eventDate >= today) {
+      upcomingEvents.push(event);
+    } else {
+      pastEvents.push(event);
+    }
+  });
+
+  // Sort upcoming events by date (earliest first)
+  upcomingEvents.sort((a, b) => new Date(a.date) - new Date(b.date));
+
+  // Sort past events by date (most recent first)
+  pastEvents.sort((a, b) => new Date(b.date) - new Date(a.date));
+
+  // Populate upcoming events
+  const upcomingContainer = document.querySelector("#upcoming-events .row");
+  if (upcomingContainer) {
+    let html = "";
+  
+    for (const event of upcomingEvents) {
+      try {
+        html += createEventCard(event);
+      } catch (err) {
+        console.warn("Error with event, skipping:", event, err);
+        continue;
+      }
+    }
+  
+    upcomingContainer.innerHTML =
+      html ||
+      '<div class="col-12"><p class="sans" style="text-align: center; padding: 20px; font-size: 1.4em; line-height: 1.8; color: #555; font-weight: 400;">No upcoming events at this time. Check back soon!</p></div>';
+  }  
+
+  // Populate past events
+  const pastContainer = document.querySelector("#past-events .row");
+  if (pastContainer) {
+    let html = "";
+  
+    for (const event of pastEvents) {
+      try {
+        html += createEventCard(event);
+      } catch (err) {
+        console.error("Error creating past event card, skipping:", event, err);
+        continue; // move to the next event
+      }
+    }
+  
+    pastContainer.innerHTML = html || `
+      <div class="col-12">
+        <p class="sans" style="text-align: center; padding: 20px; font-size: 1.4em; line-height: 1.8; color: #555; font-weight: 400;">
+          No past events available.
+        </p>
+      </div>
     `;
+  }
+}
+
+function createEventCard(event) {
+  const calendarUrl = createGoogleCalendarUrl(event);
+
+  return `
+    <div class="col-sm-6 col-md-4">
+      <div class="thumbnail">
+        <a class="lightbox" href="${event.image}">
+          <img referrerPolicy="no-referrer" src="${event.image}" 
+               alt="${event.title}" 
+               decoding="async"
+        </a>
+        <div class="overlay">
+          <div class="text">${event.title}</div>
+        </div>
+        <div class="caption">
+          <h3>${event.date}</h3>
+          <a href="${calendarUrl}" target="_blank" class="add-to-calendar-btn">
+            <i class="fa fa-calendar-plus-o"></i> Add to Google Calendar
+          </a>
+        </div>
+      </div>
+    </div>
+  `;
+}
+
+function createGoogleCalendarUrl(event) {
+  const eventDate = new Date(event.date);
+
+  // Format: YYYYMMDD
+  const dateStr = eventDate.toISOString().split("T")[0].replace(/-/g, "");
+
+  // Create all-day event (00:00 to 23:59)
+  const startDateTime = dateStr;
+  const endDateTime = dateStr;
+
+  const params = new URLSearchParams({
+    action: "TEMPLATE",
+    text: event.title,
+    dates: `${startDateTime}/${endDateTime}`,
+    details: `WiEECS @ MIT Event: ${event.title}`,
+    location: "MIT",
+    ctz: "America/New_York",
+  });
+
+  return `https://calendar.google.com/calendar/render?${params.toString()}`;
 }
 
 function populateExecutives(executives) {
@@ -130,4 +199,133 @@ function createExecutiveProfile(executive) {
             <h3>${executive.role}</h3>
         </div>
     `;
+}
+
+// Load events from Google Sheets and combine with local data
+async function loadEventsFromGoogleSheets() {
+  try {
+    const response = await fetch(GOOGLE_SHEETS_CSV_URL);
+    const csvText = await response.text();
+    const googleSheetEvents = parseCSVToEvents(csvText);
+
+    // Google Sheets events are added to the end of the local events
+    const allEvents = [...EVENTS_DATA.events, ...googleSheetEvents];
+
+    populateEvents(allEvents);
+  } catch (error) {
+    // Fallback to local data only
+    populateEvents(EVENTS_DATA.events);
+  }
+}
+
+// Parse CSV to events array
+function parseCSVToEvents(csv) {
+  const lines = csv.split("\n");
+  const events = [];
+
+  // Skip header row (index 0) and start from index 1
+  for (let i = 1; i < lines.length; i++) {
+    const line = lines[i].trim();
+    if (!line) continue;
+
+    // Split by comma, but handle quoted fields
+    const fields = parseCSVLine(line);
+
+    if (fields.length >= 3) {
+      // Assuming columns: Timestamp, Title, Date, Image URL/Drive URL
+      // Adjust indices based on your form structure
+      const imageUrl = fields[3].trim();
+
+      events.push({
+        title: fields[1].trim(), // Column B: Event Title
+        date: formatDate(fields[2].trim()), // Column C: Event Date
+        image: convertGoogleDriveUrl(imageUrl), // Column D: Image (convert if Google Drive)
+      });
+    }
+  }
+
+  return events;
+}
+
+// Convert Google Drive URL to direct image URL
+function convertGoogleDriveUrl(url) {
+  if (!url) return "";
+
+  // If it's already a local path, return as-is
+  if (url.startsWith("public/")) {
+    return url;
+  }
+
+  // Handle Google Drive URLs
+  // Format 1: https://drive.google.com/open?id=FILE_ID
+  // Format 2: https://drive.google.com/file/d/FILE_ID/view
+  // Format 3: https://drive.google.com/uc?id=FILE_ID
+
+  let fileId = "";
+
+  // Extract file ID from various Google Drive URL formats
+  if (url.includes("drive.google.com")) {
+    // Format 1: ?id=FILE_ID (most common from Forms)
+    const idMatch = url.match(/[?&]id=([^&]+)/);
+    if (idMatch) {
+      fileId = idMatch[1];
+    }
+
+    // Format 2: /d/FILE_ID/ (if not found yet)
+    if (!fileId) {
+      const dMatch = url.match(/\/d\/([^/]+)/);
+      if (dMatch) {
+        fileId = dMatch[1];
+      }
+    }
+  }
+
+  // Convert to direct image URL if we found a file ID
+  if (fileId) {
+    const directUrl = `https://drive.google.com/thumbnail?id=${fileId}&sz=w1000`;
+    console.log(`Converted Drive URL to direct image: ${directUrl}`);
+    return directUrl;
+  }
+
+  // Return original URL if not a Drive URL
+  console.log(`Using original URL (not Drive): ${url}`);
+  return url;
+}
+
+// Parse a single CSV line handling quoted fields
+function parseCSVLine(line) {
+  const fields = [];
+  let currentField = "";
+  let insideQuotes = false;
+
+  for (let i = 0; i < line.length; i++) {
+    const char = line[i];
+
+    if (char === '"') {
+      insideQuotes = !insideQuotes;
+    } else if (char === "," && !insideQuotes) {
+      fields.push(currentField);
+      currentField = "";
+    } else {
+      currentField += char;
+    }
+  }
+  fields.push(currentField); // Add the last field
+
+  return fields;
+}
+
+// Format date from Google Sheets format to MM/DD/YYYY
+function formatDate(dateString) {
+  // Handle various date formats
+  const date = new Date(dateString);
+  if (isNaN(date.getTime())) {
+    return dateString; // Return as-is if not parseable
+  }
+
+  const month = date.getMonth() + 1;
+  const day = date.getDate();
+  const year = date.getFullYear();
+
+  return `${month}/${day}/${year}`;
 }
