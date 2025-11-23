@@ -214,7 +214,9 @@ const PEOPLE_DATA = {
     "name": "Angela Yang",
     "role": "Development Team",
     "image": "public/images/exec/2025-2026/Angela.jpg",
-    "bio": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+    "bio": "Hi, I'm Angela Yang from New York City. I'm a 2029 looking forward to studying Electrical Engineering with Computing (6-5). In my free time, I love to read Chinese novels, eat good food, and hangout with friends.",
+    "linkedin": "http://www.linkedin.com/in/angela-yang-790782318",
+    "email": "ayang333@mit.edu"
   },
   {
     "name": "Catherine Li",
