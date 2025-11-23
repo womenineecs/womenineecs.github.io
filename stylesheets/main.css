@@ -703,6 +703,7 @@ section#resources #resources-container .column p {
 }
 
 #contact-section .contact-text p {
+  font-family: "Nixie One", serif;
   font-size: 1.2em;    /* slightly bigger text */
   line-height: 1.6;
   padding-left: 100px; /* shift text right */
@@ -727,10 +728,11 @@ section#resources #resources-container .column p {
 
 /* Reuse resource-button styling */
 #contact-section .resource-button {
-  background-color: #6a43c1;
+  background-color: #664ea6;
   color: white !important;
   padding: 12px 26px;
   border-radius: 14px;
+
   font-weight: 600;
   text-decoration: none;
   letter-spacing: 0.5px;
