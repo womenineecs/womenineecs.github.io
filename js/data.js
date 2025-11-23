@@ -138,7 +138,7 @@ const PEOPLE_DATA = {
   {
     "name": "Sabrina Do",
     "role": "Co-President",
-    "image": "public/images/exec/2024-2025/Sabrina_Do.jpg",
+    "image": "public/images/exec/2025-2026/Sabrina.jpg",
     "bio": "Hi, I’m Sabrina, and I’m from Southern California. I’m a senior ('26) studying computer science and engineering (6-3), and I’m interested in entrepreneurship, machine learning, and software development. In my free time, I love to run along the esplanade, find new cafes, and to photograph nature!",
     "linkedin": "https://www.linkedin.com/in/sabrina-phuonglan-do/",
     "email": "sabpdo@mit.edu"
@@ -146,7 +146,7 @@ const PEOPLE_DATA = {
   {
     "name": "Shiqi Cheng",
     "role": "Co-President",
-    "image": "public/images/exec/2024-2025/Shiqi_Cheng.jpg",
+    "image": "public/images/exec/2025-2026/Shiqi.jpg",
     "bio": "Hi! I'm Shiqi and I'm a junior studying 18 (math) & 6-4 (CS) from Illinois. Outside of class, I play viola, spend too much time thinking about board games, and am obsessed with watching ballets.",
     "linkedin": "http://www.linkedin.com/in/shiqi-cheng-b17b61294",
     "email": "sqcheng@mit.edu"
@@ -154,14 +154,14 @@ const PEOPLE_DATA = {
   {
     "name": "Janelle Cai",
     "role": "Treasurer",
-    "image": "public/images/exec/2023-2024/Janelle_Cai.jpeg",
+    "image": "public/images/exec/2025-2026/Janelle.jpg",
     "bio": "Hi, I'm Janelle! I grew up in the Cupertino, CA. I'm a 2027 studying computer science (6-3), and I'm interested in systems, robotics, and computer vision. In my free time, I like to read books or admire succulents.",
     "email": "jcai18@mit.edu"
   },
   {
     "name": "Arianna Scott",
     "role": "Community Events Team",
-    "image": "public/images/exec/2024-2025/Arianna_Scott.jpg",
+    "image": "public/images/exec/2025-2026/Arianna.jpg",
     "bio": "Hi, my name is Arianna and I am a senior studying Computer Science, Economics, and Data Science (6-14) and Business Management (15-1). In my free time I enjoy buying over-priced coffee or boba, pretending I can cook, and overthinking everything.",
     "linkedin": "https://www.linkedin.com/in/ariannacscott/",
     "email": "acscott@mit.edu"
@@ -169,7 +169,7 @@ const PEOPLE_DATA = {
   {
     "name": "Christy Li",
     "role": "Community Events Team",
-    "image": "public/images/exec/2024-2025/Christy_Li.jpg",
+    "image": "public/images/exec/2025-2026/Christy.jpg",
     "bio": "Hi, I'm Christy, a 2027 from Rockville, MD. I'm studying computer science (6-3), and I'm interested in AI/ML research and engineering. In my free time, I like to read, spend time with friends, and slowly but surely taste test every matcha drink in Boston.",
     "linkedin": "https://www.linkedin.com/in/christykl/",
     "email": "ckl@mit.edu"
@@ -183,13 +183,13 @@ const PEOPLE_DATA = {
   {
     "name": "Claire Chen",
     "role": "Community Events Team",
-    "image": "public/images/exec/stock.jpg",
+    "image": "public/images/exec/2025-2026/Claire.jpg",
     "bio": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
   },
   {
     "name": "Rachel Yang",
     "role": "Community Events Team",
-    "image": "public/images/exec/stock.jpg",
+    "image": "public/images/exec/2025-2026/RachelY.jpg",
     "bio": "Hi! I’m Rachel from San Diego, CA. I’m a 2028 studying 6-4 (AI and Decision Making) with interests in swe, ai/ml, and fintech. In my free time, I like taking photos, watching asian dramas, listening to music, and most importantly, trying new restaurants and drinking boba.",
     "linkedin": "http://linkedin.com/in/ryang148",
     "email": "ryang148@mit.edu"
@@ -197,7 +197,7 @@ const PEOPLE_DATA = {
   {
     "name": "Isabella Wu",
     "role": "Development Team",
-    "image": "public/images/exec/2024-2025/Isabella_Wu.jpg",
+    "image": "public/images/exec/2025-2026/Isabella.jpg",
     "bio": "Hi, I'm Isabella, and I'm from Long Island, NY. I'm a 2028 studying AI (6-4) and Mathematics (18). I'm interested in AI/ML, finance, and tech. In my free time, I love to paint and explore restaurants to add to my beli.",
     "linkedin": "https://www.linkedin.com/in/isabella-wu-356982279/",
     "email": "isawu888@mit.edu"
@@ -205,15 +205,15 @@ const PEOPLE_DATA = {
   {
     "name": "Michelle Han",
     "role": "Development Team",
-    "image": "public/images/exec/stock.jpg",
-    "bio": "Hi! I'm Michelle and I'm from Sacramento, CA. I'm a 2029 studying 6-14 (CS, Econ, & Data Sci), and I'm interested in human-computer interaction, AI/ML, and fintech. In my free time, I enjoy playing tennis, cafe hopping, and watching movies!",
+    "image": "public/images/exec/2025-2026/Michelle.jpeg",
+    "bio": "Hi! I'm Michelle and I'm from Sacramento, CA. I'm a 2029 studying 6-14 (CS, Econ, & Data Sci), and I'm interested in human-computer interaction, AI/ML, and fintech. In my free time, I enjoy playing tennis, cafe hopping, baking, thrifting, and watching movies!",
     "linkedin": "https://www.linkedin.com/in/michellehhan/",
     "email": "mhhan@mit.edu"
   },
   {
     "name": "Angela Yang",
     "role": "Development Team",
-    "image": "public/images/exec/stock.jpg",
+    "image": "public/images/exec/2025-2026/Angela.jpg",
     "bio": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
   },
   {
@@ -226,20 +226,20 @@ const PEOPLE_DATA = {
   {
     "name": "Iris Xu",
     "role": "Mentorship Team",
-    "image": "public/images/exec/2024-2025/Iris_Xu.jpg",
+    "image": "public/images/exec/2025-2026/Iris.jpg",
     "bio": "Hi I'm Iris, and I'm from Maryland! I'm currently studying AI and Math (6-4 & 18), and am interested in machine learning research. I love baking, trying new boba spots, and doing karaoke with friends :D",
     "linkedin": "https://www.linkedin.com/in/iris-j-xu/",
   },
   {
     "name": "Maureen Zhang",
     "role": "Mentorship Team",
-    "image": "public/images/exec/stock.jpg",
+    "image": "public/images/exec/2025-2026/Maureen.jpg",
     "bio": "Hey! I'm Maureen, and I'm studying Math (18) & CS (6-3), with a particular interest in AI-driven tools for social and economic mobility, multimodal AI, and scalable AI/ML infrastructure. In my free time, I love writing, visiting art museums, running, and doomscrolling Depop!"
   },
   {
     "name": "Chinmayi Goyal",
     "role": "Mentorship Team",
-    "image": "public/images/exec/stock.jpg",
+    "image": "public/images/exec/2025-2026/Chinmayi.jpg",
     "bio": "Hi, I'm Chinmayi and I'm from Westchester, NY. I'm a 2029 studying computer science and math (6-4 & 18), and I'm interested in artificial intelligence and machine learning. In my free time, I love to go on runs, hike, read, play my clarinet, and hang out with friends.",
     "linkedin": "http://www.linkedin.com/in/chinmayi-goyal-942b872a5",
     "email": "cgoyal@mit.edu"
@@ -247,14 +247,14 @@ const PEOPLE_DATA = {
   {
     "name": "Rachel Jiang",
     "role": "Professional Development Team",
-    "image": "public/images/exec/2024-2025/Rachel_Jiang.jpg",
+    "image": "public/images/exec/2025-2026/RachelJ.jpg",
     "bio": "Hi I'm Rachel and I'm from Anhui, China and Queens, NY. I'm a 2027 studying AI and Business Analytics. I'm interested in consulting and AI technology. In my free time, I love to do photography, play tennis, and explore coffee shops.",
     "email": "rjcan@mit.edu"
   },
   {
     "name": "Jeewoo Kang",
     "role": "Professional Development Team",
-    "image": "public/images/exec/2024-2025/Jeewoo_Kang.jpg",
+    "image": "public/images/exec/2025-2026/Jeewoo.jpg",
     "bio": "Hi! I'm Jeewoo and I'm from near Chicago. I'm a 2027 studying 6-1 (electrical engineering), and I'm interested in circuit design and chip design. In my free time, I like to play the flute, go on runs/walks, and go out to eat with my friends!"
   },
   {
@@ -266,7 +266,7 @@ const PEOPLE_DATA = {
   {
     "name": "Valeria Ramirez",
     "role": "Professional Development Team",
-    "image": "public/images/exec/stock.jpg",
+    "image": "public/images/exec/2025-2026/Valeria.jpg",
     "bio": "Hi, I'm Valeria Ramirez, and I'm from the Chicago suburbs! I'm part of the class of 2029, planning to study Electrical Engineering with Computer alongside Physics (6-5 and 8). I'm interested in quantum computing and in my free time I love to find places to get coffee and go on walks along the Charles river!",
     "linkedin": "https://www.linkedin.com/in/valnicomex/",
     "email": "rvaleria@mit.edu"
