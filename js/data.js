@@ -177,8 +177,10 @@ const PEOPLE_DATA = {
   {
     "name": "Kyra Henriques",
     "role": "Community Events Team",
-    "image": "public/images/exec/2024-2025/Kyra_Henriques.jpg",
-    "bio": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+    "image": "public/images/exec/2025-2026/Kyra.jpg",
+    "bio": "Hi, I’m Kyra, and I’m from Orlando, FL. I’m a 2027 majoring in computer science & molecular biology (6-7), and minoring in business analytics (15-2). In my free time, I love to explore new cafes, go to concerts, and play badminton!",
+    "linkedin": "https://www.linkedin.com/in/kyra-henriques/",
+    "email": "kyramh@mit.edu"
   },
   {
     "name": "Claire Chen",
@@ -221,7 +223,7 @@ const PEOPLE_DATA = {
   {
     "name": "Catherine Li",
     "role": "Mentorship Team",
-    "image": "public/images/exec/2024-2025/Catherine_Li.jpg",
+    "image": "public/images/exec/2025-2026/Catherine.jpg",
     "bio": "Hi, I'm Catherine, and I'm from San Jose, CA. I'm a 2027 studying math and computer science (18 and 6-3), and I'm interested in research and AI applications. In my free time, I love to sing, watch movies, and hang out with friends!",
     "email": "cateli@mit.edu"
   },
@@ -262,7 +264,7 @@ const PEOPLE_DATA = {
   {
     "name": "Nikita Agrawal",
     "role": "Professional Development Team",
-    "image": "public/images/exec/2024-2025/Nikita_Agarwal.jpg",
+    "image": "public/images/exec/2025-2026/Nikita.jpg",
     "bio": "Hi, I’m Nikita, and I’m from Chicago, IL. I’m a 2028, studying Electrical Engineering and Computer Science (6-5). In my free time, I love to watch movies, solve puzzles, and explore Boston with friends!"
   },
   {
@@ -277,7 +279,8 @@ const PEOPLE_DATA = {
     "name": "Jada Ogueh",
     "role": "Professional Development Team",
     "image": "public/images/exec/stock.jpg",
-    "bio": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+    "bio": "Hi, I'm Jada Ogueh, and I'm from Katy, TX. I'm a 2029 wanting to study computer science (6-3), and I'm interested in public policy and AI safety. In my free time, I like reading, thrifting, and hanging out with friends.",
+    "linkedin": "https://www.linkedin.com/in/jada-ogueh-109389282/"
   }
   ],
 };
