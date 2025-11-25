@@ -186,7 +186,7 @@ const PEOPLE_DATA = {
     "name": "Claire Chen",
     "role": "Community Events Team",
     "image": "public/images/exec/2025-2026/Claire.jpg",
-    "bio": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+    "bio": ""
   },
   {
     "name": "Rachel Yang",
@@ -278,7 +278,7 @@ const PEOPLE_DATA = {
   {
     "name": "Jada Ogueh",
     "role": "Professional Development Team",
-    "image": "public/images/exec/stock.jpg",
+    "image": "public/images/exec/2025-2026/Jada.jpg",
     "bio": "Hi, I'm Jada Ogueh, and I'm from Katy, TX. I'm a 2029 wanting to study computer science (6-3), and I'm interested in public policy and AI safety. In my free time, I like reading, thrifting, and hanging out with friends.",
     "linkedin": "https://www.linkedin.com/in/jada-ogueh-109389282/"
   }
