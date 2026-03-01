@@ -136,20 +136,19 @@ const PEOPLE_DATA = {
   executives: [
     
   {
-    "name": "Sabrina Do",
-    "role": "Co-President",
-    "image": "public/images/exec/2025-2026/Sabrina.jpg",
-    "bio": "Hi, I’m Sabrina, and I’m from Southern California. I’m a senior ('26) studying computer science and engineering (6-3), and I’m interested in entrepreneurship, machine learning, and software development. In my free time, I love to run along the esplanade, find new cafes, and to photograph nature!",
-    "linkedin": "https://www.linkedin.com/in/sabrina-phuonglan-do/",
-    "email": "sabpdo@mit.edu"
-  },
-  {
     "name": "Shiqi Cheng",
     "role": "Co-President",
     "image": "public/images/exec/2025-2026/Shiqi.jpg",
     "bio": "Hi! I'm Shiqi and I'm a junior studying 18 (math) & 6-4 (CS) from Illinois. Outside of class, I play viola, spend too much time thinking about board games, and am obsessed with watching ballets.",
     "linkedin": "http://www.linkedin.com/in/shiqi-cheng-b17b61294",
     "email": "sqcheng@mit.edu"
+  },
+  {
+    "name": "Rachel Jiang",
+    "role": "Co-President",
+    "image": "public/images/exec/2025-2026/RachelJ.jpg",
+    "bio": "Hi I'm Rachel and I'm from Anhui, China and Queens, NY. I'm a 2027 studying AI and Business Analytics. I'm interested in consulting and AI technology. In my free time, I love to do photography, play tennis, and explore coffee shops.",
+    "email": "rjcan@mit.edu"
   },
   {
     "name": "Janelle Cai",
@@ -247,13 +246,6 @@ const PEOPLE_DATA = {
     "bio": "Hi, I'm Chinmayi and I'm from Westchester, NY. I'm a 2029 studying computer science and math (6-4 & 18), and I'm interested in artificial intelligence and machine learning. In my free time, I love to go on runs, hike, read, play my clarinet, and hang out with friends.",
     "linkedin": "http://www.linkedin.com/in/chinmayi-goyal-942b872a5",
     "email": "cgoyal@mit.edu"
-  },
-  {
-    "name": "Rachel Jiang",
-    "role": "Professional Development Team",
-    "image": "public/images/exec/2025-2026/RachelJ.jpg",
-    "bio": "Hi I'm Rachel and I'm from Anhui, China and Queens, NY. I'm a 2027 studying AI and Business Analytics. I'm interested in consulting and AI technology. In my free time, I love to do photography, play tennis, and explore coffee shops.",
-    "email": "rjcan@mit.edu"
   },
   {
     "name": "Jeewoo Kang",

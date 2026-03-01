@@ -126,28 +126,67 @@ function populateEvents(events) {
 }
 
 function createEventCard(event) {
-  const calendarUrl = createGoogleCalendarUrl(event);
+  const isAllYears = event.allYears || (!event.date && !event.startDate);
+
+  // Build time tag
+  let timeTag = '';
+  if (!isAllYears) {
+    if (event.startDate && event.endDate) {
+      timeTag = `<span class="tag time-tag"><i class="fa fa-calendar"></i> ${event.startDate} – ${event.endDate}</span>`;
+    } else if (event.date) {
+      const formattedDate = formatDisplayDate(event.date);
+      timeTag = `<span class="tag time-tag"><i class="fa fa-calendar"></i> ${formattedDate}</span>`;
+    }
+  }
+
+  // Build location tag
+  const locationTag = event.location
+    ? `<span class="tag location-tag"><i class="fa fa-map-marker"></i> ${event.location}</span>`
+    : '';
+
+  // Build all years tag
+  const allYearsTag = isAllYears
+    ? `<span class="tag all-years-tag"><i class="fa fa-star"></i> All Years</span>`
+    : '';
+
+  // Build calendar button (only for events with specific dates)
+  let calendarBtn = '';
+  if (!isAllYears && event.date) {
+    const calendarUrl = createGoogleCalendarUrl(event);
+    calendarBtn = `
+      <a href="${calendarUrl}" target="_blank" class="add-to-calendar-btn">
+        <i class="fa fa-calendar-plus-o"></i> Add to Google Calendar
+      </a>`;
+  }
 
   return `
     <div class="col-sm-6 col-md-4">
       <div class="thumbnail">
-        <a class="lightbox" href="${event.image}">
-          <img referrerPolicy="no-referrer" src="${event.image}" 
-               alt="${event.title}" 
-               decoding="async"
-        </a>
-        <div class="overlay">
-          <div class="text">${event.title}</div>
-        </div>
-        <div class="caption">
-          <h3>${event.date}</h3>
-          <a href="${calendarUrl}" target="_blank" class="add-to-calendar-btn">
-            <i class="fa fa-calendar-plus-o"></i> Add to Google Calendar
+        <div class="img-wrapper">
+          <a class="lightbox" href="${event.image}">
+            <img referrerPolicy="no-referrer" src="${event.image}"
+                 alt="${event.title}"
+                 decoding="async" />
           </a>
+          <div class="overlay">
+            <div class="text">${event.title}</div>
+          </div>
+        </div>
+        <div class="card-meta">
+          <div class="card-tags">
+            ${timeTag}${locationTag}${allYearsTag}
+          </div>
+          ${calendarBtn}
         </div>
       </div>
     </div>
   `;
+}
+
+function formatDisplayDate(dateStr) {
+  const date = new Date(dateStr);
+  if (isNaN(date.getTime())) return dateStr;
+  return date.toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' });
 }
 
 function createGoogleCalendarUrl(event) {

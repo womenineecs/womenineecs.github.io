@@ -1,0 +1,653 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>WiEECS Opportunities</title>
+  <link rel='icon' href='/public/images/favicon.png' type='image/x-icon'>
+
+  <!-- JQuery -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <!-- Bootstrap -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css" rel="stylesheet">
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.13.0/umd/popper.min.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/js/bootstrap.min.js"></script>
+  <!-- MDB -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.5.9/css/mdb.min.css" rel="stylesheet">
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.5.9/js/mdb.min.js"></script>
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Nixie+One|Roboto:100,300,400,500,700,900|Source+Sans+Pro:200,300,400,600,700,900" rel="stylesheet">
+  <!-- Shared CSS (navbar, footer) -->
+  <link href="stylesheets/main.css" rel="stylesheet" type="text/css">
+
+<style>
+    :root {
+      --pri: #6E5DC6;
+      --pri-light: #d5d0f0;
+      --pri-dark: #4F3DA3;
+      --pri-wash: #F0EEFA;
+      --pri-ghost: #F8F7FD;
+      --gold: #D4960A;
+      --gold-w: #FEF7E6;
+      --blue: #4A7FE5;
+      --blue-w: #EAF0FD;
+      --green: #0E9A6E;
+      --green-w: #E6F7F1;
+      --rose: #D44080;
+      --rose-w: #FDEBF3;
+      --bg: #F5F4FA;
+      --card: #FFFFFF;
+      --text: #151226;
+      --text2: #5D5775;
+      --muted: #8C85A3;
+      --border: #E4E1EF;
+      --border-l: #EEEDF5;
+      --exc-bg: #ffffff;
+      --exc-border: #C9BFED;
+      --radius: 14px;
+      --radius-sm: 10px;
+      --sh-card: 0 1px 4px rgba(110,93,198,0.04), 0 4px 16px rgba(110,93,198,0.06);
+      --sh-hover: 0 4px 24px rgba(110,93,198,0.12);
+      --sh-float: 0 8px 40px rgba(110,93,198,0.14);
+    }
+    *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+    body{font-family:'Outfit',system-ui,sans-serif;background:var(--bg);color:var(--text);line-height:1.55;min-height:100vh;-webkit-font-smoothing:antialiased}
+
+    /* ══ HERO ══ */
+    .hero{background:var(--pri-dark);padding:calc(3.5rem + 65px) 2rem 3.25rem;text-align:center;position:relative;overflow:hidden}
+    .hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 80% 60% at 25% 90%,rgba(155,143,219,.35) 0%,transparent 70%),radial-gradient(ellipse 60% 50% at 85% 20%,rgba(74,127,229,.25) 0%,transparent 70%),radial-gradient(ellipse 40% 40% at 50% 50%,rgba(212,96,128,.1) 0%,transparent 70%)}
+    .hero::after{content:'';position:absolute;inset:0;background:url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");opacity:.5}
+    .hero-inner{position:relative;z-index:1;max-width:680px;margin:0 auto}
+    .hero-ey{display:inline-flex;align-items:center;gap:7px;background:rgba(255,255,255,.1);backdrop-filter:blur(12px);border:1px solid rgba(255,255,255,.15);border-radius:100px;padding:5px 16px;font-size:.72rem;font-weight:700;color:rgba(255,255,255,.85);letter-spacing:.08em;text-transform:uppercase;margin-bottom:1.25rem}
+    .hero-ey .pd{width:7px;height:7px;background:#4ADE80;border-radius:50%;animation:pulse 2s ease-in-out infinite}
+    @keyframes pulse{0%,100%{opacity:1;box-shadow:0 0 0 0 rgba(74,222,128,.4)}50%{opacity:.7;box-shadow:0 0 0 4px rgba(74,222,128,0)}}
+    .hero h1{font-family:'Newsreader',Georgia,serif;font-weight:600;font-size:clamp(2rem,5vw,2.8rem);color:#fff;margin-bottom:.5rem;letter-spacing:-.01em;line-height:1.15}
+    .hero h1 em{font-style:italic;color:var(--pri-light)}
+    .hero p{color:rgba(255,255,255,.65);font-size:1rem;max-width:460px;margin:0 auto}
+
+    /* ══ FILTERS ══ */
+    .controls{max-width:1120px;margin:-1.4rem auto 0;padding:0 1.5rem;position:relative;z-index:10}
+    .fbar{background:var(--card);border-radius:var(--radius);box-shadow:var(--sh-float);padding:.85rem 1.1rem;display:flex;flex-wrap:wrap;align-items:center;gap:.5rem}
+    .flbl{font-size:.7rem;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:.08em;margin-right:.15rem}
+    .fb{display:inline-flex;align-items:center;gap:5px;padding:6px 14px;border-radius:100px;border:1.5px solid var(--border);background:transparent;font-family:'Outfit',sans-serif;font-size:.8rem;font-weight:500;color:var(--text2);cursor:pointer;transition:all .15s;white-space:nowrap}
+    .fb svg{width:14px;height:14px;flex-shrink:0}
+    .fb:hover{border-color:var(--pri-light);color:var(--pri);background:var(--pri-wash)}
+    .fb.active{border-color:var(--pri);background:var(--pri);color:#fff}
+    .fb.active svg{color:#fff}
+    .fdiv{width:1px;height:22px;background:var(--border-l);margin:0 .15rem}
+    .sw{margin-left:auto;position:relative}
+    .sw>svg{position:absolute;left:11px;top:50%;transform:translateY(-50%);color:var(--muted);width:15px;height:15px;pointer-events:none}
+    .si{padding:7px 13px 7px 34px;border:1.5px solid var(--border);border-radius:100px;font-family:'Outfit',sans-serif;font-size:.82rem;width:190px;outline:none;transition:all .2s;background:var(--pri-ghost);color:var(--text)}
+    .si::placeholder{color:var(--muted)}
+    .si:focus{border-color:var(--pri-light);box-shadow:0 0 0 3px rgba(110,93,198,.08);width:230px}
+
+    /* ══ GRID ══ */
+    .gs{max-width:1120px;margin:1.75rem auto 3rem;padding:0 1.5rem}
+    .rm{margin-bottom:1rem}
+    .rc{font-size:.82rem;color:var(--muted);font-weight:500}
+    .grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1.15rem}
+
+    /* ══ CARD ══ */
+    .card{background:var(--card);border-radius:var(--radius);border:1px solid var(--border-l);overflow:hidden;transition:all .25s;display:flex;flex-direction:column;animation:rise .45s ease both;cursor:pointer;position:relative}
+    .card:hover{box-shadow:var(--sh-hover);transform:translateY(-3px);border-color:var(--border)}
+    .card.exc{background:var(--exc-bg);border-color:var(--exc-border)}
+    .card.exc:hover{box-shadow:0 6px 28px rgba(110,93,198,.16);border-color:var(--pri-light)}
+    .exc-tag{display:none;position:absolute;top:12px;right:12px;background:var(--pri);color:#fff;font-size:.62rem;font-weight:700;text-transform:uppercase;letter-spacing:.07em;padding:3px 10px;border-radius:100px;z-index:3;box-shadow:0 2px 8px rgba(79,61,163,.3);align-items:center;gap:4px}
+    .exc-tag svg{width:10px;height:10px}
+    .card.exc .exc-tag{display:inline-flex}
+    .card.closed{opacity:.55}
+    .card.closed:hover{opacity:.7;transform:translateY(-2px)}
+    .card.closed .cb{filter:grayscale(20%)}
+    @keyframes rise{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:translateY(0)}}
+    .ts{height:5px;width:100%}
+    .ts.coffee-chat{background:linear-gradient(90deg,var(--gold),#F0C850)}
+    .ts.info-session{background:linear-gradient(90deg,var(--blue),#7BA8F0)}
+    .ts.internship,.ts.full-time{background:linear-gradient(90deg,var(--green),#4BD6A0)}
+    .ts.program{background:linear-gradient(90deg,var(--rose),#E87DAA)}
+    .ts.event{background:linear-gradient(90deg,#0E9A9A,#4BD6D6)}
+    .cf{width:100%;background:var(--pri-wash)}
+    .cf img{width:100%;height:auto;display:block}
+    .cb{padding:1.15rem 1.2rem .9rem;flex:1;display:flex;flex-direction:column;position:relative}
+    .ct{display:flex;align-items:flex-start;gap:.8rem;margin-bottom:.7rem}
+    .logo{width:42px;height:42px;border-radius:var(--radius-sm);background:var(--pri-wash);display:flex;align-items:center;justify-content:center;flex-shrink:0;font-family:'Newsreader',serif;font-weight:600;font-size:1.05rem;color:var(--pri);overflow:hidden;border:1px solid var(--border-l)}
+    .card.exc .logo{border-color:var(--exc-border)}
+    .logo img{width:100%;height:100%;object-fit:cover}
+    .ch{flex:1;min-width:0;padding-right:75px}
+    .card:not(.exc) .ch{padding-right:0}
+    .ch h3{font-weight:700;font-size:.98rem;line-height:1.3;color:var(--text);margin-bottom:1px}
+    .cc{font-size:.78rem;font-weight:600;color:var(--pri)}
+    .cd{font-size:.84rem;color:var(--text2);line-height:1.5;margin-bottom:.85rem;flex:1;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+    .cp{display:flex;flex-wrap:wrap;gap:.4rem;margin-bottom:.85rem}
+    .pt{display:inline-flex;align-items:center;gap:4px;padding:4px 11px;border-radius:100px;font-size:.75rem;font-weight:700;text-transform:uppercase;letter-spacing:.04em}
+    .pt svg{width:12px;height:12px}
+    .pt.coffee-chat{background:var(--gold-w);color:var(--gold)}
+    .pt.info-session{background:var(--blue-w);color:var(--blue)}
+    .pt.internship,.pt.full-time{background:var(--green-w);color:var(--green)}
+    .pt.program{background:var(--rose-w);color:var(--rose)}
+    .pt.event{background:#E6FAFA;color:#0E9A9A}
+    .ps{display:inline-flex;align-items:center;gap:4px;padding:4px 11px;border-radius:100px;font-size:.75rem;font-weight:700;text-transform:uppercase;letter-spacing:.04em}
+    .ps .sd{width:6px;height:6px;border-radius:50%}
+    .ps.open{background:var(--green-w);color:var(--green)}.ps.open .sd{background:var(--green)}
+    .ps.closing-soon{background:var(--gold-w);color:var(--gold)}.ps.closing-soon .sd{background:var(--gold);animation:pulse 1.5s infinite}
+    .ps.closed,.ps.past{background:#F0F0F3;color:#8C85A3}.ps.closed .sd,.ps.past .sd{background:#8C85A3}
+    .meta{display:inline-flex;align-items:center;gap:4px;font-size:.82rem;font-weight:700;color:var(--text2);background:var(--pri-ghost);padding:4px 10px;border-radius:8px}
+    .card.exc .meta{background:rgba(110,93,198,.06)}
+    .meta svg{width:13px;height:13px;flex-shrink:0;color:var(--muted)}
+    .cft{padding:.7rem 1.2rem;border-top:1px solid var(--border-l);display:flex;align-items:center;justify-content:space-between;gap:.5rem}
+    .card.exc .cft{border-top-color:var(--exc-border)}
+    .fl{display:flex;align-items:center;gap:.5rem;flex:1;min-width:0}
+    .dt{font-size:.82rem;font-weight:700;color:var(--text2);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+    .dt.urgent{color:var(--rose);font-weight:700}
+    .gcl{display:inline-flex;align-items:center;justify-content:center;gap:5px;padding:6px 13px;border-radius:8px;border:1.5px solid rgba(14,154,110,.4);background:var(--green-w);cursor:pointer;transition:all .15s;color:var(--green);flex-shrink:0;text-decoration:none;font-family:'Outfit',sans-serif;font-size:.78rem;font-weight:600;white-space:nowrap}
+    .gcl:hover{border-color:var(--green);background:rgba(14,154,110,.18);color:var(--green)}
+    .gcl svg{width:14px;height:14px;flex-shrink:0}
+    .cta{display:inline-flex;align-items:center;gap:5px;padding:7px 18px;border-radius:100px;background:var(--pri);color:#fff;font-family:'Outfit',sans-serif;font-size:.8rem;font-weight:600;text-decoration:none;border:none;cursor:pointer;transition:all .15s;flex-shrink:0}
+    .cta:hover{background:var(--pri-dark);transform:scale(1.03)}
+    .cta svg{width:13px;height:13px}
+    .card.closed .cta{background:#D1D0DB;color:#8C85A3;pointer-events:none}
+
+    /* ══ MODAL ══ */
+    .modal-overlay{position:fixed;inset:0;background:rgba(21,18,38,.55);backdrop-filter:blur(4px);z-index:100;display:none;align-items:center;justify-content:center;padding:2rem;opacity:0;transition:opacity .25s}
+    .modal-overlay.open{display:flex;opacity:1}
+    .opp-modal{background:var(--card);border-radius:18px;max-width:640px;width:100%;max-height:85vh;overflow-y:auto;box-shadow:0 24px 80px rgba(21,18,38,.25);position:relative;animation:modalIn .3s ease}
+    @keyframes modalIn{from{opacity:0;transform:translateY(20px) scale(.97)}to{opacity:1;transform:translateY(0) scale(1)}}
+    .opp-modal-close{position:absolute;top:14px;right:14px;width:32px;height:32px;border-radius:50%;border:none;background:rgba(21,18,38,.06);cursor:pointer;display:flex;align-items:center;justify-content:center;z-index:5;transition:background .15s}
+    .opp-modal-close:hover{background:rgba(21,18,38,.12)}
+    .opp-modal-close svg{width:18px;height:18px;color:var(--text2)}
+    .m-stripe{height:6px;width:100%;border-radius:18px 18px 0 0}
+    .m-stripe.coffee-chat{background:linear-gradient(90deg,var(--gold),#F0C850)}
+    .m-stripe.info-session{background:linear-gradient(90deg,var(--blue),#7BA8F0)}
+    .m-stripe.internship,.m-stripe.full-time{background:linear-gradient(90deg,var(--green),#4BD6A0)}
+    .m-stripe.program{background:linear-gradient(90deg,var(--rose),#E87DAA)}
+    .m-stripe.event{background:linear-gradient(90deg,#0E9A9A,#4BD6D6)}
+    .m-flyer{width:100%;background:var(--pri-wash)}
+    .m-flyer img{width:100%;height:auto;display:block}
+    .m-body{padding:1.5rem 1.75rem 1.25rem}
+    .m-exc{display:inline-flex;align-items:center;gap:4px;background:var(--pri);color:#fff;font-size:.65rem;font-weight:700;text-transform:uppercase;letter-spacing:.06em;padding:3px 10px;border-radius:100px;margin-bottom:.75rem}
+    .m-exc svg{width:10px;height:10px}
+    .m-top{display:flex;align-items:center;gap:.9rem;margin-bottom:1rem}
+    .m-logo{width:52px;height:52px;border-radius:12px;background:var(--pri-wash);display:flex;align-items:center;justify-content:center;font-family:'Newsreader',serif;font-weight:600;font-size:1.3rem;color:var(--pri);overflow:hidden;border:1px solid var(--border-l);flex-shrink:0}
+    .m-logo img{width:100%;height:100%;object-fit:cover}
+    .m-hdr h2{font-family:'Newsreader',serif;font-weight:600;font-size:1.35rem;line-height:1.25;margin-bottom:2px}
+    .m-hdr .cc{font-size:.88rem}
+    .m-desc{font-size:.92rem;color:var(--text2);line-height:1.65;margin-bottom:1.25rem;white-space:pre-line}
+    .m-section{margin-bottom:1.25rem}
+    .m-section-title{font-size:.7rem;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:.08em;margin-bottom:.5rem}
+    .m-tags{display:flex;flex-wrap:wrap;gap:.4rem}
+    .m-tag{display:inline-flex;align-items:center;gap:5px;font-size:.8rem;font-weight:500;color:var(--text2);background:var(--pri-ghost);padding:5px 12px;border-radius:10px}
+    .m-tag svg{width:14px;height:14px;color:var(--muted);flex-shrink:0}
+    .m-foot{padding:1rem 1.75rem 1.5rem;border-top:1px solid var(--border-l);display:flex;align-items:center;justify-content:space-between;gap:.75rem;flex-wrap:wrap}
+    .m-foot .dt{font-size:.85rem}
+    .m-foot .cta{padding:9px 24px;font-size:.88rem}
+    .m-foot .gcl{font-size:.84rem;padding:8px 15px}
+    .m-foot .gcl svg{width:15px;height:15px}
+
+    /* ══ EMPTY / LOADING ══ */
+    .empty{text-align:center;padding:4rem 2rem;grid-column:1/-1}
+    .empty svg{width:56px;height:56px;color:var(--pri-wash);margin-bottom:.8rem}
+    .empty h3{font-family:'Newsreader',serif;font-size:1.2rem;color:var(--text);margin-bottom:.3rem}
+    .empty p{color:var(--muted);font-size:.9rem}
+    .loading{text-align:center;padding:4rem 2rem;grid-column:1/-1}
+    .spinner{width:36px;height:36px;border:3px solid var(--pri-wash);border-top-color:var(--pri);border-radius:50%;animation:spin .7s linear infinite;margin:0 auto .8rem}
+    @keyframes spin{to{transform:rotate(360deg)}}
+    .loading p{color:var(--muted);font-size:.88rem}
+
+    /* ══ RESPONSIVE ══ */
+    @media(max-width:768px){
+      .hero{padding:calc(2.5rem + 65px) 1.25rem 2.5rem}
+      .fbar{padding:.8rem .9rem}
+      .sw{margin-left:0;width:100%}
+      .si{width:100%!important}
+      .fdiv{display:none}
+      .grid{grid-template-columns:1fr}
+      .ch{padding-right:70px!important}
+      .opp-modal{max-width:100%;max-height:90vh;border-radius:14px}
+      .m-body{padding:1.25rem 1.25rem 1rem}
+      .m-foot{padding:.9rem 1.25rem 1.25rem}
+    }
+  </style>
+</head>
+<body>
+
+  <div id="navbar">
+    <div class="menu">
+      <a href="index.html" class="item">Home</a>
+      <a href="mission.html" class="item">Mission</a>
+      <a href="events.html" class="item">Events</a>
+      <a href="exec.html" class="item">Executive Board</a>
+      <a href="sponsors.html" class="item">Sponsors</a>
+      <a href="contact.html" class="item">Contact Us</a>
+      <a href="careers.html" class="item">Career Board</a>
+    </div>
+    <div class="mobile-menu-toggle">
+      <i class="fa fa-bars"></i>
+    </div>
+  </div>
+
+<!-- ══ SVG ══ -->
+<svg xmlns="http://www.w3.org/2000/svg" style="display:none">
+  <symbol id="i-coffee" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 8h1a4 4 0 110 8h-1"/><path d="M3 8h14v9a4 4 0 01-4 4H7a4 4 0 01-4-4V8z"/><line x1="6" y1="2" x2="6" y2="4"/><line x1="10" y1="2" x2="10" y2="4"/><line x1="14" y1="2" x2="14" y2="4"/></symbol>
+  <symbol id="i-mega" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11l18-5v12L3 13v-2z"/><path d="M11.6 16.8a3 3 0 11-5.8-1.6"/></symbol>
+  <symbol id="i-brief" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 21V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v16"/></symbol>
+  <symbol id="i-grad" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10l-10-5L2 10l10 5 10-5z"/><path d="M6 12v5c0 2 3 3 6 3s6-1 6-3v-5"/><line x1="22" y1="10" x2="22" y2="16"/></symbol>
+  <symbol id="i-cal" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></symbol>
+  <symbol id="i-clock" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></symbol>
+  <symbol id="i-pin" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></symbol>
+  <symbol id="i-users" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></symbol>
+  <symbol id="i-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></symbol>
+  <symbol id="i-search" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></symbol>
+  <symbol id="i-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7"/><path d="M7 7h10v10"/></symbol>
+  <symbol id="i-zap" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></symbol>
+  <symbol id="i-calr" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/><circle cx="8" cy="14" r=".5" fill="currentColor"/><circle cx="12" cy="14" r=".5" fill="currentColor"/><circle cx="16" cy="14" r=".5" fill="currentColor"/></symbol>
+  <symbol id="i-calp" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/><line x1="12" y1="14" x2="12" y2="18"/><line x1="10" y1="16" x2="14" y2="16"/></symbol>
+  <symbol id="i-star" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width=".5"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></symbol>
+  <symbol id="i-book" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 016.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 014 19.5v-15A2.5 2.5 0 016.5 2z"/></symbol>
+  <symbol id="i-x" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></symbol>
+</svg>
+
+<!-- ══ HERO ══ -->
+<section class="hero">
+  <div class="hero-inner">
+    <h1>WiEECS <em>Opportunities</em></h1>
+    <p>Exclusive events, internships, and programs from our sponsor partners</p>
+  </div>
+</section>
+
+<!-- ══ FILTERS ══ -->
+<div class="controls">
+  <div class="fbar">
+    <span class="flbl">Filter</span>
+    <button class="fb active" data-filter="all">All</button>
+    <button class="fb" data-filter="coffee-chat"><svg><use href="#i-coffee"/></svg>Coffee Chats</button>
+    <button class="fb" data-filter="info-session"><svg><use href="#i-mega"/></svg>Info Sessions</button>
+    <button class="fb" data-filter="internship,full-time"><svg><use href="#i-brief"/></svg>Jobs</button>
+    <button class="fb" data-filter="program"><svg><use href="#i-grad"/></svg>Programs</button>
+    <button class="fb" data-filter="event"><svg><use href="#i-cal"/></svg>Events</button>
+    <button class="fb" data-filter="exclusive"><svg><use href="#i-star"/></svg>WiEECS Exclusive</button>
+    <div class="fdiv"></div>
+    <div class="sw">
+      <svg><use href="#i-search"/></svg>
+      <input type="text" class="si" placeholder="Search companies..." id="searchInput">
+    </div>
+  </div>
+</div>
+
+<!-- ══ GRID ══ -->
+<div class="gs">
+  <div class="rm"><span class="rc" id="resultsCount"></span></div>
+  <div class="grid" id="grid">
+    <div class="loading"><div class="spinner"></div><p>Loading opportunities...</p></div>
+  </div>
+</div>
+
+<!-- ══ MODAL ══ -->
+<div class="modal-overlay" id="modalOverlay">
+  <div class="opp-modal" id="modal"></div>
+</div>
+
+<script>
+// ═══ CONFIG ═══
+const SHEET_ID = '15mjvmNFeZoES6Ga1J4mKOoCz0da17WjMi5Q0MqI2h3Q';
+const USE_DEMO = false;
+const SHEET_URL = `https://docs.google.com/spreadsheets/d/${SHEET_ID}/gviz/tq?tqx=out:json`;
+
+const DEMO = [
+  {company:'Quantbot Technologies',type:'coffee-chat',title:'Summer 2027 Internship Coffee Chats',desc:'Meet with Katharina, the Intern Program Manager, for exclusive 10-minute coffee chats.',location:'MIT Campus',deadline:'2026-02-27',link:'#',exclusive:true,open:true,flyerUrl:'',logoUrl:'',year:'All',major:'EECS/CS, Math/Stats',startDate:'2026-03-11',endDate:'',startTime:'2:30 PM',endTime:'4:30 PM',season:''},
+  {company:'Datadog',type:'info-session',title:'WiEECS × Datadog Information Session',desc:'Learn about Datadog\'s culture, interview tips, internships and full-time roles.',location:'Room 1-190',deadline:'2025-09-25',link:'#',exclusive:true,open:false,flyerUrl:'https://images.unsplash.com/photo-1531297484001-80022131f5a1?w=600&h=300&fit=crop',logoUrl:'',year:'All',major:'Any STEM',startDate:'2025-09-25',endDate:'',startTime:'6:00 PM',endTime:'7:00 PM',season:''},
+  {company:'Jane Street',type:'program',title:'First-year Trading & Technology Program',desc:'A week-long program for first-year undergrads to explore careers in tech, trading, and research.',location:'Jane Street NYC Office',deadline:'2026-02-01',link:'#',exclusive:false,open:false,flyerUrl:'',logoUrl:'',year:'Freshman',major:'Any STEM',startDate:'2026-03-23',endDate:'2026-03-27',startTime:'',endTime:'',season:''},
+  {company:'Two Sigma',type:'internship',title:'Software Engineering Internship',desc:'Join Two Sigma\'s engineering team building large-scale distributed systems.',location:'New York, NY',deadline:'2026-03-15',link:'#',exclusive:false,open:true,flyerUrl:'',logoUrl:'',year:'Junior, Senior',major:'EECS/CS',startDate:'',endDate:'',startTime:'',endTime:'',season:'Summer 2027'},
+  {company:'Citadel',type:'info-session',title:'Women in Tech Networking Dinner',desc:'An intimate dinner with Citadel engineers and quantitative researchers.',location:'MIT Faculty Club',deadline:'2026-03-28',link:'#',exclusive:true,open:true,flyerUrl:'https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=600&h=300&fit=crop',logoUrl:'',year:'All',major:'Any STEM',startDate:'2026-04-02',endDate:'',startTime:'6:30 PM',endTime:'8:30 PM',season:''},
+  {company:'Hudson River Trading',type:'internship',title:'Algorithm Developer Internship',desc:'Design and implement trading algorithms. Competitive compensation with housing stipend.',location:'New York, NY',deadline:'2026-04-01',link:'#',exclusive:false,open:true,flyerUrl:'',logoUrl:'',year:'Junior, Senior',major:'CS, Math/Stats, EECS',startDate:'',endDate:'',startTime:'',endTime:'',season:'Summer 2027'}
+];
+
+// ═══ HELPERS ═══
+const TL={'coffee-chat':'Coffee Chat','info-session':'Info Session','internship':'Internship','full-time':'Full-time','program':'Program','event':'Event'};
+const TI={'coffee-chat':'i-coffee','info-session':'i-mega','internship':'i-brief','full-time':'i-brief','program':'i-grad','event':'i-cal'};
+const SL={open:'Open','closing-soon':'Closing Soon',closed:'Closed',past:'Past'};
+
+function normType(r){const t=(r||'').toLowerCase();if(t.includes('coffee'))return'coffee-chat';if(t.includes('info'))return'info-session';if(t.includes('intern'))return'internship';if(t.includes('job')||t.includes('full'))return'full-time';if(t.includes('program'))return'program';if(t.includes('event'))return'event';return'info-session'}
+function yn(v){return(v||'').toLowerCase().startsWith('y')}
+function esc(s){return(s||'').replace(/</g,'&lt;').replace(/>/g,'&gt;')}
+function initials(n){return n.split(/\s+/).map(w=>w[0]).join('').slice(0,2).toUpperCase()}
+
+function driveImg(raw) {
+  if (!raw) return '';
+  raw = raw.trim();
+  if (raw.includes(',')) {
+    const parts = raw.split(',').map(s => s.trim()).filter(s => s.startsWith('http'));
+    if (parts.length) raw = parts[0];
+  }
+  if (/\.(jpg|jpeg|png|gif|webp|svg)(\?|$)/i.test(raw)) return raw;
+  if (raw.includes('/uc?') && raw.includes('id=')) return raw;
+  let m = raw.match(/[?&]id=([a-zA-Z0-9_-]+)/);
+  if (m) return `https://lh3.googleusercontent.com/d/${m[1]}`;
+  m = raw.match(/\/d\/([a-zA-Z0-9_-]+)/);
+  if (m) return `https://lh3.googleusercontent.com/d/${m[1]}`;
+  return raw;
+}
+
+// ═══ HEADER-BASED COLUMN MAPPING ═══
+let COL = {};
+
+function buildColumnMap(cols) {
+  COL = {};
+  cols.forEach((c, i) => {
+    const label = (c.label || '').toLowerCase().trim();
+    if (label.includes('timestamp')) COL.timestamp = i;
+    else if (label.includes('company name')) COL.company = i;
+    else if (label.includes('opportunity type')) COL.type = i;
+    else if (label.includes('description') && COL.desc === undefined) COL.desc = i;
+    else if (label.includes('location') && COL.location === undefined) COL.location = i;
+    else if (label.includes('deadline')) COL.deadline = i;
+    else if (label.includes('apply') || label.includes('rsvp link')) COL.link = i;
+    else if (label.includes('exclusive')) COL.exclusive = i;
+    else if (label.includes('currently open') || label.includes('is this opportunity currently')) COL.open = i;
+    else if (label.includes('flyer') || label.includes('graphics') || label.includes('upload')) COL.flyer = i;
+    else if (label.includes('logo')) COL.logo = i;
+    else if (label.includes('year')) COL.year = i;
+    else if (label.includes('major') || label.includes('department')) COL.major = i;
+    else if (label.includes('start date')) COL.startDate = i;
+    else if (label.includes('end date')) COL.endDate = i;
+    else if (label.includes('start time')) COL.startTime = i;
+    else if (label.includes('end time')) COL.endTime = i;
+    else if (label.includes('season')) COL.season = i;
+  });
+  console.log('Column mapping:', COL);
+}
+
+function getVal(cells, idx) {
+  if (idx === undefined || !cells[idx]) return '';
+  const v = cells[idx].v;
+  if (v === null || v === undefined) return '';
+  return String(v).trim();
+}
+
+function getFmt(cells, idx) {
+  if (idx === undefined || !cells[idx]) return '';
+  const c = cells[idx];
+  const v = c.v;
+  if (v === null || v === undefined) return '';
+  if (typeof v === 'string' && v.startsWith('Date(')) return c.f || '';
+  return String(c.f || c.v).trim();
+}
+
+function getTime(cells, idx) {
+  if (idx === undefined || !cells[idx]) return '';
+  const c = cells[idx];
+  const v = c.v;
+  if (v === null || v === undefined) return '';
+  if (c.f) return c.f.replace(/:(\d{2})\s*(AM|PM)/i, ' $2');
+  if (typeof v === 'string' && v.startsWith('Date(')) {
+    const m = v.match(/Date\(\d+,\d+,\d+,(\d+),(\d+)/);
+    if (m) {
+      let h = parseInt(m[1]);
+      const min = String(m[2]).padStart(2, '0');
+      const ampm = h >= 12 ? 'PM' : 'AM';
+      h = h % 12 || 12;
+      return `${h}:${min} ${ampm}`;
+    }
+  }
+  if (typeof v === 'number') {
+    const totalMins = Math.round(v * 1440);
+    let h = Math.floor(totalMins / 60) % 24;
+    const min = String(totalMins % 60).padStart(2, '0');
+    const ampm = h >= 12 ? 'PM' : 'AM';
+    h = h % 12 || 12;
+    return `${h}:${min} ${ampm}`;
+  }
+  return String(v).trim();
+}
+
+function rowToOpp(cells) {
+  const type = normType(getVal(cells, COL.type));
+  const company = getVal(cells, COL.company) || 'Unknown';
+  return {
+    company, type,
+    title: `${company} — ${TL[type] || type}`,
+    desc: getVal(cells, COL.desc) || '',
+    location: getVal(cells, COL.location) || '',
+    deadline: getFmt(cells, COL.deadline) || '',
+    link: getVal(cells, COL.link) || '#',
+    exclusive: yn(getVal(cells, COL.exclusive)),
+    open: yn(getVal(cells, COL.open)),
+    flyerUrl: driveImg(getVal(cells, COL.flyer)),
+    logoUrl: getVal(cells, COL.logo) || '',
+    year: getVal(cells, COL.year) || '',
+    major: getVal(cells, COL.major) || '',
+    startDate: getFmt(cells, COL.startDate) || '',
+    endDate: getFmt(cells, COL.endDate) || '',
+    startTime: getTime(cells, COL.startTime) || '',
+    endTime: getTime(cells, COL.endTime) || '',
+    season: getVal(cells, COL.season) || '',
+  };
+}
+
+function parseGviz(txt) {
+  const m = txt.match(/google\.visualization\.Query\.setResponse\((.+)\);?\s*$/s);
+  if (!m) throw new Error('Could not parse response');
+  const d = JSON.parse(m[1]);
+  if (d.status === 'error') throw new Error(d.errors?.[0]?.message || 'Error');
+  if (d.table?.cols) buildColumnMap(d.table.cols);
+  return (d.table?.rows || [])
+    .filter(r => r.c && r.c[COL.company] && r.c[COL.company].v)
+    .map(r => rowToOpp(r.c));
+}
+
+// ═══ DATE ═══
+function fD(s){if(!s)return'';try{const d=new Date(s);return isNaN(d)?s:d.toLocaleDateString('en-US',{month:'short',day:'numeric',year:'numeric'})}catch{return s}}
+function fDs(s){if(!s)return'';try{const d=new Date(s);return isNaN(d)?s:d.toLocaleDateString('en-US',{month:'short',day:'numeric'})}catch{return s}}
+function dTo(s){if(!s)return Infinity;try{const d=new Date(s),t=new Date;t.setHours(0,0,0,0);return isNaN(d)?Infinity:Math.ceil((d-t)/864e5)}catch{return Infinity}}
+function isClosed(o){if(!o.open)return true;if(o.deadline){const d=dTo(o.deadline);if(d!==Infinity&&d<0)return true}return false}
+function isPast(o){const d=o.endDate||o.startDate;if(!d)return false;return dTo(d)<0}
+function getStatus(o){if(isPast(o))return'past';if(isClosed(o))return'closed';if(o.deadline&&dTo(o.deadline)>=0&&dTo(o.deadline)<=3)return'closing-soon';return'open'}
+
+// ═══ GCAL ═══
+function gcalUrl(o){
+  if(!o.startDate)return'';const sd=new Date(o.startDate);if(isNaN(sd))return'';
+  const ti=encodeURIComponent(`${o.company}: ${o.title}`),lo=encodeURIComponent(o.location||''),de=encodeURIComponent(`${o.desc}\n\nApply/RSVP: ${o.link}`);
+  let s,e;
+  if(o.startTime){const sdt=pDT(o.startDate,o.startTime);const edt=o.endTime?pDT(o.endDate||o.startDate,o.endTime):new Date(sdt.getTime()+36e5);s=gDT(sdt);e=gDT(edt)}
+  else{s=gD(sd);const ed=o.endDate?new Date(o.endDate):sd;const en=new Date(ed);en.setDate(en.getDate()+1);e=gD(en)}
+  return`https://calendar.google.com/calendar/render?action=TEMPLATE&text=${ti}&dates=${s}/${e}&location=${lo}&details=${de}`;
+}
+function pDT(ds,ts){const d=new Date(ds);const m=ts.match(/(\d{1,2}):(\d{2})\s*(AM|PM)?/i);if(m){let h=+m[1];const mn=+m[2],ap=(m[3]||'').toUpperCase();if(ap==='PM'&&h<12)h+=12;if(ap==='AM'&&h===12)h=0;d.setHours(h,mn,0,0)}return d}
+function gDT(d){return d.toISOString().replace(/[-:]/g,'').replace(/\.\d{3}/,'')}
+function gD(d){return`${d.getFullYear()}${String(d.getMonth()+1).padStart(2,'0')}${String(d.getDate()).padStart(2,'0')}`}
+
+// ═══ META TAGS ═══
+function buildMeta(o) {
+  const t=o.type; let h='';
+  const isEvt=t==='coffee-chat'||t==='info-session'||t==='event';
+  const isJob=t==='internship'||t==='full-time';
+  const isProg=t==='program';
+  if(isEvt){
+    if(o.startDate){let ds=fD(o.startDate);if(o.endDate&&o.endDate!==o.startDate)ds=`${fDs(o.startDate)} – ${fDs(o.endDate)}`;h+=`<span class="meta"><svg><use href="#i-cal"/></svg>${ds}</span>`}
+    if(o.startTime){let ts=o.startTime;if(o.endTime)ts+=` – ${o.endTime}`;h+=`<span class="meta"><svg><use href="#i-clock"/></svg>${ts}</span>`}
+  }else if(isJob){
+    if(o.season)h+=`<span class="meta"><svg><use href="#i-sun"/></svg>${o.season}</span>`;
+  }else if(isProg){
+    if(o.startDate){let ds=fD(o.startDate);if(o.endDate)ds=`${fDs(o.startDate)} – ${fDs(o.endDate)}`;h+=`<span class="meta"><svg><use href="#i-calr"/></svg>${ds}</span>`}
+  }
+  if(o.location)h+=`<span class="meta"><svg><use href="#i-pin"/></svg>${esc(o.location)}</span>`;
+  if(o.year&&!/^all/i.test(o.year))h+=`<span class="meta"><svg><use href="#i-users"/></svg>${esc(o.year)}</span>`;
+  if(o.major&&!/open to all/i.test(o.major))h+=`<span class="meta"><svg><use href="#i-book"/></svg>${esc(o.major)}</span>`;
+  return h;
+}
+
+// ═══ RENDER CARD ═══
+function renderCard(o, i) {
+  const st=getStatus(o), cl=st==='closed'||st==='past';
+  const logo=o.logoUrl?`<img src="${o.logoUrl}" alt="${esc(o.company)}" onerror="this.parentElement.textContent='${initials(o.company)}'">`:initials(o.company);
+  const flyer=o.flyerUrl?`<div class="cf"><img src="${o.flyerUrl}" alt="${esc(o.company)} flyer" onerror="this.parentElement.style.display='none'"></div>`:'';
+  let dl='';
+  if(o.deadline){const days=dTo(o.deadline);if(st==='closing-soon'){const l=days===0?'Due today!':days===1?'Due tomorrow!':`Due in ${days}d`;dl=`<span class="dt urgent"><svg style="width:12px;height:12px;vertical-align:-2px;margin-right:2px"><use href="#i-zap"/></svg>${l}</span>`}else if(cl){dl=`<span class="dt">Closed ${fD(o.deadline)}</span>`}else{dl=`<span class="dt">Due ${fD(o.deadline)}</span>`}}
+  else if(o.season)dl=`<span class="dt">${esc(o.season)}</span>`;
+  const gu=gcalUrl(o);
+  const gb=(gu&&!cl)?`<a href="${gu}" target="_blank" rel="noopener" class="gcl" onclick="event.stopPropagation()"><svg><use href="#i-calp"/></svg>Add to Cal</a>`:'';
+  const cta=cl?'Closed':(o.type==='coffee-chat'||o.type==='info-session'?'RSVP':'Apply');
+  return`
+    <div class="card ${o.exclusive?'exc':''} ${cl?'closed':''}" data-idx="${i}" style="animation-delay:${i*.055}s" onclick="openModal(${i})">
+      <span class="exc-tag"><svg><use href="#i-star"/></svg>WiEECS Exclusive</span>
+      <div class="ts ${o.type}"></div>
+      <div class="cb">
+        <div class="ct">
+          <div class="logo">${logo}</div>
+          <div class="ch"><h3>${esc(o.title)}</h3><span class="cc">${esc(o.company)}</span></div>
+        </div>
+        <p class="cd">${esc(o.desc)}</p>
+        <div class="cp">
+          <span class="pt ${o.type}"><svg><use href="#${TI[o.type]}"/></svg>${TL[o.type]}</span>
+          <span class="ps ${st}"><span class="sd"></span>${SL[st]}</span>
+          ${buildMeta(o)}
+        </div>
+      </div>
+      <div class="cft">
+        <div class="fl">${dl}</div>${gb}
+        <a href="${o.link}" target="_blank" rel="noopener" class="cta" onclick="event.stopPropagation()">
+          ${cta}${cl?'':'<svg><use href="#i-arrow"/></svg>'}
+        </a>
+      </div>
+      ${flyer}
+    </div>`;
+}
+
+// ═══ MODAL ═══
+function openModal(idx) {
+  const o = filtered[idx];
+  if (!o) return;
+  const st = getStatus(o), cl = st==='closed'||st==='past';
+  const logo = o.logoUrl
+    ? `<img src="${o.logoUrl}" alt="${esc(o.company)}" onerror="this.parentElement.textContent='${initials(o.company)}'">`
+    : initials(o.company);
+  const flyer = o.flyerUrl
+    ? `<div class="m-flyer"><img src="${o.flyerUrl}" alt="${esc(o.company)} flyer" onerror="this.parentElement.style.display='none'"></div>`
+    : '';
+
+  let detailsHtml = '';
+  const whenWhere = [];
+  const t = o.type;
+  const isEvt = t==='coffee-chat'||t==='info-session'||t==='event';
+  const isJob = t==='internship'||t==='full-time';
+  const isProg = t==='program';
+
+  if (isEvt) {
+    if (o.startDate) { let ds=fD(o.startDate); if(o.endDate&&o.endDate!==o.startDate)ds=`${fDs(o.startDate)} – ${fDs(o.endDate)}`; whenWhere.push({icon:'i-cal',text:ds}); }
+    if (o.startTime) { let ts=o.startTime; if(o.endTime)ts+=` – ${o.endTime}`; whenWhere.push({icon:'i-clock',text:ts}); }
+  } else if (isJob) {
+    if (o.season) whenWhere.push({icon:'i-sun',text:o.season});
+  } else if (isProg) {
+    if (o.startDate) { let ds=fD(o.startDate); if(o.endDate)ds=`${fDs(o.startDate)} – ${fDs(o.endDate)}`; whenWhere.push({icon:'i-calr',text:ds}); }
+  }
+  if (o.location) whenWhere.push({icon:'i-pin',text:o.location});
+  if (whenWhere.length) detailsHtml+=`<div class="m-section"><div class="m-section-title">When & Where</div><div class="m-tags">${whenWhere.map(w=>`<span class="m-tag"><svg><use href="#${w.icon}"/></svg>${esc(w.text)}</span>`).join('')}</div></div>`;
+
+  const elig = [];
+  if (o.year) elig.push({icon:'i-users',text:o.year});
+  if (o.major) elig.push({icon:'i-book',text:o.major});
+  if (elig.length) detailsHtml+=`<div class="m-section"><div class="m-section-title">Eligibility</div><div class="m-tags">${elig.map(e=>`<span class="m-tag"><svg><use href="#${e.icon}"/></svg>${esc(e.text)}</span>`).join('')}</div></div>`;
+
+  let dlHtml='';
+  if(o.deadline){const days=dTo(o.deadline);if(st==='closing-soon'){const l=days===0?'Due today!':days===1?'Due tomorrow!':`Due in ${days} days`;dlHtml=`<span class="dt urgent"><svg style="width:13px;height:13px;vertical-align:-2px;margin-right:3px"><use href="#i-zap"/></svg>${l}</span>`}else if(cl){dlHtml=`<span class="dt">Deadline was ${fD(o.deadline)}</span>`}else{dlHtml=`<span class="dt">Deadline: ${fD(o.deadline)}</span>`}}
+  else if(o.season)dlHtml=`<span class="dt">${esc(o.season)}</span>`;
+
+  const gu=gcalUrl(o);
+  const gb=(gu&&!cl)?`<a href="${gu}" target="_blank" rel="noopener" class="gcl"><svg><use href="#i-calp"/></svg>Add to Calendar</a>`:'';
+  const cta=cl?'Closed':(o.type==='coffee-chat'||o.type==='info-session'?'RSVP':'Apply');
+
+  document.getElementById('modal').innerHTML=`
+    <button class="opp-modal-close" onclick="closeModal()"><svg><use href="#i-x"/></svg></button>
+    <div class="m-stripe ${o.type}"></div>
+    <div class="m-body">
+      ${o.exclusive?'<div class="m-exc"><svg><use href="#i-star"/></svg>WiEECS Exclusive</div>':''}
+      <div class="m-top">
+        <div class="m-logo">${logo}</div>
+        <div class="m-hdr"><h2>${esc(o.title)}</h2><span class="cc">${esc(o.company)}</span></div>
+      </div>
+      <div class="cp" style="margin-bottom:1rem">
+        <span class="pt ${o.type}"><svg><use href="#${TI[o.type]}"/></svg>${TL[o.type]}</span>
+        <span class="ps ${st}"><span class="sd"></span>${SL[st]}</span>
+      </div>
+      <p class="m-desc">${esc(o.desc)}</p>
+      ${detailsHtml}
+    </div>
+    <div class="m-foot">
+      <div class="fl">${dlHtml}</div>${gb}
+      <a href="${o.link}" target="_blank" rel="noopener" class="cta">${cta}${cl?'':'<svg><use href="#i-arrow"/></svg>'}</a>
+    </div>
+    ${flyer}`;
+  applyModalFlyerPlacement();
+  document.getElementById('modalOverlay').classList.add('open');
+  document.body.style.overflow='hidden';
+}
+
+function closeModal(){document.getElementById('modalOverlay').classList.remove('open');document.body.style.overflow=''}
+document.getElementById('modalOverlay').addEventListener('click',e=>{if(e.target===e.currentTarget)closeModal()});
+document.addEventListener('keydown',e=>{if(e.key==='Escape')closeModal()});
+
+// ═══ STATE ═══
+let all=[],filtered=[],filter='all',query='';
+
+function sortArr(arr){
+  const ord={'closing-soon':0,'open':1,'closed':2,'past':3};
+  return arr.sort((a,b)=>{const sa=getStatus(a),sb=getStatus(b);if(ord[sa]!==ord[sb])return ord[sa]-ord[sb];if(a.exclusive!==b.exclusive)return a.exclusive?-1:1;const da=new Date(a.deadline||a.startDate||'9999-12-31'),db=new Date(b.deadline||b.startDate||'9999-12-31');return da-db});
+}
+
+function render(){
+  filtered=[...all];
+  if(filter==='exclusive')filtered=filtered.filter(o=>o.exclusive);
+  else if(filter!=='all'){const ts=filter.split(',');filtered=filtered.filter(o=>ts.includes(o.type))}
+  if(query){const q=query.toLowerCase();filtered=filtered.filter(o=>o.company.toLowerCase().includes(q)||o.title.toLowerCase().includes(q)||o.desc.toLowerCase().includes(q))}
+  filtered=sortArr(filtered);
+  const grid=document.getElementById('grid'),cnt=document.getElementById('resultsCount');
+  if(!filtered.length){grid.innerHTML=`<div class="empty"><svg><use href="#i-search"/></svg><h3>No opportunities found</h3><p>Try adjusting your filters or check back soon!</p></div>`;cnt.textContent='0 opportunities'}
+  else{grid.innerHTML=filtered.map((o,i)=>renderCard(o,i)).join('');applyFlyerPlacement();const open=filtered.filter(o=>{const s=getStatus(o);return s==='open'||s==='closing-soon'}).length;const cl=filtered.length-open;cnt.textContent=`${filtered.length} opportunit${filtered.length===1?'y':'ies'}${cl?` · ${cl} closed/past`:''}`}
+}
+
+// ═══ LOAD ═══
+async function load(){
+  if(USE_DEMO){all=DEMO;render();return}
+  try{const res=await fetch(SHEET_URL);const txt=await res.text();all=parseGviz(txt);render()}
+  catch(e){console.error('Load error:',e);document.getElementById('grid').innerHTML=`<div class="empty"><svg><use href="#i-search"/></svg><h3>Couldn't load opportunities</h3><p>${e.message||'Check Sheet ID & sharing settings.'}</p></div>`}
+}
+
+// ═══ FLYER PLACEMENT ═══
+function placeFlyerImg(img){const cf=img.closest('.cf');if(!cf)return;const card=cf.closest('.card');if(!card)return;if(img.naturalHeight<350||img.naturalWidth>img.naturalHeight){const ts=card.querySelector('.ts');ts.after(cf)}}
+function placeModalFlyerImg(img){const mf=img.closest('.m-flyer');if(!mf)return;const modal=mf.closest('.opp-modal');if(!modal)return;if(img.naturalHeight<350||img.naturalWidth>img.naturalHeight){const ms=modal.querySelector('.m-stripe');ms.after(mf)}}
+function applyFlyerPlacement(){document.querySelectorAll('#grid .cf img').forEach(img=>{if(img.complete)placeFlyerImg(img);else img.addEventListener('load',()=>placeFlyerImg(img))})}
+function applyModalFlyerPlacement(){const img=document.querySelector('#modal .m-flyer img');if(!img)return;if(img.complete)placeModalFlyerImg(img);else img.addEventListener('load',()=>placeModalFlyerImg(img))}
+
+// ═══ EVENTS ═══
+document.querySelectorAll('.fb').forEach(b=>{b.addEventListener('click',()=>{document.querySelectorAll('.fb').forEach(x=>x.classList.remove('active'));b.classList.add('active');filter=b.dataset.filter;render()})});
+document.getElementById('searchInput').addEventListener('input',e=>{query=e.target.value;render()});
+load();
+</script>
+
+<script src="js/main.js"></script>
+
+<!-- ══ FOOTER ══ -->
+<a name="connect"></a>
+<section id="connect">
+  <div class="icons">
+    <a href="mailto:wieecs-exec@mit.edu">
+      <i class="fa fa-envelope"></i>
+    </a>
+    <a href="https://www.facebook.com/mitwieecs/" target="_blank">
+      <i class="fa fa-facebook"></i>
+    </a>
+    <a href="https://www.instagram.com/mitwieecs/" target="_blank">
+      <i class="fa fa-instagram"></i>
+    </a>
+    <a href="https://mailman.mit.edu:444/mailman/listinfo/wieecs" target="_blank">
+      <i class="fa fa-address-book"></i>
+    </a>
+    <div class="contact-info">
+      <a href="public/assets/constitution.pdf" target="_blank"> Women in EECS @ MIT</a>
+    </div>
+  </div>
+</section>
+</body>
+</html>
