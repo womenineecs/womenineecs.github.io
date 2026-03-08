@@ -183,6 +183,9 @@ function createExecCol(person, colClass, imgWidth, imgMaxWidth) {
         ? `<img src="${escapeAttribute(person.image)}"
                class="img-fluid mb-3 shadow exec-card-img"
                style="width:${imgWidth};max-width:${imgMaxWidth};"
+               loading="lazy"
+               decoding="async"
+               fetchpriority="low"
                alt="${escapeAttribute(person.name || "Executive")}">`
         : `<div class="exec-placeholder-img mb-3" style="width:${imgWidth};max-width:${imgMaxWidth};"><i class="fa fa-user"></i></div>`
       }
@@ -339,6 +342,9 @@ function createAlumniCard(person) {
   const imageHtml = person.image
     ? `<img src="${escapeAttribute(person.image)}"
             class="img-fluid mb-3 shadow alumni-card-img"
+            loading="lazy"
+            decoding="async"
+            fetchpriority="low"
             alt="${escapeAttribute(person.name || "Alumni")}">`
     : `<div class="alumni-placeholder-img mb-3"><i class="fa fa-user"></i></div>`;
 
@@ -349,6 +355,17 @@ function createAlumniCard(person) {
       ${displayRole ? `<p>${escapeHtml(displayRole)}</p>` : ""}
     </div>`;
 }
+
+$(document).ready(function () {
+  $("#execModal").on("hidden.bs.modal", function () {
+    $("#execModalImage").attr("src", "");
+  });
+
+  $("#alumniModal").on("hidden.bs.modal", function () {
+    $("#alumniModalImage").attr("src", "").hide();
+    $("#alumniModalPlaceholder").show();
+  });
+});
 
 function bindAlumniCardClicks() {
   document.querySelectorAll(".alumni-exec-card").forEach((card) => {

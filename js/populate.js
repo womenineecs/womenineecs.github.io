@@ -14,7 +14,7 @@ if (GOOGLE_SHEETS_CSV_URL) {
   populateEvents(EVENTS_DATA.events);
 }
 
-populateExecutives(PEOPLE_DATA.executives);
+//populateExecutives(PEOPLE_DATA.executives);
 
 function populateSponsors(sponsors) {
   const tiers = ["gold", "silver", "bronze", "past"];
