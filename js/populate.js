@@ -4,8 +4,6 @@ const maxEvents = 6;
 const GOOGLE_SHEETS_CSV_URL =
   "https://docs.google.com/spreadsheets/d/e/2PACX-1vSCj2n9VNPuirjkT8gbPdlDZC0HAMszyipQlcu7k5-wNV0tVjOSnlleY9YhMc5-2jA8_eAUgJ_prFXq/pub?output=csv"; // Add your Google Sheets CSV URL here
 
-populateSponsors(SPONSORS_DATA.sponsors);
-
 // Load events from both local data and Google Sheets
 if (GOOGLE_SHEETS_CSV_URL) {
   loadEventsFromGoogleSheets();
@@ -14,7 +12,6 @@ if (GOOGLE_SHEETS_CSV_URL) {
   populateEvents(EVENTS_DATA.events);
 }
 
-//populateExecutives(PEOPLE_DATA.executives);
 
 function populateSponsors(sponsors) {
   const tiers = ["gold", "silver", "bronze", "past"];
@@ -49,13 +46,7 @@ function populateSponsors(sponsors) {
   });
 }
 
-document.addEventListener("DOMContentLoaded", () => {
-  populateSponsors(SPONSORS_DATA.sponsors);
-});
-
-document.addEventListener("DOMContentLoaded", () => {
-  populateSponsors(SPONSORS_DATA.sponsors);
-});
+populateSponsors(SPONSORS_DATA.sponsors);
 
 function populateEvents(events) {
   const today = new Date();
@@ -209,23 +200,6 @@ function createGoogleCalendarUrl(event) {
   });
 
   return `https://calendar.google.com/calendar/render?${params.toString()}`;
-}
-
-function populateExecutives(executives) {
-  const execContainer = document.getElementById("exec-positions");
-  let html = "";
-
-  // Group executives into pairs for rows
-  for (let i = 0; i < executives.length; i += 2) {
-    html += '<div class="row">';
-    html += createExecutiveProfile(executives[i]);
-    if (executives[i + 1]) {
-      html += createExecutiveProfile(executives[i + 1]);
-    }
-    html += "</div>";
-  }
-
-  execContainer.innerHTML = html;
 }
 
 function createExecutiveProfile(executive) {
