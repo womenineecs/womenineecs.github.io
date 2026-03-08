@@ -1,10 +1,8 @@
 // Show upcoming events alert on home page
-document.addEventListener("DOMContentLoaded", () => {
-  showUpcomingEventsAlert();
-  initMobileMenu();
-  initExecSection();
-  initAlumniSection();
-});
+showUpcomingEventsAlert();
+initMobileMenu();
+initExecSection();
+initAlumniSection();
 
 /* =========================
    Utility: HTML escaping
@@ -62,6 +60,7 @@ function showUpcomingEventsAlert() {
 function initMobileMenu() {
   const mobileToggle = document.querySelector(".mobile-menu-toggle");
   const menu = document.querySelector("#navbar .menu");
+  if (!mobileToggle || !menu) return;
 
   if (mobileToggle && menu) {
     mobileToggle.addEventListener("click", () => {
