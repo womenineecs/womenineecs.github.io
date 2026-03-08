@@ -8,14 +8,15 @@
   <link rel='icon' href='/public/images/favicon.png' type='image/x-icon'>
 
   <!-- JQuery -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <!-- Bootstrap -->
   <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css" rel="stylesheet">
   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.13.0/umd/popper.min.js"></script>
   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/js/bootstrap.min.js"></script>
   <!-- MDB -->
-  <!-- <link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.5.9/css/mdb.min.css" rel="stylesheet"> -->
-  <!-- <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.5.9/js/mdb.min.js"></script> -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.5.9/css/mdb.min.css" rel="stylesheet">
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.5.9/js/mdb.min.js"></script>
   <!-- Font Awesome -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
   <!-- Fonts -->
@@ -54,6 +55,7 @@
       --sh-float: 0 8px 40px rgba(110,93,198,0.14);
     }
     *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+    html{background:var(--bg)}
     body{font-family:'Outfit',system-ui,sans-serif;background:var(--bg);color:var(--text);line-height:1.55;min-height:100vh;-webkit-font-smoothing:antialiased}
 
     /* ══ HERO ══ */
@@ -88,7 +90,7 @@
     .gs{max-width:1120px;margin:1.75rem auto 3rem;padding:0 1.5rem}
     .rm{margin-bottom:1rem}
     .rc{font-size:.82rem;color:var(--muted);font-weight:500}
-    .grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1.15rem}
+    .grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1.15rem;align-items:start}
 
     /* ══ CARD ══ */
     .card{background:var(--card);border-radius:var(--radius);border:1px solid var(--border-l);overflow:hidden;transition:all .25s;display:flex;flex-direction:column;animation:rise .45s ease both;cursor:pointer;position:relative}
@@ -261,11 +263,11 @@
   <div class="fbar">
     <span class="flbl">Filter</span>
     <button class="fb active" data-filter="all">All</button>
+    <button class="fb" data-filter="event"><svg><use href="#i-cal"/></svg>Events</button>
     <button class="fb" data-filter="coffee-chat"><svg><use href="#i-coffee"/></svg>Coffee Chats</button>
     <button class="fb" data-filter="info-session"><svg><use href="#i-mega"/></svg>Info Sessions</button>
     <button class="fb" data-filter="internship,full-time"><svg><use href="#i-brief"/></svg>Jobs</button>
     <button class="fb" data-filter="program"><svg><use href="#i-grad"/></svg>Programs</button>
-    <button class="fb" data-filter="event"><svg><use href="#i-cal"/></svg>Events</button>
     <button class="fb" data-filter="exclusive"><svg><use href="#i-star"/></svg>WiEECS Exclusive</button>
     <div class="fdiv"></div>
     <div class="sw">
@@ -584,12 +586,7 @@ function openModal(idx) {
 }
 
 function closeModal(){document.getElementById('modalOverlay').classList.remove('open');document.body.style.overflow=''}
-modalOverlay = document.getElementById('modalOverlay'); 
-if (modalOverlay) {
-  modalOverlay.addEventListener('click', e => {
-    if (e.target === e.currentTarget) closeModal();
-  });
-}
+document.getElementById('modalOverlay').addEventListener('click',e=>{if(e.target===e.currentTarget)closeModal()});
 document.addEventListener('keydown',e=>{if(e.key==='Escape')closeModal()});
 
 // ═══ STATE ═══
