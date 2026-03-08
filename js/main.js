@@ -1,8 +1,10 @@
 // Show upcoming events alert on home page
-showUpcomingEventsAlert();
-initMobileMenu();
-initExecSection();
-initAlumniSection();
+document.addEventListener("DOMContentLoaded", () => {
+  showUpcomingEventsAlert();
+  initMobileMenu();
+  initExecSection();
+  initAlumniSection();
+});
 
 /* =========================
    Utility: HTML escaping
