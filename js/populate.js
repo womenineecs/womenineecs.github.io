@@ -241,6 +241,14 @@ function getEventVal(cells, idx) {
 function getEventDate(cells, idx) {
   if (idx === undefined || !cells[idx]) return '';
   const c = cells[idx];
+  // Parse gviz Date(year,month,day) format (month is 0-indexed)
+  if (c.v && typeof c.v === 'string' && c.v.startsWith('Date(')) {
+    const m = c.v.match(/Date\((\d+),(\d+),(\d+)\)/);
+    if (m) {
+      const d = new Date(parseInt(m[1]), parseInt(m[2]), parseInt(m[3]));
+      return d.toLocaleDateString('en-US', { month: 'numeric', day: 'numeric', year: 'numeric' });
+    }
+  }
   if (c.f) return c.f;
   if (c.v) return String(c.v).trim();
   return '';
