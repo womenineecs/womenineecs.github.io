@@ -1,14 +1,16 @@
 const maxEvents = 6;
 
-// Google Sheets CSV URL - replace with your published sheet URL
-const GOOGLE_SHEETS_CSV_URL =
-  "https://docs.google.com/spreadsheets/d/e/2PACX-1vSCj2n9VNPuirjkT8gbPdlDZC0HAMszyipQlcu7k5-wNV0tVjOSnlleY9YhMc5-2jA8_eAUgJ_prFXq/pub?output=csv"; // Add your Google Sheets CSV URL here
+// ── EVENTS GOOGLE SHEET CONFIG ──────────────────────────────────────────────
+const EVENTS_SHEET_ID = '1oswsn0whV1fhBSokfH0ECoEmd7Fl-70bTr6rMD3lmz0';
 
-// Load events from both local data and Google Sheets
-if (GOOGLE_SHEETS_CSV_URL) {
+const EVENTS_SHEET_URL = EVENTS_SHEET_ID
+  ? `https://docs.google.com/spreadsheets/d/${EVENTS_SHEET_ID}/gviz/tq?tqx=out:json`
+  : '';
+
+// Load events: Google Sheet (if configured) + local data
+if (EVENTS_SHEET_URL) {
   loadEventsFromGoogleSheets();
 } else {
-  // Only local events if no Google Sheets URL
   populateEvents(EVENTS_DATA.events);
 }
 
@@ -214,131 +216,71 @@ function createExecutiveProfile(executive) {
     `;
 }
 
-// Load events from Google Sheets and combine with local data
+// ── EVENTS GOOGLE SHEET LOADER (gviz — same method as Career Board) ─────────
+let ECOL = {};
+
+function buildEventColumnMap(cols) {
+  ECOL = {};
+  cols.forEach((c, i) => {
+    const label = (c.label || '').toLowerCase().trim();
+    if (label.includes('timestamp'))           ECOL.timestamp = i;
+    else if (label.includes('event title'))    ECOL.title     = i;
+    else if (label.includes('event date'))     ECOL.date      = i;
+    else if (label.includes('location'))       ECOL.location  = i;
+    else if (label.includes('image'))          ECOL.image     = i;
+  });
+}
+
+function getEventVal(cells, idx) {
+  if (idx === undefined || !cells[idx]) return '';
+  const v = cells[idx].v;
+  if (v === null || v === undefined) return '';
+  return String(v).trim();
+}
+
+function getEventDate(cells, idx) {
+  if (idx === undefined || !cells[idx]) return '';
+  const c = cells[idx];
+  if (c.f) return c.f;
+  if (c.v) return String(c.v).trim();
+  return '';
+}
+
+function driveImgEvent(raw) {
+  if (!raw) return '';
+  raw = raw.trim();
+  if (/\.(jpg|jpeg|png|gif|webp|svg)(\?|$)/i.test(raw)) return raw;
+  let m = raw.match(/[?&]id=([a-zA-Z0-9_-]+)/);
+  if (m) return `https://lh3.googleusercontent.com/d/${m[1]}`;
+  m = raw.match(/\/d\/([a-zA-Z0-9_-]+)/);
+  if (m) return `https://lh3.googleusercontent.com/d/${m[1]}`;
+  return raw;
+}
+
+function parseGvizEvents(txt) {
+  const m = txt.match(/google\.visualization\.Query\.setResponse\((.+)\);?\s*$/s);
+  if (!m) throw new Error('Could not parse sheet response');
+  const d = JSON.parse(m[1]);
+  if (d.status === 'error') throw new Error(d.errors?.[0]?.message || 'Sheet error');
+  if (d.table?.cols) buildEventColumnMap(d.table.cols);
+  return (d.table?.rows || [])
+    .filter(r => r.c && r.c[ECOL.title] && r.c[ECOL.title].v)
+    .map(r => ({
+      title:    getEventVal(r.c, ECOL.title),
+      date:     getEventDate(r.c, ECOL.date),
+      location: getEventVal(r.c, ECOL.location),
+      image:    driveImgEvent(getEventVal(r.c, ECOL.image)),
+    }));
+}
+
 async function loadEventsFromGoogleSheets() {
   try {
-    const response = await fetch(GOOGLE_SHEETS_CSV_URL);
-    const csvText = await response.text();
-    const googleSheetEvents = parseCSVToEvents(csvText);
-
-    // Google Sheets events are added to the end of the local events
-    const allEvents = [...EVENTS_DATA.events, ...googleSheetEvents];
-
-    populateEvents(allEvents);
-  } catch (error) {
-    // Fallback to local data only
+    const res = await fetch(EVENTS_SHEET_URL);
+    const txt = await res.text();
+    const sheetEvents = parseGvizEvents(txt);
+    populateEvents([...EVENTS_DATA.events, ...sheetEvents]);
+  } catch (e) {
+    console.error('Events sheet load error:', e);
     populateEvents(EVENTS_DATA.events);
   }
-}
-
-// Parse CSV to events array
-function parseCSVToEvents(csv) {
-  const lines = csv.split("\n");
-  const events = [];
-
-  // Skip header row (index 0) and start from index 1
-  for (let i = 1; i < lines.length; i++) {
-    const line = lines[i].trim();
-    if (!line) continue;
-
-    // Split by comma, but handle quoted fields
-    const fields = parseCSVLine(line);
-
-    if (fields.length >= 3) {
-      // Assuming columns: Timestamp, Title, Date, Image URL/Drive URL
-      // Adjust indices based on your form structure
-      const imageUrl = fields[3].trim();
-
-      events.push({
-        title: fields[1].trim(), // Column B: Event Title
-        date: formatDate(fields[2].trim()), // Column C: Event Date
-        image: convertGoogleDriveUrl(imageUrl), // Column D: Image (convert if Google Drive)
-      });
-    }
-  }
-
-  return events;
-}
-
-// Convert Google Drive URL to direct image URL
-function convertGoogleDriveUrl(url) {
-  if (!url) return "";
-
-  // If it's already a local path, return as-is
-  if (url.startsWith("public/")) {
-    return url;
-  }
-
-  // Handle Google Drive URLs
-  // Format 1: https://drive.google.com/open?id=FILE_ID
-  // Format 2: https://drive.google.com/file/d/FILE_ID/view
-  // Format 3: https://drive.google.com/uc?id=FILE_ID
-
-  let fileId = "";
-
-  // Extract file ID from various Google Drive URL formats
-  if (url.includes("drive.google.com")) {
-    // Format 1: ?id=FILE_ID (most common from Forms)
-    const idMatch = url.match(/[?&]id=([^&]+)/);
-    if (idMatch) {
-      fileId = idMatch[1];
-    }
-
-    // Format 2: /d/FILE_ID/ (if not found yet)
-    if (!fileId) {
-      const dMatch = url.match(/\/d\/([^/]+)/);
-      if (dMatch) {
-        fileId = dMatch[1];
-      }
-    }
-  }
-
-  // Convert to direct image URL if we found a file ID
-  if (fileId) {
-    const directUrl = `https://drive.google.com/thumbnail?id=${fileId}&sz=w1000`;
-    console.log(`Converted Drive URL to direct image: ${directUrl}`);
-    return directUrl;
-  }
-
-  // Return original URL if not a Drive URL
-  console.log(`Using original URL (not Drive): ${url}`);
-  return url;
-}
-
-// Parse a single CSV line handling quoted fields
-function parseCSVLine(line) {
-  const fields = [];
-  let currentField = "";
-  let insideQuotes = false;
-
-  for (let i = 0; i < line.length; i++) {
-    const char = line[i];
-
-    if (char === '"') {
-      insideQuotes = !insideQuotes;
-    } else if (char === "," && !insideQuotes) {
-      fields.push(currentField);
-      currentField = "";
-    } else {
-      currentField += char;
-    }
-  }
-  fields.push(currentField); // Add the last field
-
-  return fields;
-}
-
-// Format date from Google Sheets format to MM/DD/YYYY
-function formatDate(dateString) {
-  // Handle various date formats
-  const date = new Date(dateString);
-  if (isNaN(date.getTime())) {
-    return dateString; // Return as-is if not parseable
-  }
-
-  const month = date.getMonth() + 1;
-  const day = date.getDate();
-  const year = date.getFullYear();
-
-  return `${month}/${day}/${year}`;
 }
