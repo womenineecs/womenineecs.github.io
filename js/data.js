@@ -136,7 +136,7 @@ const CURRENT_ACADEMIC_YEAR = "2025-2026";
 
 const PEOPLE_DATA = {
   executives: [
-    
+
   {
     name: "Shiqi Cheng",
     role: "Co-President",
@@ -286,7 +286,7 @@ const PEOPLE_DATA = {
     name: "Michelle Han",
     role: "Development Team",
     image: "public/images/exec/2025-2026/Michelle.jpeg",
-    bio: "Hi! I'm Michelle and I'm from Sacramento, CA. I'm a 2029 studying 6-14 (CS, Econ, & Data Sci), and I'm interested in human-computer interaction, AI/ML, and fintech. In my free time, I enjoy playing tennis, cafe hopping, baking, thrifting, and watching movies!",
+    bio: "Hi! I'm Michelle and I'm from Sacramento, CA. I'm a 2029 studying 6-5 (EECS), and I'm interested in human-computer interaction and AI/ML. In my free time, I enjoy playing tennis, cafe hopping, figure skating, and watching movies!",
     linkedin: "https://www.linkedin.com/in/michellehhan/",
     email: "mhhan@mit.edu",
     terms: [
