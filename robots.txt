@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://womenineecs.github.io/sitemap.xml
+Sitemap: https://womenineecs.mit.edu/sitemap.xml
